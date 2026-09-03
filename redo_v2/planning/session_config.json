@@ -1,7 +1,7 @@
 {
   "interaction_mode": "learning",
   "rigor_profile": "lean",
-  "execution_strategy": "global_skeleton_then_sequential_question_loops",
+  "execution_strategy": "global_initial_models_then_sequential_question_loops",
   "active_scope": "Q1",
   "allow_all_questions_in_one_run": false
 }

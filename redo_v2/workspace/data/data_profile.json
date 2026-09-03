@@ -219,7 +219,7 @@
       "warnings": [
         "Expected sales volume is not supplied as a separate field.",
         "Sales price is a range and no representative-value rule is specified.",
-        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available, but method probes must be refreshed.",
+        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available and the targeted method-family refresh has passed, while formal solution metrics remain to be recomputed.",
         "Management thresholds and Attachment 3 templates are missing."
       ]
     },
@@ -227,7 +227,7 @@
       "status": "ready_with_warnings",
       "warnings": [
         "Only 2023 data are observed; future distributions and risk tolerance require explicit scenario assumptions.",
-        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available, but method probes must be refreshed.",
+        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available and the targeted method-family refresh has passed, while formal solution metrics remain to be recomputed.",
         "Attachment 3 output template is missing."
       ]
     },
@@ -235,7 +235,7 @@
       "status": "ready_with_warnings",
       "warnings": [
         "The one-year supplied data cannot identify substitution, complementarity, or temporal correlations.",
-        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available, but method probes must be refreshed.",
+        "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available and the targeted method-family refresh has passed, while formal solution metrics remain to be recomputed.",
         "Simulation relationships and parameters require literature support or human-approved assumptions."
       ]
     }
@@ -275,7 +275,7 @@
     "Expected sales volume proxy not confirmed.",
     "Price representative value not confirmed.",
     "Management convenience thresholds not confirmed.",
-    "Smart-greenhouse first-season yield/cost rows are absent in the attachment; the human-confirmed mapping resolves the modeling rule, while risk probes produced under the previous mapping are stale.",
+    "Smart-greenhouse first-season yield/cost rows are absent in the attachment; the human-confirmed mapping resolves the modeling rule, the targeted method-family refresh has passed, and formal solution metrics remain to be recomputed.",
     "Q2 probability and risk conventions not confirmed.",
     "Q3 relationship groups and dependence parameters are not empirically identifiable from supplied data."
   ]

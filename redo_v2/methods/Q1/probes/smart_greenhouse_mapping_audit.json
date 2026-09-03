@@ -24,8 +24,19 @@
       "maximum": -16.67
     }
   },
-  "verdict": "MATERIAL_CHANGE_REQUIRES_PROBE_REFRESH",
-  "interpretation": "The first-season mapping changes all three economic inputs materially. Directional effects on profit cannot be inferred from one input alone, so the Q1 optimization and constraint checks must be rerun before final method approval.",
-  "allowed_next_step": "refresh Q1 risk probe only",
+  "gross_margin_rank_screen": {
+    "definition": "yield times midpoint price minus cost, evaluated per mu without sales-cap coupling",
+    "spearman_rank_correlation": 0.995354,
+    "maximum_absolute_rank_shift": 1,
+    "top_five_new_crop_ids": [29, 32, 22, 17, 26],
+    "top_five_old_crop_ids": [29, 32, 22, 26, 17],
+    "top_margin_change_percent": -7.3482,
+    "affected_smart_greenhouse_first_season_area_mu_per_year": 2.4,
+    "affected_share_of_annual_land_season_capacity_percent": 0.17991,
+    "caveat": "This is a coefficient and ranking screen, not a rerun of the coupled sales-cap MILP."
+  },
+  "verdict": "MATERIAL_CHANGE_SCREENED_METHOD_FAMILY_RETAINED",
+  "interpretation": "The first-season mapping changes all three economic inputs materially, but covers all 18 crops, affects 0.17991% of annual land-season capacity, and leaves uncoupled gross-margin ranks nearly unchanged. The method family remains eligible; exact profits, allocation, concentration, and constraint checks must be recomputed during formal implementation.",
+  "allowed_next_step": "present refreshed Q1 method choice; formal implementation remains gated by the human decision",
   "code_generation_allowed": false
 }
