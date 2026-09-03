@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "generated_at": "2026-09-02T23:08:00+08:00",
+  "data_refs": ["workspace/data/data_profile.json", "methods/probe_metrics.json", "methods/probe_reduced_metrics.json"],
+  "methods": [
+    {
+      "id": "Q1-M1",
+      "role": "main_candidate",
+      "executability": {"status": "PASS", "evidence": {"window_years": 3, "runtime_seconds": 14.8848, "mip_gap": 0.00808, "variables": 6573, "binary_variables": 3210}},
+      "data_coverage": {"status": "CONDITIONAL", "evidence": {"plots": 54, "crops": 41, "years_in_probe_window": 3, "smart_greenhouse_first_season_economics": "reused_from_second_season"}},
+      "assumption_checks": [
+        {"name": "constraint_feasibility", "status": "PASS", "metric": "solver_feasible", "value": true},
+        {"name": "full_horizon_scale", "status": "CONDITIONAL", "metric": "45_second_mip_gap_range", "value": [0.1922, 0.5691], "threshold": 0.05}
+      ],
+      "output_degeneracy": {"status": "PASS", "metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.6086, "waste_ratio": 0.02133, "minimum_positive_area_mu": 0.1}},
+      "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "crop prices independently within +/-5%", "metric": "area_jaccard", "value": 0.4062, "caveat": "perturbed solve ended at 21.65% gap"},
+      "scale_check": {"status": "PASS", "representative_n": 6573, "runtime_seconds": 14.8848, "full_horizon_variables": 15337},
+      "verdict": "CONDITIONAL",
+      "conditions": ["use overlapping three-year windows", "require <=5% gap for every production run", "recheck price sensitivity with comparable solver gaps"],
+      "evidence_refs": ["methods/probe_reduced_metrics.json", "methods/probe_metrics.json"]
+    },
+    {
+      "id": "Q1-B1",
+      "role": "usable_baseline",
+      "executability": {"status": "PASS", "evidence": {"assignments": 574, "constraint_validation_errors": 0}},
+      "data_coverage": {"status": "PASS", "evidence": {"plots": 54, "years": 7}},
+      "assumption_checks": [{"name": "hard_constraint_validation", "status": "PASS", "metric": "error_count", "value": 0}],
+      "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"unique_crop_count": 8, "top_5_area_mass": 0.9656, "waste_ratio_case_1": 0.9212}},
+      "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "surplus rule 0% vs 50% salvage", "metric": "profit_sign_change", "value": true},
+      "scale_check": {"status": "PASS", "representative_n": 574, "runtime_seconds": 0.1},
+      "verdict": "CONDITIONAL",
+      "conditions": ["use only as a deliberately simple comparison baseline", "never present its concentrated allocation as the recommended plan"],
+      "evidence_refs": ["methods/probe_metrics.json"]
+    }
+  ]
+}

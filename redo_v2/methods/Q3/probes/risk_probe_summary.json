@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "generated_at": "2026-09-02T23:08:00+08:00",
+  "data_refs": ["workspace/data/data_profile.json", "methods/probe_metrics.json"],
+  "methods": [
+    {
+      "id": "Q3-M1",
+      "role": "main_candidate",
+      "executability": {"status": "CONDITIONAL", "evidence": {"correlated_scenario_generation": "PASS", "joint_reoptimization": "not yet implemented before human choice"}},
+      "data_coverage": {"status": "CONDITIONAL", "evidence": {"scenarios": 100, "correlation_parameters_identified_from_data": false}},
+      "assumption_checks": [
+        {"name": "correlation_matrix_psd", "status": "PASS", "metric": "minimum_eigenvalue", "value": 0.58323, "threshold": 0},
+        {"name": "substitution_complementarity_identifiability", "status": "CONDITIONAL", "metric": "observed_time_points", "value": 1, "threshold": "simulation assumptions only"}
+      ],
+      "output_degeneracy": {"status": "PASS", "metrics": {"profit_std_yuan": 835211.55, "profit_p05_yuan": 46191410.66}},
+      "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "independent to illustrative correlation structure", "metric": "lower_10pct_mean_change_yuan", "value": 43400.16},
+      "scale_check": {"status": "CONDITIONAL", "representative_scenarios": 100, "shared_scale_with_Q2": true},
+      "verdict": "CONDITIONAL",
+      "conditions": ["human chooses relationship-strength convention", "keep all relationship claims explicitly simulated", "test correlation strength +/-50%"],
+      "evidence_refs": ["methods/probe_metrics.json"]
+    },
+    {
+      "id": "Q3-B1",
+      "role": "usable_baseline",
+      "executability": {"status": "PASS", "evidence": {"independent_scenarios": 100, "seed_reproducible": true}},
+      "data_coverage": {"status": "PASS", "evidence": {"same_marginal_ranges_as_Q3": true}},
+      "assumption_checks": [{"name": "comparison_isolation", "status": "PASS", "metric": "only_dependence_structure_changes", "value": true}],
+      "output_degeneracy": {"status": "PASS", "metrics": {"profit_std_yuan": 847564.84}},
+      "perturbation_sensitivity": {"status": "PASS", "perturbation": "fixed seed reproduction", "metric": "exact_repeat", "value": true},
+      "scale_check": {"status": "PASS", "representative_scenarios": 100},
+      "verdict": "PASS",
+      "conditions": [],
+      "evidence_refs": ["methods/probe_metrics.json"]
+    }
+  ]
+}
