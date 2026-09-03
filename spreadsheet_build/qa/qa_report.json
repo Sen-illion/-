@@ -1,0 +1,26 @@
+[
+  {
+    "file": "result1_1.xlsx",
+    "sheets": 5,
+    "rendered": 5,
+    "formulaScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  {
+    "file": "result1_2.xlsx",
+    "sheets": 5,
+    "rendered": 5,
+    "formulaScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  {
+    "file": "result2.xlsx",
+    "sheets": 5,
+    "rendered": 5,
+    "formulaScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  },
+  {
+    "file": "result3.xlsx",
+    "sheets": 6,
+    "rendered": 6,
+    "formulaScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+  }
+]

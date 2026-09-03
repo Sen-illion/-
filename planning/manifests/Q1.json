@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "rigor_profile": "submission",
+  "current_gate": "G6",
+  "status": "final_audit_passed",
+  "artifacts": {
+    "problem_parse": "planning/parse/problem_parse.json",
+    "classification": "planning/classification/problem_classification.json",
+    "data_profile": "workspace/data/data_profile.json",
+    "method_card": "methods/Q1/q1_method_card.md",
+    "decision_ledger": "methods/Q1/q1_decisions.jsonl",
+    "risk_probe": "methods/Q1/probes/risk_probe_summary.json",
+    "latest_run": "results/Q1/experiments/round1/run_summary.json",
+    "code_review": "code/Q1/reviews/q1_python_review.json",
+    "decision_report": "results/Q1/experiments/round1/q1_decision_report.md",
+    "robustness_summary": "robustness/Q1/q1_robustness_summary.json",
+    "final_method": "methods/Q1/q1_final_method_explanation.md",
+    "final_result_analysis": "results/Q1/reports/q1_final_result_analysis.md",
+    "robustness_report": "robustness/Q1/q1_robustness_report.md",
+    "solution_package": "results/Q1/reports/q1_solution_package_for_writer.md",
+    "frozen_numbers": "results/Q1/reports/frozen_numbers.json",
+    "figure_plan": "methods/Q1/q1_figure_table_plan.md",
+    "paper_section": "paper/sections/03_q1.md",
+    "consistency_audit": "paper/audits/cross_media_consistency_audit.md",
+    "completeness_audit": "paper/audits/completeness_audit.md",
+    "qa_report": "paper/qa_report.md",
+    "final_docx": "paper/final/24C_农作物种植策略论文.docx",
+    "final_pdf": "paper/final/24C_农作物种植策略论文.pdf"
+  },
+  "allowed": {
+    "code_generation": true,
+    "freeze": true,
+    "paper_writing": true,
+    "final_assembly": true
+  },
+  "blockers": [],
+  "claim_limitations": [
+    "conditional robustness: excess rate is 10.119% when expected sales decrease 5%",
+    "feasible approximation only: maximum rolling-window MIP gap is 48.858%"
+  ],
+  "next_action": {
+    "owner": "none",
+    "skill": null,
+    "reason": "submission package complete; G6 audits passed"
+  },
+  "updated_at": "2026-09-03T01:25:00+08:00"
+}

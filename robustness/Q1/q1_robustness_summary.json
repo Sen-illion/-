@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "profile": "lean",
+  "input_sources": [
+    "results/Q1/experiments/round1/run_summary.json",
+    "results/Q1/experiments/round1/tables/result1_1_main.csv",
+    "results/Q1/experiments/round1/tables/result1_2_main.csv",
+    "results/Q1/experiments/round1/tables/result1_baseline.csv"
+  ],
+  "checks": [
+    {
+      "tested_claim": "Q1(1) prioritizes avoiding unsold waste",
+      "perturbation": "expected sales multiplied by 0.95, 1.00, and 1.05 with the accepted plan fixed",
+      "metric_threshold": "main excess rate <= 10% at every tested level (predeclared)",
+      "observed_value": {
+        "0.95": 0.10119096358924118,
+        "1.0": 0.06833022576410706,
+        "1.05": 0.0644694263764188
+      },
+      "status": "FAIL",
+      "limitation": "This does not reduce the accepted rolling-window optimality gap.",
+      "fallback_trigger_relevance": "Q1-F1 remains triggered by the recorded 48.858% MIP gap."
+    },
+    {
+      "tested_claim": "The accepted Q1 plans remain feasible",
+      "perturbation": "re-run all hard-constraint checks on saved plans",
+      "metric_threshold": "zero constraint errors",
+      "observed_value": {
+        "case1_main": 0,
+        "case2_main": 0,
+        "baseline": 0
+      },
+      "status": "PASS",
+      "limitation": "Economic-parameter assumptions are not feasibility constraints.",
+      "fallback_trigger_relevance": "No new feasibility trigger."
+    },
+    {
+      "tested_claim": "Waste control materially improves on the usable baseline",
+      "perturbation": "same ±5% expected-sales evaluation for main and baseline",
+      "metric_threshold": "main excess rate below baseline at every tested level",
+      "observed_value": {
+        "0.95": {
+          "main": 0.10119096358924118,
+          "baseline": 0.9251268609811868
+        },
+        "1.0": {
+          "main": 0.06833022576410706,
+          "baseline": 0.9211861694538809
+        },
+        "1.05": {
+          "main": 0.0644694263764188,
+          "baseline": 0.9172454779265748
+        }
+      },
+      "status": "PASS",
+      "limitation": "The baseline is a concentration-prone greedy lower bound.",
+      "fallback_trigger_relevance": "Supports the accepted main plan but not global optimality."
+    }
+  ],
+  "observations": [
+    {
+      "demand_scale": 0.95,
+      "plan": "case1_main",
+      "mean_profit_yuan": 32235832.745909814,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 32235832.745909814,
+      "median_profit_yuan": 32235832.745909814,
+      "p95_profit_yuan": 32235832.745909814,
+      "lower_10pct_mean_profit_yuan": 32235832.745909814,
+      "mean_excess_jin": 740054.7045454544,
+      "mean_excess_rate": 0.10119096358924118
+    },
+    {
+      "demand_scale": 0.95,
+      "plan": "case2_main",
+      "mean_profit_yuan": 60827118.38011363,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 60827118.38011363,
+      "median_profit_yuan": 60827118.38011363,
+      "p95_profit_yuan": 60827118.38011363,
+      "lower_10pct_mean_profit_yuan": 60827118.38011363,
+      "mean_excess_jin": 9389690.25,
+      "mean_excess_rate": 0.6171950042735397
+    },
+    {
+      "demand_scale": 0.95,
+      "plan": "baseline",
+      "mean_profit_yuan": -3080301.5999999996,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": -3080301.5999999996,
+      "median_profit_yuan": -3080301.5999999996,
+      "p95_profit_yuan": -3080301.5999999996,
+      "lower_10pct_mean_profit_yuan": -3080301.5999999996,
+      "mean_excess_jin": 19193718.0,
+      "mean_excess_rate": 0.9251268609811868
+    },
+    {
+      "demand_scale": 1.0,
+      "plan": "case1_main",
+      "mean_profit_yuan": 33728552.325076476,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 33728552.325076476,
+      "median_profit_yuan": 33728552.325076476,
+      "p95_profit_yuan": 33728552.325076476,
+      "lower_10pct_mean_profit_yuan": 33728552.325076476,
+      "mean_excess_jin": 499729.4545454546,
+      "mean_excess_rate": 0.06833022576410706
+    },
+    {
+      "demand_scale": 1.0,
+      "plan": "case2_main",
+      "mean_profit_yuan": 61412145.76136363,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 61412145.76136363,
+      "median_profit_yuan": 61412145.76136363,
+      "p95_profit_yuan": 61412145.76136363,
+      "lower_10pct_mean_profit_yuan": 61412145.76136363,
+      "mean_excess_jin": 9172668.0,
+      "mean_excess_rate": 0.602929885302634
+    },
+    {
+      "demand_scale": 1.0,
+      "plan": "baseline",
+      "mean_profit_yuan": -2595500.0,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": -2595500.0,
+      "median_profit_yuan": -2595500.0,
+      "p95_profit_yuan": -2595500.0,
+      "lower_10pct_mean_profit_yuan": -2595500.0,
+      "mean_excess_jin": 19111960.0,
+      "mean_excess_rate": 0.9211861694538809
+    },
+    {
+      "demand_scale": 1.05,
+      "plan": "case1_main",
+      "mean_profit_yuan": 33893430.30007648,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 33893430.30007648,
+      "median_profit_yuan": 33893430.30007648,
+      "p95_profit_yuan": 33893430.30007648,
+      "lower_10pct_mean_profit_yuan": 33893430.30007648,
+      "mean_excess_jin": 471493.7045454546,
+      "mean_excess_rate": 0.0644694263764188
+    },
+    {
+      "demand_scale": 1.05,
+      "plan": "case2_main",
+      "mean_profit_yuan": 61880887.392613634,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": 61880887.392613634,
+      "median_profit_yuan": 61880887.392613634,
+      "p95_profit_yuan": 61880887.392613634,
+      "lower_10pct_mean_profit_yuan": 61880887.392613634,
+      "mean_excess_jin": 8996739.25,
+      "mean_excess_rate": 0.5913658887577972
+    },
+    {
+      "demand_scale": 1.05,
+      "plan": "baseline",
+      "mean_profit_yuan": -2110698.4000000004,
+      "std_profit_yuan": 0.0,
+      "p05_profit_yuan": -2110698.4000000004,
+      "median_profit_yuan": -2110698.4000000004,
+      "p95_profit_yuan": -2110698.4000000004,
+      "lower_10pct_mean_profit_yuan": -2110698.4000000004,
+      "mean_excess_jin": 19030202.0,
+      "mean_excess_rate": 0.9172454779265748
+    }
+  ],
+  "overall_status": "FAIL",
+  "overall_limitation": "Human accepted a feasible approximation; maximum recorded MIP gap remains 48.858%."
+}

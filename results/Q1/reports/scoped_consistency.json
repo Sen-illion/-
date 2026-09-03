@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "mode": "scoped",
+  "impact_class": "FROZEN",
+  "question": "Q1",
+  "verdict": "PASSED",
+  "scope": "run summary, robustness summary, human result/stability decisions, manifest freeze state",
+  "checks": [
+    {
+      "check": "manifest freeze state",
+      "status": "PASS",
+      "evidence": "lean_results_judged_and_frozen"
+    },
+    {
+      "check": "result verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q1_method_choice",
+        "q1_result_verdict_round1",
+        "q1_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "stability verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q1_method_choice",
+        "q1_result_verdict_round1",
+        "q1_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "canonical references exist",
+      "status": "PASS",
+      "evidence": [
+        "results/Q1/experiments/round1/run_summary.json",
+        "code/Q1/reviews/q1_python_review.json",
+        "robustness/Q1/q1_robustness_summary.json"
+      ]
+    },
+    {
+      "check": "hard-constraint review passed",
+      "status": "PASS",
+      "evidence": "code/Q1/reviews/q1_python_review.json"
+    },
+    {
+      "check": "nominal Q1 excess rate agrees",
+      "status": "PASS",
+      "evidence": {
+        "run": 0.06833022576410706,
+        "robustness": 0.06833022576410706
+      }
+    },
+    {
+      "check": "Q1 limitation retained",
+      "status": "PASS",
+      "evidence": [
+        "conditional robustness: excess rate is 10.119% when expected sales decrease 5%",
+        "feasible approximation only: maximum rolling-window MIP gap is 48.858%"
+      ]
+    }
+  ]
+}

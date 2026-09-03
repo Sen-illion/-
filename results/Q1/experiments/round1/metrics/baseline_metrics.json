@@ -1,0 +1,35 @@
+{
+  "Q1_case_1": {
+    "mean_profit_yuan": -2595500.0,
+    "std_profit_yuan": 0.0,
+    "p05_profit_yuan": -2595500.0,
+    "median_profit_yuan": -2595500.0,
+    "p95_profit_yuan": -2595500.0,
+    "lower_10pct_mean_profit_yuan": -2595500.0,
+    "mean_excess_jin": 19111960.0,
+    "mean_excess_rate": 0.9211861694538809,
+    "unique_crops": 8,
+    "top1_area_mass": 0.3508245877061469,
+    "top5_area_mass": 0.9656029128292998,
+    "assignment_count": 574,
+    "minimum_positive_area_mu": 0.6
+  },
+  "Q1_case_2": {
+    "mean_profit_yuan": 58284477.0,
+    "std_profit_yuan": 0.0,
+    "p05_profit_yuan": 58284477.0,
+    "median_profit_yuan": 58284477.0,
+    "p95_profit_yuan": 58284477.0,
+    "lower_10pct_mean_profit_yuan": 58284477.0,
+    "mean_excess_jin": 19111960.0,
+    "mean_excess_rate": 0.9211861694538809,
+    "unique_crops": 8,
+    "top1_area_mass": 0.3508245877061469,
+    "top5_area_mass": 0.9656029128292998,
+    "assignment_count": 574,
+    "minimum_positive_area_mu": 0.6
+  },
+  "constraint_error_count": 0,
+  "constraint_errors": [],
+  "execution_time_seconds": 0.03330339999956777
+}

@@ -1,0 +1,282 @@
+{
+  "schema_version": 1,
+  "raw_files": [
+    {
+      "path": "workspace/data_raw/C题.pdf",
+      "size_bytes": 558863,
+      "sha256": "c7b5e58bff4189b8afba5505f7bff7d4f08280fc291c51ef3f46134ebbf74f9a"
+    },
+    {
+      "path": "workspace/data_raw/附件1.xlsx",
+      "size_bytes": 17147,
+      "sha256": "b799a137294a5c5497fed9667c5dfed6c967f1fb180316c5adc8509cfa6f0932"
+    },
+    {
+      "path": "workspace/data_raw/附件2.xlsx",
+      "size_bytes": 21976,
+      "sha256": "869081a3ab47d3bf8d0955106b622aaf0fd2c068fada7948da69b20ebf1d00ce"
+    }
+  ],
+  "attachment_mapping": [
+    {
+      "file": "C题.pdf",
+      "scope": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "role": "problem statement"
+    },
+    {
+      "file": "附件1.xlsx",
+      "scope": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "role": "land and crop master data"
+    },
+    {
+      "file": "附件2.xlsx",
+      "scope": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "role": "2023 planting and economics"
+    },
+    {
+      "file": "附件3",
+      "scope": [
+        "Q1",
+        "Q2"
+      ],
+      "role": "required output templates",
+      "status": "missing"
+    }
+  ],
+  "fields": [
+    {
+      "dataset": "land",
+      "key": [
+        "plot_id"
+      ],
+      "units": {
+        "area_mu": "亩"
+      }
+    },
+    {
+      "dataset": "crops",
+      "key": [
+        "crop_id"
+      ],
+      "units": {}
+    },
+    {
+      "dataset": "planting_2023",
+      "key": [
+        "plot_id",
+        "crop_id",
+        "season"
+      ],
+      "units": {
+        "area_mu": "亩"
+      }
+    },
+    {
+      "dataset": "economics_2023",
+      "key": [
+        "crop_id",
+        "land_type",
+        "season"
+      ],
+      "units": {
+        "yield_jin_per_mu": "斤/亩",
+        "cost_yuan_per_mu": "元/亩",
+        "price_low_yuan_per_jin": "元/斤",
+        "price_high_yuan_per_jin": "元/斤"
+      }
+    }
+  ],
+  "quality": {
+    "missingness": {
+      "required_fields_after_merged_cell_expansion": 0,
+      "note": "Source presentation uses merged cells; inherited values were expanded in cleaned tables."
+    },
+    "duplicates": {
+      "land_primary_key": 0,
+      "crop_primary_key": 0,
+      "planting_composite_key": 0,
+      "economics_composite_key": 0
+    },
+    "impossible_values": {
+      "nonpositive_land_area": 0,
+      "nonpositive_planting_area": 0,
+      "nonpositive_yield": 0,
+      "negative_cost": 0,
+      "nonpositive_price_bound": 0,
+      "plot_season_area_excess": [],
+      "unknown_plot_references": [],
+      "unknown_crop_references": [],
+      "crop_ids_without_economic_rows": [],
+      "economic_slot_coverage_gaps": {
+        "smart_greenhouse_first_season_crop_ids": [
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34
+        ],
+        "note": "Attachment 1 permits two smart-greenhouse vegetable seasons and 2023 planting includes first-season records, but Attachment 2 supplies only smart-greenhouse rows labeled second season."
+      }
+    },
+    "outliers": {
+      "status": "not_labeled_as_errors",
+      "note": "Large yield, cost and price differences are crop-dependent and must not be globally winsorized. Method-specific screening should inspect profitability concentration."
+    }
+  },
+  "coverage": {
+    "rows": {
+      "land": 54,
+      "crops": 41,
+      "planting_2023": 87,
+      "economics_2023": 107
+    },
+    "effective_sample_size": {
+      "plots": 54,
+      "crops": 41,
+      "planting_records": 87,
+      "economic_records": 107
+    },
+    "time_range": [
+      2023,
+      2023
+    ],
+    "time_gaps": null,
+    "time_note": "Only a 2023 cross-section is supplied; future behavior is scenario-driven, not estimable as a historical time series."
+  },
+  "distribution_risks": {
+    "class_imbalance": {
+      "land_type_counts": {
+        "山坡地": 6,
+        "平旱地": 6,
+        "普通大棚": 16,
+        "智慧大棚": 4,
+        "梯田": 14,
+        "水浇地": 8
+      },
+      "crop_type_counts": {
+        "粮食": 11,
+        "粮食（豆类）": 5,
+        "蔬菜": 18,
+        "蔬菜（豆类）": 3,
+        "食用菌": 4
+      },
+      "2023_planting_records_per_crop_min": 1,
+      "2023_planting_records_per_crop_max": 7,
+      "economic_records_by_land_type": {
+        "山坡地": 15,
+        "平旱地": 15,
+        "普通大棚": 22,
+        "智慧大棚": 18,
+        "梯田": 15,
+        "水浇地": 22
+      }
+    },
+    "rare_categories": [
+      "智慧大棚仅4个地块、总面积2.4亩。",
+      "食用菌仅4种，且只允许普通大棚第二季。"
+    ],
+    "high_cardinality": [
+      "plot_id: 54 levels",
+      "crop_id: 41 levels"
+    ],
+    "redundancy_warnings": [
+      "crop_name and crop_type repeat information keyed by crop_id; joins should use crop_id and validate names."
+    ],
+    "concentration_metrics": {
+      "price_range_width_min": 1.0,
+      "price_range_width_max": 40.0,
+      "note": "No outcome target exists yet; decision-output concentration must be checked in method risk probes."
+    }
+  },
+  "per_question_readiness": {
+    "Q1": {
+      "status": "ready_with_warnings",
+      "warnings": [
+        "Expected sales volume is not supplied as a separate field.",
+        "Sales price is a range and no representative-value rule is specified.",
+        "Smart-greenhouse first-season economics are not separately supplied.",
+        "Management thresholds and Attachment 3 templates are missing."
+      ]
+    },
+    "Q2": {
+      "status": "ready_with_warnings",
+      "warnings": [
+        "Only 2023 data are observed; future distributions and risk tolerance require explicit scenario assumptions.",
+        "Smart-greenhouse first-season economics are not separately supplied.",
+        "Attachment 3 output template is missing."
+      ]
+    },
+    "Q3": {
+      "status": "ready_with_warnings",
+      "warnings": [
+        "The one-year supplied data cannot identify substitution, complementarity, or temporal correlations.",
+        "Smart-greenhouse first-season economics are not separately supplied.",
+        "Simulation relationships and parameters require literature support or human-approved assumptions."
+      ]
+    }
+  },
+  "cleaned_files": [
+    {
+      "path": "workspace/data_clean/land.csv",
+      "transformations": [
+        "expanded merged cells",
+        "trimmed whitespace"
+      ]
+    },
+    {
+      "path": "workspace/data_clean/crops.csv",
+      "transformations": [
+        "expanded merged cells",
+        "trimmed whitespace"
+      ]
+    },
+    {
+      "path": "workspace/data_clean/planting_2023.csv",
+      "transformations": [
+        "expanded merged plot identifiers",
+        "trimmed whitespace"
+      ]
+    },
+    {
+      "path": "workspace/data_clean/economics_2023.csv",
+      "transformations": [
+        "trimmed whitespace",
+        "parsed price range into low and high bounds"
+      ]
+    }
+  ],
+  "unresolved_risks": [
+    "No Attachment 3 templates.",
+    "Expected sales volume proxy not confirmed.",
+    "Price representative value not confirmed.",
+    "Management convenience thresholds not confirmed.",
+    "Smart-greenhouse first-season yield/cost rows are absent; whether second-season parameters apply to both seasons is not explicitly stated.",
+    "Q2 probability and risk conventions not confirmed.",
+    "Q3 relationship groups and dependence parameters are not empirically identifiable from supplied data."
+  ]
+}

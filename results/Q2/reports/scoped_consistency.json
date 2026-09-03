@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "mode": "scoped",
+  "impact_class": "FROZEN",
+  "question": "Q2",
+  "verdict": "PASSED",
+  "scope": "run summary, robustness summary, human result/stability decisions, manifest freeze state",
+  "checks": [
+    {
+      "check": "manifest freeze state",
+      "status": "PASS",
+      "evidence": "lean_results_judged_and_frozen"
+    },
+    {
+      "check": "result verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q2_method_choice",
+        "q2_result_verdict_round1",
+        "q2_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "stability verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q2_method_choice",
+        "q2_result_verdict_round1",
+        "q2_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "canonical references exist",
+      "status": "PASS",
+      "evidence": [
+        "results/Q2/experiments/round1/run_summary.json",
+        "code/Q2/reviews/q2_python_review.json",
+        "robustness/Q2/q2_robustness_summary.json"
+      ]
+    },
+    {
+      "check": "hard-constraint review passed",
+      "status": "PASS",
+      "evidence": "code/Q2/reviews/q2_python_review.json"
+    },
+    {
+      "check": "Q2 robustness direction agrees",
+      "status": "PASS",
+      "evidence": "all five seeds positive"
+    },
+    {
+      "check": "Q2 main value resolves",
+      "status": "PASS",
+      "evidence": 68206112.46817191
+    }
+  ]
+}

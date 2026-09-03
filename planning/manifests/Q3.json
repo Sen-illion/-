@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "rigor_profile": "submission",
+  "current_gate": "G6",
+  "status": "final_audit_passed",
+  "artifacts": {
+    "problem_parse": "planning/parse/problem_parse.json",
+    "classification": "planning/classification/problem_classification.json",
+    "data_profile": "workspace/data/data_profile.json",
+    "method_card": "methods/Q3/q3_method_card.md",
+    "decision_ledger": "methods/Q3/q3_decisions.jsonl",
+    "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
+    "latest_run": "results/Q3/experiments/round1/run_summary.json",
+    "code_review": "code/Q3/reviews/q3_python_review.json",
+    "decision_report": "results/Q3/experiments/round1/q3_decision_report.md",
+    "robustness_summary": "robustness/Q3/q3_robustness_summary.json",
+    "final_method": "methods/Q3/q3_final_method_explanation.md",
+    "final_result_analysis": "results/Q3/reports/q3_final_result_analysis.md",
+    "robustness_report": "robustness/Q3/q3_robustness_report.md",
+    "solution_package": "results/Q3/reports/q3_solution_package_for_writer.md",
+    "frozen_numbers": "results/Q3/reports/frozen_numbers.json",
+    "figure_plan": "methods/Q3/q3_figure_table_plan.md",
+    "paper_section": "paper/sections/05_q3.md",
+    "consistency_audit": "paper/audits/cross_media_consistency_audit.md",
+    "completeness_audit": "paper/audits/completeness_audit.md",
+    "qa_report": "paper/qa_report.md",
+    "final_docx": "paper/final/24C_农作物种植策略论文.docx",
+    "final_pdf": "paper/final/24C_农作物种植策略论文.pdf"
+  },
+  "allowed": {
+    "code_generation": true,
+    "freeze": true,
+    "paper_writing": true,
+    "final_assembly": true
+  },
+  "blockers": [],
+  "claim_limitations": [
+    "relationship structure is simulated rather than estimated from attachments",
+    "Q3 main is retained but does not outperform the Q2 plan in tested scenarios",
+    "Q2/Q3 plan-area overlap is 42.645%"
+  ],
+  "next_action": {
+    "owner": "none",
+    "skill": null,
+    "reason": "submission package complete; G6 audits passed"
+  },
+  "updated_at": "2026-09-03T01:25:00+08:00"
+}

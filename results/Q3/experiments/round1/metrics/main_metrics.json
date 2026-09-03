@@ -1,0 +1,303 @@
+{
+  "mean_profit_yuan": 67563277.60528316,
+  "std_profit_yuan": 933814.8608387053,
+  "p05_profit_yuan": 65829261.151499294,
+  "median_profit_yuan": 67607849.11043471,
+  "p95_profit_yuan": 68916273.90226658,
+  "lower_10pct_mean_profit_yuan": 65684174.3508435,
+  "mean_excess_jin": 9316571.808077106,
+  "mean_excess_rate": 0.598146138162089,
+  "unique_crops": 23,
+  "top1_area_mass": 0.18572636280435334,
+  "top5_area_mass": 0.6480740873463625,
+  "assignment_count": 571,
+  "minimum_positive_area_mu": 0.28901275852248554,
+  "windows": [
+    {
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 1.8665056999998342,
+      "mip_gap": 0.03424170766331658,
+      "variables": 11737,
+      "binary_variables": 3210,
+      "constraints": 18592,
+      "objective": -32103956.74256446,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "years": [
+        2026,
+        2027,
+        2028
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 2.1567102999997587,
+      "mip_gap": 0.031151424395153435,
+      "variables": 11737,
+      "binary_variables": 3210,
+      "constraints": 18639,
+      "objective": -33805678.9735326,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2026,
+        2027
+      ]
+    },
+    {
+      "years": [
+        2028,
+        2029,
+        2030
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 1.2868384000012156,
+      "mip_gap": 0.03626177931019131,
+      "variables": 11737,
+      "binary_variables": 3210,
+      "constraints": 18639,
+      "objective": -35349448.79644238,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2028,
+        2029,
+        2030
+      ]
+    }
+  ],
+  "scenario_metadata": {
+    "correlation_matrix": [
+      [
+        1.0,
+        -0.35,
+        0.25,
+        0.3
+      ],
+      [
+        -0.35,
+        1.0,
+        -0.1,
+        -0.2
+      ],
+      [
+        0.25,
+        -0.1,
+        1.0,
+        0.4
+      ],
+      [
+        0.3,
+        -0.2,
+        0.4,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 0.5832254698718115,
+    "relationship_strength": 1.0,
+    "count": 30,
+    "seed": 20240902
+  },
+  "relationship_sensitivity": {
+    "strength_0.5": {
+      "mean_profit_yuan": 67566907.3800006,
+      "std_profit_yuan": 924971.0123517795,
+      "p05_profit_yuan": 65844336.99817507,
+      "median_profit_yuan": 67624377.8346785,
+      "p95_profit_yuan": 68882842.69249764,
+      "lower_10pct_mean_profit_yuan": 65716787.7107558,
+      "mean_excess_jin": 9316602.841720466,
+      "mean_excess_rate": 0.5981481305960347,
+      "metadata": {
+        "correlation_matrix": [
+          [
+            1.0,
+            -0.175,
+            0.125,
+            0.15
+          ],
+          [
+            -0.175,
+            1.0,
+            -0.05,
+            -0.1
+          ],
+          [
+            0.125,
+            -0.05,
+            1.0,
+            0.2
+          ],
+          [
+            0.15,
+            -0.1,
+            0.2,
+            1.0
+          ]
+        ],
+        "minimum_eigenvalue": 0.7916127349359059,
+        "relationship_strength": 0.5,
+        "count": 30,
+        "seed": 20240902
+      }
+    },
+    "strength_1.0": {
+      "mean_profit_yuan": 67563277.60528316,
+      "std_profit_yuan": 933814.8608387053,
+      "p05_profit_yuan": 65829261.151499294,
+      "median_profit_yuan": 67607849.11043471,
+      "p95_profit_yuan": 68916273.90226658,
+      "lower_10pct_mean_profit_yuan": 65684174.3508435,
+      "mean_excess_jin": 9316571.808077106,
+      "mean_excess_rate": 0.598146138162089,
+      "metadata": {
+        "correlation_matrix": [
+          [
+            1.0,
+            -0.35,
+            0.25,
+            0.3
+          ],
+          [
+            -0.35,
+            1.0,
+            -0.1,
+            -0.2
+          ],
+          [
+            0.25,
+            -0.1,
+            1.0,
+            0.4
+          ],
+          [
+            0.3,
+            -0.2,
+            0.4,
+            1.0
+          ]
+        ],
+        "minimum_eigenvalue": 0.5832254698718115,
+        "relationship_strength": 1.0,
+        "count": 30,
+        "seed": 20240902
+      }
+    },
+    "strength_1.5": {
+      "mean_profit_yuan": 67559903.20276988,
+      "std_profit_yuan": 942783.095952712,
+      "p05_profit_yuan": 65816139.962699905,
+      "median_profit_yuan": 67569792.07947353,
+      "p95_profit_yuan": 68951748.45870656,
+      "lower_10pct_mean_profit_yuan": 65653723.24706244,
+      "mean_excess_jin": 9316461.128935287,
+      "mean_excess_rate": 0.5981390322971186,
+      "metadata": {
+        "correlation_matrix": [
+          [
+            1.0,
+            -0.5249999999999999,
+            0.375,
+            0.44999999999999996
+          ],
+          [
+            -0.5249999999999999,
+            1.0,
+            -0.15000000000000002,
+            -0.30000000000000004
+          ],
+          [
+            0.375,
+            -0.15000000000000002,
+            1.0,
+            0.6000000000000001
+          ],
+          [
+            0.44999999999999996,
+            -0.30000000000000004,
+            0.6000000000000001,
+            1.0
+          ]
+        ],
+        "minimum_eigenvalue": 0.37483820480771707,
+        "relationship_strength": 1.5,
+        "count": 30,
+        "seed": 20240902
+      }
+    }
+  },
+  "risk_weight": 0.15,
+  "execution_time_seconds": 6.446660999999949
+}

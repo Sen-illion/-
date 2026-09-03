@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "reviewed_files": [
+    "code/common/planting_optimizer.py",
+    "code/Q1/q1_main.py",
+    "code/Q1/q1_baseline.py",
+    "code/Q1/run_all.py"
+  ],
+  "decision_id": "q1_method_choice",
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "py_compile completed for all reviewed files"
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "cleaned CSV inputs only",
+        "required plan columns present",
+        "raw data paths are not output targets"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "decision=q1_method_choice",
+        "methods=[('Q1-B1', 'usable_baseline'), ('Q1-M1', 'main_candidate')]"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "scenario generator exact repeat passed",
+        "seed=20240902",
+        {
+          "python": "3.14.6",
+          "platform": "Windows-11-10.0.26100-SP0",
+          "numpy": "2.4.6",
+          "pandas": "3.0.3",
+          "scipy": "1.18.0"
+        }
+      ]
+    },
+    "output_contract": {
+      "status": "PASS",
+      "evidence": [
+        "listed_outputs_exist=True",
+        "method_statuses_success=True",
+        "constraint_error_counts={'results/Q1/experiments/round1/tables/result1_1_main.csv': 0, 'results/Q1/experiments/round1/tables/result1_2_main.csv': 0, 'results/Q1/experiments/round1/tables/result1_baseline.csv': 0}"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "severity": "warning",
+      "check": "scale",
+      "message": "Maximum rolling-window MIP gap is 48.86%; outputs are feasible approximations and the recorded fallback trigger is active."
+    },
+    {
+      "severity": "warning",
+      "check": "fallback_trigger",
+      "message": "The approved main run triggered its dormant fallback condition; human result judgment is required before final-method claims."
+    }
+  ],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-09-03T00:12:21+08:00"
+}

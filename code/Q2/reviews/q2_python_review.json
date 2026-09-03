@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "language": "python",
+  "reviewed_files": [
+    "code/common/planting_optimizer.py",
+    "code/Q2/q2_main.py",
+    "code/Q2/q2_baseline.py",
+    "code/Q2/run_all.py"
+  ],
+  "decision_id": "q2_method_choice",
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "py_compile completed for all reviewed files"
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "cleaned CSV inputs only",
+        "required plan columns present",
+        "raw data paths are not output targets"
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "decision=q2_method_choice",
+        "methods=[('Q2-B1', 'usable_baseline'), ('Q2-M1', 'main_candidate')]"
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "scenario generator exact repeat passed",
+        "seed=20240902",
+        {
+          "python": "3.14.6",
+          "platform": "Windows-11-10.0.26100-SP0",
+          "numpy": "2.4.6",
+          "pandas": "3.0.3",
+          "scipy": "1.18.0"
+        }
+      ]
+    },
+    "output_contract": {
+      "status": "PASS",
+      "evidence": [
+        "listed_outputs_exist=True",
+        "method_statuses_success=True",
+        "constraint_error_counts={'results/Q2/experiments/round1/tables/result2_main.csv': 0, 'results/Q2/experiments/round1/tables/result2_baseline.csv': 0}"
+      ]
+    }
+  },
+  "findings": [],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-09-03T00:12:21+08:00"
+}

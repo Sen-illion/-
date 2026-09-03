@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "mode": "scoped",
+  "impact_class": "FROZEN",
+  "question": "Q3",
+  "verdict": "PASSED",
+  "scope": "run summary, robustness summary, human result/stability decisions, manifest freeze state",
+  "checks": [
+    {
+      "check": "manifest freeze state",
+      "status": "PASS",
+      "evidence": "lean_results_judged_and_frozen"
+    },
+    {
+      "check": "result verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q3_method_choice",
+        "q3_result_verdict_round1",
+        "q3_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "stability verdict exists",
+      "status": "PASS",
+      "evidence": [
+        "q3_method_choice",
+        "q3_result_verdict_round1",
+        "q3_stability_verdict_round1"
+      ]
+    },
+    {
+      "check": "canonical references exist",
+      "status": "PASS",
+      "evidence": [
+        "results/Q3/experiments/round1/run_summary.json",
+        "code/Q3/reviews/q3_python_review.json",
+        "robustness/Q3/q3_robustness_summary.json"
+      ]
+    },
+    {
+      "check": "hard-constraint review passed",
+      "status": "PASS",
+      "evidence": "code/Q3/reviews/q3_python_review.json"
+    },
+    {
+      "check": "Q3 non-superiority agrees",
+      "status": "PASS",
+      "evidence": -633523.9855479747
+    },
+    {
+      "check": "Q3 limitation retained",
+      "status": "PASS",
+      "evidence": [
+        "relationship structure is simulated rather than estimated from attachments",
+        "Q3 main is retained but does not outperform the Q2 plan in tested scenarios",
+        "Q2/Q3 plan-area overlap is 42.645%"
+      ]
+    }
+  ]
+}

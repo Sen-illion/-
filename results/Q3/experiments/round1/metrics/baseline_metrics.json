@@ -1,0 +1,47 @@
+{
+  "mean_profit_yuan": 68196801.59083113,
+  "std_profit_yuan": 929321.1822585895,
+  "p05_profit_yuan": 66503565.71652495,
+  "median_profit_yuan": 68252386.16859871,
+  "p95_profit_yuan": 69544794.22853445,
+  "lower_10pct_mean_profit_yuan": 66353033.97042032,
+  "mean_excess_jin": 9015123.227132704,
+  "mean_excess_rate": 0.5803360426027844,
+  "unique_crops": 24,
+  "top1_area_mass": 0.1852683111841754,
+  "top5_area_mass": 0.6406670333497627,
+  "assignment_count": 589,
+  "minimum_positive_area_mu": 0.2002365554071237,
+  "scenario_metadata": {
+    "correlation_matrix": [
+      [
+        1.0,
+        -0.35,
+        0.25,
+        0.3
+      ],
+      [
+        -0.35,
+        1.0,
+        -0.1,
+        -0.2
+      ],
+      [
+        0.25,
+        -0.1,
+        1.0,
+        0.4
+      ],
+      [
+        0.3,
+        -0.2,
+        0.4,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 0.5832254698718115,
+    "relationship_strength": 1.0,
+    "count": 30,
+    "seed": 20240902
+  }
+}

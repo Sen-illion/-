@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "profile": "lean",
+  "input_sources": [
+    "results/Q2/experiments/round1/run_summary.json",
+    "results/Q2/experiments/round1/tables/result2_main.csv",
+    "results/Q2/experiments/round1/tables/result2_baseline.csv"
+  ],
+  "checks": [
+    {
+      "tested_claim": "Q2 main has higher mean profit than the usable baseline",
+      "perturbation": "five new fixed seeds, 100 independent scenarios per seed",
+      "metric_threshold": "positive mean-profit difference for every seed",
+      "observed_value": {
+        "20240903": 171508.32173852623,
+        "20240904": 170206.2165917158,
+        "20240905": 180445.80264501274,
+        "20240906": 172936.89753478765,
+        "20240907": 188220.71719880402
+      },
+      "status": "PASS",
+      "limitation": "Fixed-plan evaluation does not re-optimize under each seed.",
+      "fallback_trigger_relevance": "A sign reversal would make the accepted superiority claim conditional."
+    },
+    {
+      "tested_claim": "Q2 main improves lower-tail profit",
+      "perturbation": "same five 100-scenario evaluation sets",
+      "metric_threshold": "positive lower-10%-mean difference for every seed",
+      "observed_value": {
+        "20240903": 230592.42886421084,
+        "20240904": 190136.60465130955,
+        "20240905": 226512.36195652187,
+        "20240906": 277085.79419475794,
+        "20240907": 217956.7900499925
+      },
+      "status": "PASS",
+      "limitation": "Tail estimates remain Monte Carlo estimates.",
+      "fallback_trigger_relevance": "Tests the accepted risk-balanced direction."
+    },
+    {
+      "tested_claim": "Accepted Q2 plans remain feasible",
+      "perturbation": "re-run all hard-constraint checks",
+      "metric_threshold": "zero constraint errors",
+      "observed_value": {
+        "main": 0,
+        "baseline": 0
+      },
+      "status": "PASS",
+      "limitation": "Does not test missing economic fields.",
+      "fallback_trigger_relevance": "No new feasibility trigger."
+    }
+  ],
+  "observations": [
+    {
+      "seed": 20240903,
+      "main_mean_profit_yuan": 67818592.88645364,
+      "baseline_mean_profit_yuan": 67647084.56471512,
+      "mean_difference_yuan": 171508.32173852623,
+      "main_lower_10pct_mean_profit_yuan": 66211349.820805684,
+      "baseline_lower_10pct_mean_profit_yuan": 65980757.39194147,
+      "lower_tail_difference_yuan": 230592.42886421084,
+      "main_excess_rate": 0.5800074246337776,
+      "baseline_excess_rate": 0.596911570391389
+    },
+    {
+      "seed": 20240904,
+      "main_mean_profit_yuan": 67956693.91153277,
+      "baseline_mean_profit_yuan": 67786487.69494106,
+      "mean_difference_yuan": 170206.2165917158,
+      "main_lower_10pct_mean_profit_yuan": 66377134.44092359,
+      "baseline_lower_10pct_mean_profit_yuan": 66186997.83627228,
+      "lower_tail_difference_yuan": 190136.60465130955,
+      "main_excess_rate": 0.5806522346329385,
+      "baseline_excess_rate": 0.5972859808218955
+    },
+    {
+      "seed": 20240905,
+      "main_mean_profit_yuan": 67726812.55882017,
+      "baseline_mean_profit_yuan": 67546366.75617516,
+      "mean_difference_yuan": 180445.80264501274,
+      "main_lower_10pct_mean_profit_yuan": 66202838.589450285,
+      "baseline_lower_10pct_mean_profit_yuan": 65976326.22749376,
+      "lower_tail_difference_yuan": 226512.36195652187,
+      "main_excess_rate": 0.5799068708033926,
+      "baseline_excess_rate": 0.5966080100759303
+    },
+    {
+      "seed": 20240906,
+      "main_mean_profit_yuan": 67919249.4114524,
+      "baseline_mean_profit_yuan": 67746312.51391761,
+      "mean_difference_yuan": 172936.89753478765,
+      "main_lower_10pct_mean_profit_yuan": 66185312.005092464,
+      "baseline_lower_10pct_mean_profit_yuan": 65908226.21089771,
+      "lower_tail_difference_yuan": 277085.79419475794,
+      "main_excess_rate": 0.5803146758984306,
+      "baseline_excess_rate": 0.596727240390141
+    },
+    {
+      "seed": 20240907,
+      "main_mean_profit_yuan": 67803751.0296824,
+      "baseline_mean_profit_yuan": 67615530.3124836,
+      "mean_difference_yuan": 188220.71719880402,
+      "main_lower_10pct_mean_profit_yuan": 66092742.51018991,
+      "baseline_lower_10pct_mean_profit_yuan": 65874785.72013992,
+      "lower_tail_difference_yuan": 217956.7900499925,
+      "main_excess_rate": 0.5799499778867665,
+      "baseline_excess_rate": 0.5967551334897788
+    }
+  ],
+  "overall_status": "PASS"
+}

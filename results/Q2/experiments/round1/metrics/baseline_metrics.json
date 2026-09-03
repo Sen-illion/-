@@ -1,0 +1,174 @@
+{
+  "mean_profit_yuan": 68014316.6995913,
+  "std_profit_yuan": 934272.0172408513,
+  "p05_profit_yuan": 66323681.14818456,
+  "median_profit_yuan": 68046120.15012851,
+  "p95_profit_yuan": 69312760.52759682,
+  "lower_10pct_mean_profit_yuan": 66143787.9313327,
+  "mean_excess_jin": 9340801.499143438,
+  "mean_excess_rate": 0.5984046929708686,
+  "unique_crops": 22,
+  "top1_area_mass": 0.17698726394378564,
+  "top5_area_mass": 0.6689723320158101,
+  "assignment_count": 570,
+  "minimum_positive_area_mu": 0.6,
+  "windows": [
+    {
+      "years": [
+        2024,
+        2025,
+        2026
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 0.5187505000012607,
+      "mip_gap": 0.03343457203307008,
+      "variables": 6573,
+      "binary_variables": 3210,
+      "constraints": 8296,
+      "objective": -28145400.875580966,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2024,
+        2025
+      ]
+    },
+    {
+      "years": [
+        2026,
+        2027,
+        2028
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 0.47334570000020904,
+      "mip_gap": 0.03956006750704542,
+      "variables": 6573,
+      "binary_variables": 3210,
+      "constraints": 8344,
+      "objective": -29351245.491262153,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2026,
+        2027
+      ]
+    },
+    {
+      "years": [
+        2028,
+        2029,
+        2030
+      ],
+      "status": "success",
+      "solver_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "runtime_seconds": 0.5071215999996639,
+      "mip_gap": 0.024984401493864113,
+      "variables": 6573,
+      "binary_variables": 3210,
+      "constraints": 8343,
+      "objective": -31245535.365433384,
+      "smart_greenhouse_first_season_reused_crop_ids": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "fragmentation_penalty_yuan_per_assignment": 145.20000000000002,
+      "committed_years": [
+        2028,
+        2029,
+        2030
+      ]
+    }
+  ],
+  "scenario_metadata": {
+    "correlation_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "minimum_eigenvalue": 1.0,
+    "relationship_strength": 1.0,
+    "count": 30,
+    "seed": 20240902
+  },
+  "execution_time_seconds": 1.613367099998868
+}

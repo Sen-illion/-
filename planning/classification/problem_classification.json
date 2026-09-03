@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "subquestions": [
+    {
+      "id": "Q1",
+      "primary_type": "optimization/decision",
+      "secondary_type": null,
+      "confidence": "high",
+      "evidence": [
+        "必须输出2024—2030年逐地块、逐季、逐作物的种植方案。",
+        "存在面积、适种、季次、轮作、豆类覆盖和管理便利性约束。",
+        "需要分别处理两种超产销售规则下的最优方案。"
+      ],
+      "required_validation": [
+        "决策变量与输出模板逐项对应",
+        "全部硬约束可行性检查",
+        "两种超产规则的收入计算核对",
+        "目标值与可实现种植方案一致",
+        "最优性证据或求解误差说明",
+        "管理便利性和可实施性检查"
+      ],
+      "framing_decision_id": null,
+      "risks": [
+        "最优目标和管理便利性阈值尚未由人确认。",
+        "预期销售量与价格区间代表值的口径会直接改变目标值。",
+        "附件3缺失会阻碍最终交付格式验证。"
+      ]
+    },
+    {
+      "id": "Q2",
+      "primary_type": "optimization/decision",
+      "secondary_type": "simulation/scenario",
+      "confidence": "high",
+      "evidence": [
+        "核心交付仍是2024—2030年逐地块逐季种植方案。",
+        "销量、亩产量、成本和价格按年度变化并带有区间或趋势不确定性。",
+        "题目明确要求综合考虑潜在种植风险。"
+      ],
+      "required_validation": [
+        "全部硬约束可行性检查",
+        "不确定参数范围与题面逐项一致",
+        "模拟或情景的随机种子、重复次数和区间稳定性",
+        "收益与风险指标的样本外或留出情景表现",
+        "与Q1确定性基准采用可比口径"
+      ],
+      "framing_decision_id": "global_framing_choice_1",
+      "risks": [
+        "风险度量和风险厌恶程度未指定。",
+        "题面没有提供不确定参数的概率分布。",
+        "将约5%的变化解释为固定趋势或随机波动会产生不同输出。"
+      ]
+    },
+    {
+      "id": "Q3",
+      "primary_type": "optimization/decision",
+      "secondary_type": "simulation/scenario",
+      "confidence": "high",
+      "evidence": [
+        "必须在相关模拟条件下给出2024—2030年种植策略。",
+        "必须构造作物替代性、互补性及销量、价格、成本相关性的模拟数据。",
+        "必须与Q2方案进行结果比较。"
+      ],
+      "required_validation": [
+        "全部硬约束可行性检查",
+        "替代、互补和相关结构的方向与强度有可追溯依据",
+        "联合模拟的边际范围仍符合Q2题面",
+        "固定随机种子、重复次数和模拟稳定性",
+        "与Q2采用相同评价指标和测试情景",
+        "结论区分模拟设定与观测事实"
+      ],
+      "framing_decision_id": "global_framing_choice_1",
+      "risks": [
+        "替代与互补分组及相关参数均未由题面给出。",
+        "模拟设定可能主导结论，必须进行敏感性检查。",
+        "相关性不能被表述为因果机制。"
+      ]
+    }
+  ],
+  "classification_note": "三个问题的主交付均是受约束的种植决策，故主类型统一为optimization/decision；Q2和Q3只有在不确定情景结果服务于种植决策时才列simulation/scenario为次类型。当前不存在会改变主任务类型的歧义。"
+}

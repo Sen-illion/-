@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "question": "Q3",
+  "profile": "lean",
+  "input_sources": [
+    "results/Q3/experiments/round1/run_summary.json",
+    "results/Q3/experiments/round1/tables/result3_main.csv",
+    "results/Q3/experiments/round1/tables/result3_baseline_q2_plan.csv"
+  ],
+  "checks": [
+    {
+      "tested_claim": "Q3 main is retained without claiming superiority over Q2",
+      "perturbation": "three relationship strengths and three new seeds, 100 correlated scenarios per cell",
+      "metric_threshold": "Q3-Q2 mean-profit difference <= 0 in every tested cell",
+      "observed_value": {
+        "strength_0.5_seed_20240903": -614445.9327863753,
+        "strength_0.5_seed_20240904": -626667.5893487781,
+        "strength_0.5_seed_20240905": -622056.603524752,
+        "strength_1.0_seed_20240903": -611469.3788964748,
+        "strength_1.0_seed_20240904": -625598.9215520024,
+        "strength_1.0_seed_20240905": -620243.3027941808,
+        "strength_1.5_seed_20240903": -608798.0529605001,
+        "strength_1.5_seed_20240904": -622829.4119916707,
+        "strength_1.5_seed_20240905": -618643.6061854064
+      },
+      "status": "PASS",
+      "limitation": "The relationship matrix and substitution/complement response remain simulated assumptions.",
+      "fallback_trigger_relevance": "Supports the explicit non-superiority limitation; it does not activate Q3-F1 because the human retained Q3-M1."
+    },
+    {
+      "tested_claim": "Q3 plan-level profit is not dominated by relationship-strength instability",
+      "perturbation": "relationship strength 0.5, 1.0, 1.5 across three seeds",
+      "metric_threshold": "relative range of mean profit < 1% (predeclared)",
+      "observed_value": 0.0035603228854438305,
+      "status": "PASS",
+      "limitation": "A small profit range does not validate the assumed causal relationships.",
+      "fallback_trigger_relevance": "Tests the recorded ±50% sensitivity condition."
+    },
+    {
+      "tested_claim": "Accepted Q3 plan remains feasible",
+      "perturbation": "re-run all hard-constraint checks",
+      "metric_threshold": "zero constraint errors",
+      "observed_value": {
+        "q3_main": 0,
+        "q2_plan": 0
+      },
+      "status": "PASS",
+      "limitation": "Scenario assumptions do not affect deterministic planting feasibility.",
+      "fallback_trigger_relevance": "No new feasibility trigger."
+    }
+  ],
+  "observations": [
+    {
+      "strength": 0.5,
+      "seed": 20240903,
+      "minimum_correlation_eigenvalue": 0.7916127349359059,
+      "q3_mean_profit_yuan": 67190165.04431474,
+      "q2_mean_profit_yuan": 67804610.97710112,
+      "mean_difference_yuan": -614445.9327863753,
+      "q3_lower_10pct_mean_profit_yuan": 65550150.82187321,
+      "q2_lower_10pct_mean_profit_yuan": 66172878.10169582,
+      "lower_tail_difference_yuan": -622727.2798226103
+    },
+    {
+      "strength": 0.5,
+      "seed": 20240904,
+      "minimum_correlation_eigenvalue": 0.7916127349359059,
+      "q3_mean_profit_yuan": 67329683.29775168,
+      "q2_mean_profit_yuan": 67956350.88710046,
+      "mean_difference_yuan": -626667.5893487781,
+      "q3_lower_10pct_mean_profit_yuan": 65732033.117450096,
+      "q2_lower_10pct_mean_profit_yuan": 66352480.18704864,
+      "lower_tail_difference_yuan": -620447.0695985407
+    },
+    {
+      "strength": 0.5,
+      "seed": 20240905,
+      "minimum_correlation_eigenvalue": 0.7916127349359059,
+      "q3_mean_profit_yuan": 67101032.89187478,
+      "q2_mean_profit_yuan": 67723089.49539953,
+      "mean_difference_yuan": -622056.603524752,
+      "q3_lower_10pct_mean_profit_yuan": 65555477.11612712,
+      "q2_lower_10pct_mean_profit_yuan": 66193681.39497362,
+      "lower_tail_difference_yuan": -638204.2788465023
+    },
+    {
+      "strength": 1.0,
+      "seed": 20240903,
+      "minimum_correlation_eigenvalue": 0.5832254698718115,
+      "q3_mean_profit_yuan": 67179959.90557417,
+      "q2_mean_profit_yuan": 67791429.28447065,
+      "mean_difference_yuan": -611469.3788964748,
+      "q3_lower_10pct_mean_profit_yuan": 65508248.1991686,
+      "q2_lower_10pct_mean_profit_yuan": 66137941.78641053,
+      "lower_tail_difference_yuan": -629693.5872419327
+    },
+    {
+      "strength": 1.0,
+      "seed": 20240904,
+      "minimum_correlation_eigenvalue": 0.5832254698718115,
+      "q3_mean_profit_yuan": 67328038.55314627,
+      "q2_mean_profit_yuan": 67953637.47469828,
+      "mean_difference_yuan": -625598.9215520024,
+      "q3_lower_10pct_mean_profit_yuan": 65706398.325570345,
+      "q2_lower_10pct_mean_profit_yuan": 66326187.73326764,
+      "lower_tail_difference_yuan": -619789.4076972976
+    },
+    {
+      "strength": 1.0,
+      "seed": 20240905,
+      "minimum_correlation_eigenvalue": 0.5832254698718115,
+      "q3_mean_profit_yuan": 67097329.26983703,
+      "q2_mean_profit_yuan": 67717572.57263121,
+      "mean_difference_yuan": -620243.3027941808,
+      "q3_lower_10pct_mean_profit_yuan": 65549962.54564577,
+      "q2_lower_10pct_mean_profit_yuan": 66184067.2611411,
+      "lower_tail_difference_yuan": -634104.7154953256
+    },
+    {
+      "strength": 1.5,
+      "seed": 20240903,
+      "minimum_correlation_eigenvalue": 0.37483820480771707,
+      "q3_mean_profit_yuan": 67170401.8427383,
+      "q2_mean_profit_yuan": 67779199.8956988,
+      "mean_difference_yuan": -608798.0529605001,
+      "q3_lower_10pct_mean_profit_yuan": 65467945.0909096,
+      "q2_lower_10pct_mean_profit_yuan": 66098201.15265455,
+      "lower_tail_difference_yuan": -630256.0617449507
+    },
+    {
+      "strength": 1.5,
+      "seed": 20240904,
+      "minimum_correlation_eigenvalue": 0.37483820480771707,
+      "q3_mean_profit_yuan": 67324029.32619624,
+      "q2_mean_profit_yuan": 67946858.73818791,
+      "mean_difference_yuan": -622829.4119916707,
+      "q3_lower_10pct_mean_profit_yuan": 65682533.29817109,
+      "q2_lower_10pct_mean_profit_yuan": 66302477.194821216,
+      "lower_tail_difference_yuan": -619943.8966501281
+    },
+    {
+      "strength": 1.5,
+      "seed": 20240905,
+      "minimum_correlation_eigenvalue": 0.37483820480771707,
+      "q3_mean_profit_yuan": 67090425.22249065,
+      "q2_mean_profit_yuan": 67709068.82867606,
+      "mean_difference_yuan": -618643.6061854064,
+      "q3_lower_10pct_mean_profit_yuan": 65532573.115817025,
+      "q2_lower_10pct_mean_profit_yuan": 66170482.53025217,
+      "lower_tail_difference_yuan": -637909.4144351482
+    }
+  ],
+  "overall_status": "PASS"
+}

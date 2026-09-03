@@ -1,0 +1,136 @@
+{
+  "generated_at": "2026-09-03T01:25:43+08:00",
+  "profile": "submission",
+  "questions": {
+    "Q1": {
+      "required_files": {
+        "final_method": true,
+        "code_review": true,
+        "final_result": true,
+        "robustness_report": true,
+        "solution_package": true,
+        "frozen_numbers": true,
+        "paper_section": true,
+        "figure": true
+      },
+      "review_verdict": "PASSED",
+      "named_checks_all_pass": true,
+      "human_decisions": [
+        "q1_method_choice",
+        "q1_package_signoff",
+        "q1_result_verdict_round1",
+        "q1_stability_verdict_round1"
+      ],
+      "required_decisions_present": true,
+      "frozen_claim_count": 17,
+      "frozen_sources_exist": true,
+      "paper_major_claims_present": {
+        "3372.86": true,
+        "6.83%": true,
+        "6141.21": true,
+        "48.86%": true,
+        "10.12%": true
+      }
+    },
+    "Q2": {
+      "required_files": {
+        "final_method": true,
+        "code_review": true,
+        "final_result": true,
+        "robustness_report": true,
+        "solution_package": true,
+        "frozen_numbers": true,
+        "paper_section": true,
+        "figure": true
+      },
+      "review_verdict": "PASSED",
+      "named_checks_all_pass": true,
+      "human_decisions": [
+        "q2_method_choice",
+        "q2_package_signoff",
+        "q2_result_verdict_round1",
+        "q2_stability_verdict_round1"
+      ],
+      "required_decisions_present": true,
+      "frozen_claim_count": 25,
+      "frozen_sources_exist": true,
+      "paper_major_claims_present": {
+        "6820.61": true,
+        "6801.43": true,
+        "6642.93": true,
+        "6614.38": true,
+        "58.03%": true,
+        "4.40%": true
+      }
+    },
+    "Q3": {
+      "required_files": {
+        "final_method": true,
+        "code_review": true,
+        "final_result": true,
+        "robustness_report": true,
+        "solution_package": true,
+        "frozen_numbers": true,
+        "paper_section": true,
+        "figure": true
+      },
+      "review_verdict": "PASSED",
+      "named_checks_all_pass": true,
+      "human_decisions": [
+        "q3_method_choice",
+        "q3_package_signoff",
+        "q3_result_verdict_round1",
+        "q3_stability_verdict_round1"
+      ],
+      "required_decisions_present": true,
+      "frozen_claim_count": 25,
+      "frozen_sources_exist": true,
+      "paper_major_claims_present": {
+        "6756.33": true,
+        "6819.68": true,
+        "63.35": true,
+        "6568.42": true,
+        "42.65%": true,
+        "3.63%": true,
+        "0.356%": true
+      }
+    }
+  },
+  "global": {
+    "required_files": {
+      "planning/symbol_table.md": true,
+      "planning/model_assumptions.md": true,
+      "paper/refs.bib": true,
+      "paper/reference_audit.md": true,
+      "paper/polish_report.md": true,
+      "paper/audits/cross_media_consistency_audit.md": true,
+      "paper/audits/completeness_audit.md": true,
+      "paper/qa_report.md": true,
+      "paper/final/24C_农作物种植策略论文.docx": true,
+      "paper/final/24C_农作物种植策略论文.pdf": true,
+      "outputs/24c_modeling/result1_1.xlsx": true,
+      "outputs/24c_modeling/result1_2.xlsx": true,
+      "outputs/24c_modeling/result2.xlsx": true,
+      "outputs/24c_modeling/result3.xlsx": true
+    },
+    "figures": {
+      "q1_demand_robustness.png": true,
+      "q2_seed_robustness.png": true,
+      "q3_relationship_robustness.png": true
+    },
+    "reference_entries": 5,
+    "citations_present": {
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true
+    },
+    "placeholder_hits": [],
+    "docx_table_count": 14,
+    "docx_table_geometry_ok": true,
+    "pdf_page_count": 7,
+    "pdf_all_pages_nonempty": true
+  },
+  "verdict": "PASSED"
+}

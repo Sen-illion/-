@@ -1,0 +1,224 @@
+{
+  "generated_at": "2026-09-02T22:50:00+08:00",
+  "q1": {
+    "profit_only": {
+      "profit_yuan": 35337847.315789476,
+      "revenue_yuan": 40128969.0,
+      "cost_yuan": 4791121.684210526,
+      "waste_jin": 392315.0,
+      "waste_to_production": 0.05328252921395316,
+      "unique_crops": 34,
+      "top1_area_mass": 0.16627683209272606,
+      "top5_area_mass": 0.6222973022600442,
+      "positive_plot_crop_assignments": 556,
+      "minimum_positive_area_mu": 0.1,
+      "status": "CONDITIONAL",
+      "solver_status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "runtime_seconds": 45.17255910000131,
+      "variables": 15337,
+      "binary_variables": 7490,
+      "constraints": 19972,
+      "objective_minimized": -35337847.315789476,
+      "mip_gap": 0.19219727179159612
+    },
+    "waste_priority": {
+      "profit_yuan": 34385004.833333336,
+      "revenue_yuan": 39124296.5,
+      "cost_yuan": 4739291.666666667,
+      "waste_jin": 486930.0,
+      "waste_to_production": 0.06694603813585538,
+      "unique_crops": 34,
+      "top1_area_mass": 0.16751625505378198,
+      "top5_area_mass": 0.6303992140479615,
+      "positive_plot_crop_assignments": 556,
+      "minimum_positive_area_mu": 0.1,
+      "status": "CONDITIONAL",
+      "solver_status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "runtime_seconds": 45.432576700000936,
+      "variables": 15337,
+      "binary_variables": 7490,
+      "constraints": 19972,
+      "objective_minimized": -32627203.208333332,
+      "mip_gap": 0.2729574232415893
+    },
+    "half_price": {
+      "profit_yuan": 42545253.5,
+      "revenue_yuan": 46599471.5,
+      "cost_yuan": 4054218.0,
+      "waste_jin": 7028130.0,
+      "waste_to_production": 0.6771777587642216,
+      "unique_crops": 16,
+      "top1_area_mass": 0.22863120143454874,
+      "top5_area_mass": 0.7249594398428828,
+      "positive_plot_crop_assignments": 919,
+      "minimum_positive_area_mu": 0.1,
+      "status": "CONDITIONAL",
+      "solver_status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "runtime_seconds": 45.24450129999968,
+      "variables": 15337,
+      "binary_variables": 7490,
+      "constraints": 19972,
+      "objective_minimized": -42545253.5,
+      "mip_gap": 0.569140834667212
+    },
+    "price_perturbed": {
+      "profit_yuan": 34581153.63907805,
+      "revenue_yuan": 39333037.98995525,
+      "cost_yuan": 4751884.350877193,
+      "waste_jin": 488430.0,
+      "waste_to_production": 0.0668799555256443,
+      "unique_crops": 34,
+      "top1_area_mass": 0.1670286792227966,
+      "top5_area_mass": 0.6409411372257373,
+      "positive_plot_crop_assignments": 555,
+      "minimum_positive_area_mu": 0.1,
+      "status": "CONDITIONAL",
+      "solver_status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+      "runtime_seconds": 45.14376429999902,
+      "variables": 15337,
+      "binary_variables": 7490,
+      "constraints": 19972,
+      "objective_minimized": -32875541.446186725,
+      "mip_gap": 0.2695126019390077
+    },
+    "price_perturbation_area_jaccard": 0.9427843886077244,
+    "baseline_waste": {
+      "profit_yuan": -2533999.0,
+      "revenue_yuan": 9757533.0,
+      "cost_yuan": 12291532.0,
+      "waste_jin": 19111960.0,
+      "waste_to_production": 0.9211861694538809,
+      "unique_crops": 8,
+      "top1_area_mass": 0.3508245877061469,
+      "top5_area_mass": 0.9656029128292998,
+      "positive_plot_crop_assignments": 574,
+      "minimum_positive_area_mu": 0.6
+    },
+    "baseline_half_price": {
+      "profit_yuan": 59297051.5,
+      "revenue_yuan": 71588583.5,
+      "cost_yuan": 12291532.0,
+      "waste_jin": 19111960.0,
+      "waste_to_production": 0.9211861694538809,
+      "unique_crops": 8,
+      "top1_area_mass": 0.3508245877061469,
+      "top5_area_mass": 0.9656029128292998,
+      "positive_plot_crop_assignments": 574,
+      "minimum_positive_area_mu": 0.6
+    },
+    "waste_priority_profit_change_vs_profit_only": -952842.4824561402,
+    "waste_priority_waste_change_vs_profit_only": 94615.0
+  },
+  "q2": {
+    "scenario_count": 100,
+    "seed": 20240902,
+    "seed_reproducible": true,
+    "correlation_check": {
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "min_eigenvalue": 1.0
+    },
+    "mean_value_plan_profit_distribution": {
+      "mean": 47428355.2981591,
+      "std": 847564.8370963756,
+      "p05": 46065522.66568252,
+      "p50": 47426727.60605203,
+      "p95": 48751338.094822645,
+      "lower_10pct_mean": 45977771.536102496
+    },
+    "greedy_baseline_profit_distribution": {
+      "mean": 64117151.69086759,
+      "std": 1360751.4513556182,
+      "p05": 61972454.04567179,
+      "p50": 64073609.40969564,
+      "p95": 66171203.842504755,
+      "lower_10pct_mean": 61923852.553978026
+    },
+    "surplus_rule_warning": "Probe evaluation uses 50% salvage for excess; Q2 statement does not explicitly select the inherited surplus rule."
+  },
+  "q3": {
+    "scenario_count": 100,
+    "seed": 20240902,
+    "correlation_check": {
+      "matrix": [
+        [
+          1.0,
+          -0.35,
+          0.25,
+          0.3
+        ],
+        [
+          -0.35,
+          1.0,
+          -0.1,
+          -0.2
+        ],
+        [
+          0.25,
+          -0.1,
+          1.0,
+          0.4
+        ],
+        [
+          0.3,
+          -0.2,
+          0.4,
+          1.0
+        ]
+      ],
+      "min_eigenvalue": 0.5832254698718115
+    },
+    "correlated_profit_distribution": {
+      "mean": 47439337.179410145,
+      "std": 835211.5538635858,
+      "p05": 46191410.661047965,
+      "p50": 47398157.28006081,
+      "p95": 48719716.80960027,
+      "lower_10pct_mean": 46021171.69369093
+    },
+    "independent_profit_distribution": {
+      "mean": 47428355.2981591,
+      "std": 847564.8370963756,
+      "p05": 46065522.66568252,
+      "p50": 47426727.60605203,
+      "p95": 48751338.094822645,
+      "lower_10pct_mean": 45977771.536102496
+    },
+    "mean_profit_change_correlated_vs_independent": 10981.881251044571,
+    "lower_tail_change_correlated_vs_independent": 43400.1575884372
+  },
+  "scale": {
+    "valid_area_variables_per_year": 1062,
+    "valid_area_variables_7_year": 7434,
+    "estimated_q1_total_variables": 15337,
+    "estimated_q2_extra_sales_variables_at_200_scenarios": 82600
+  }
+}

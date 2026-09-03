@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "question": "Q3",
+  "frozen_at": "2026-09-03T01:16:00+08:00",
+  "package_signoff_decision": "q3_package_signoff",
+  "claims": [
+    {
+      "claim_id": "Q3-C1",
+      "value": 67563277.60528316,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q3_main_mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-C2",
+      "value": 68196801.59083113,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q2_plan_mean_profit_under_q3_scenarios_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-C3",
+      "value": -633523.9855479747,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.mean_profit_change_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-C4",
+      "value": 65684174.3508435,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q3_main_lower_10pct_mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-C5",
+      "value": 0.42645464276443085,
+      "unit": "proportion",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.plan_area_overlap",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-q2-lower10",
+      "value": 66353033.97042032,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q2_plan_lower_10pct_mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-lower-tail-change",
+      "value": -668859.6195768267,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.lower_tail_change_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-main-excess",
+      "value": 0.598146138162089,
+      "unit": "proportion",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q3_main_mean_excess_rate",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-q2-excess",
+      "value": 0.5803360426027844,
+      "unit": "proportion",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.comparison.q2_plan_mean_excess_rate",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-max-gap",
+      "value": 0.03626177931019131,
+      "unit": "proportion",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.methods[0].metrics_summary.windows[*].mip_gap|max",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-0.5-mean",
+      "value": 67566907.3800006,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.methods[0].metrics_summary.relationship_sensitivity.strength_0.5.mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.0-mean",
+      "value": 67563277.60528316,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.methods[0].metrics_summary.relationship_sensitivity.strength_1.0.mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.5-mean",
+      "value": 67559903.20276988,
+      "unit": "yuan/year",
+      "source_file": "results/Q3/experiments/round1/run_summary.json",
+      "source_locator": "$.methods[0].metrics_summary.relationship_sensitivity.strength_1.5.mean_profit_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-robust-diff-min",
+      "value": -626667.5893487781,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[*].mean_difference_yuan|min",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-robust-diff-max",
+      "value": -608798.0529605001,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[*].mean_difference_yuan|max",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-robust-relative-range",
+      "value": 0.0035603228854438305,
+      "unit": "proportion",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.checks[1].observed_value",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-0.5-seed-20240903-mean-diff",
+      "value": -614445.9327863753,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[0].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-0.5-seed-20240904-mean-diff",
+      "value": -626667.5893487781,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[1].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-0.5-seed-20240905-mean-diff",
+      "value": -622056.603524752,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[2].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.0-seed-20240903-mean-diff",
+      "value": -611469.3788964748,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[3].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.0-seed-20240904-mean-diff",
+      "value": -625598.9215520024,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[4].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.0-seed-20240905-mean-diff",
+      "value": -620243.3027941808,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[5].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.5-seed-20240903-mean-diff",
+      "value": -608798.0529605001,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[6].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.5-seed-20240904-mean-diff",
+      "value": -622829.4119916707,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[7].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    },
+    {
+      "claim_id": "Q3-strength-1.5-seed-20240905-mean-diff",
+      "value": -618643.6061854064,
+      "unit": "yuan/year",
+      "source_file": "robustness/Q3/q3_robustness_summary.json",
+      "source_locator": "$.observations[8].mean_difference_yuan",
+      "frozen_at": "2026-09-03T01:16:00+08:00",
+      "frozen_by_skill": "solution-package-builder",
+      "decision_id": "q3_package_signoff"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Reproducible runtime caches and temporary working files
+__pycache__/
+*.py[cod]
+tmp/
+node_modules/
+.pnpm-store/
+
+# Office lock files
+~$*
