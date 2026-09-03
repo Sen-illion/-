@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "rigor_profile": "lean",
+  "current_gate": "G2",
+  "status": "method_screened_evidence_stale_waiting_refresh",
+  "artifacts": {
+    "method_card": "methods/Q1/q1_method_card.md",
+    "decision_ledger": null,
+    "risk_probe": "methods/Q1/probes/risk_probe_summary.json",
+    "mapping_audit": "methods/Q1/probes/smart_greenhouse_mapping_audit.json",
+    "latest_run": null
+  },
+  "allowed": {
+    "code_generation": false,
+    "freeze": false,
+    "paper_writing": false,
+    "final_assembly": false
+  },
+  "blockers": [
+    "智慧大棚第一季经济参数口径已由人工更新；18 种匹配蔬菜的产量、成本和价格参数均发生实质变化，现有优化风险探针需定向复核",
+    "方法链 B 目前仅为初步倾向，尚未形成最终方法决定"
+  ],
+  "next_action": {
+    "owner": "AI",
+    "skill": "method-selector",
+    "reason": "按新智慧大棚参数映射刷新 Q1 数据覆盖与风险探针，再向人工展示最终方法选择卡"
+  },
+  "updated_at": "2026-09-03T18:04:03+08:00"
+}

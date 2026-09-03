@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "question_id": "Q3",
+  "rigor_profile": "lean",
+  "current_gate": "G2",
+  "status": "method_screened_with_provisional_preference",
+  "artifacts": {
+    "method_card": "methods/Q3/q3_method_card.md",
+    "decision_ledger": "methods/Q3/q3_decisions.jsonl",
+    "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
+    "latest_run": null
+  },
+  "allowed": {
+    "code_generation": false,
+    "freeze": false,
+    "paper_writing": false,
+    "final_assembly": false
+  },
+  "blockers": [
+    "先完成 Q1 与 Q2 闭环",
+    "类别层面中等相关及 ±50% 敏感性目前为暂定选择，等待用户补充和最终确认"
+  ],
+  "next_action": {
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "在 Q2 完成后补充并最终确认 Q3 相关结构"
+  },
+  "updated_at": "2026-09-03T18:04:03+08:00"
+}

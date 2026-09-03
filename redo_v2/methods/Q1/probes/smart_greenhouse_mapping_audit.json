@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "audit_type": "parameter_mapping_change",
+  "generated_at": "2026-09-03T18:04:03+08:00",
+  "old_probe_mapping": "smart-greenhouse second-season economics reused for smart-greenhouse first season",
+  "human_confirmed_mapping": "ordinary-greenhouse first-season yield, cost, and price reused for smart-greenhouse first season",
+  "source": "workspace/data_clean/economics_2023.csv",
+  "matched_crop_count": 18,
+  "comparison_new_vs_old_percent": {
+    "yield": {
+      "minimum": 9.09,
+      "median": 11.11,
+      "maximum": 12.50
+    },
+    "cost": {
+      "minimum": -10.00,
+      "median": -9.09,
+      "maximum": -7.69
+    },
+    "midpoint_price": {
+      "minimum": -22.79,
+      "median": -16.67,
+      "maximum": -16.67
+    }
+  },
+  "verdict": "MATERIAL_CHANGE_REQUIRES_PROBE_REFRESH",
+  "interpretation": "The first-season mapping changes all three economic inputs materially. Directional effects on profit cannot be inferred from one input alone, so the Q1 optimization and constraint checks must be rerun before final method approval.",
+  "allowed_next_step": "refresh Q1 risk probe only",
+  "code_generation_allowed": false
+}

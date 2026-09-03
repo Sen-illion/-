@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "rigor_profile": "lean",
+  "current_gate": "G2",
+  "status": "method_screened_waiting_human",
+  "artifacts": {
+    "method_card": "methods/Q2/q2_method_card.md",
+    "decision_ledger": "planning/framing_decisions.jsonl",
+    "risk_probe": "methods/Q2/probes/risk_probe_summary.json",
+    "latest_run": null
+  },
+  "allowed": {
+    "code_generation": false,
+    "freeze": false,
+    "paper_writing": false,
+    "final_assembly": false
+  },
+  "blockers": [
+    "先完成 Q1 闭环",
+    "稳健方法链 B 目前仅为初步倾向，需结合刷新后的 Q1 证据正式确认"
+  ],
+  "next_action": {
+    "owner": "AI",
+    "skill": "workflow-orchestrator",
+    "reason": "等待 Q1 闭环；已记录两种超产口径均需计算"
+  },
+  "updated_at": "2026-09-03T18:04:03+08:00"
+}
