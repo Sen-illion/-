@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "question_id": "Q1",
-  "generated_at": "2026-09-03T18:51:30+08:00",
+  "generated_at": "2026-09-03T22:33:27+08:00",
   "provenance": {
     "upstream_probe_summary": "allowed pre-code screening artifact copied into redo_v2",
     "detailed_upstream_probe_files": "not copied into redo_v2 and not used",
-    "targeted_refresh": "smart-greenhouse first-season parameter mapping audit"
+    "targeted_refresh": "smart-greenhouse first-season mapping audit plus profit-waste/minimum-area/bean-area micro-probe"
   },
-  "data_refs": ["workspace/data/data_profile.json", "methods/Q1/probes/smart_greenhouse_mapping_audit.json"],
+  "data_refs": ["workspace/data/data_profile.json", "methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json"],
   "methods": [
     {
       "id": "Q1-M1",
@@ -19,26 +19,29 @@
         {"name": "full_horizon_scale", "status": "CONDITIONAL", "metric": "45_second_mip_gap_range", "value": [0.1922, 0.5691], "threshold": 0.05},
         {"name": "smart_greenhouse_mapping_completeness", "status": "PASS", "metric": "matched_crop_fraction", "value": 1.0, "matched": 18, "required": 18},
         {"name": "objective_coefficient_rank_stability", "status": "PASS", "metric": "spearman_gross_margin_rank", "value": 0.995354, "maximum_absolute_rank_shift": 1, "caveat": "uncoupled coefficient screen only"},
-        {"name": "mapping_scope", "status": "PASS", "metric": "affected_annual_land_season_capacity_fraction", "value": 0.0017991}
+        {"name": "mapping_scope", "status": "PASS", "metric": "affected_annual_land_season_capacity_fraction", "value": 0.0017991},
+        {"name": "bean_area_coverage", "status": "PASS", "metric": "micro_probe_violation_count", "value": 0, "formulation": "three-year cumulative bean area >= plot area; 2023 initialized from observed areas"},
+        {"name": "relative_minimum_area", "status": "CONDITIONAL", "metric": "alpha_scan", "value": {"recommended": 0.1, "alpha_20_profit_loss_rate": 0.061793, "alpha_30_profit_loss_rate": 0.125625}},
+        {"name": "profit_waste_tradeoff", "status": "CONDITIONAL", "metric": "eta_knee", "value": {"preliminary": 0.01, "retained_interval": [0.01, 0.03], "eta_1_profit_loss_rate": 0.006923, "eta_1_waste_reduction_rate": 0.2788}}
       ],
-      "output_degeneracy": {"status": "PASS", "metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.6086, "waste_ratio": 0.02133, "minimum_positive_area_mu": 0.1}, "evidence_status": "carried from allowed upstream summary; exact values must be recomputed under the new mapping"},
+      "output_degeneracy": {"status": "CONDITIONAL", "legacy_metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.6086, "waste_ratio": 0.02133, "minimum_positive_area_mu": 0.1}, "micro_probe_eta_1_alpha_10": {"unique_crop_count": 34, "top_5_area_mass": 0.643739, "waste_ratio": 0.103112, "activation_count": 200, "average_area_per_activation_mu": 5.000637}, "evidence_status": "legacy values are stale under the corrected constraints; micro values are screening-only and full-scale values must be recomputed"},
       "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "crop prices independently within +/-5%", "metric": "area_jaccard", "value": 0.4062, "caveat": "perturbed solve ended at 21.65% gap"},
-      "scale_check": {"status": "PASS", "representative_n": 6573, "runtime_seconds": 14.8848, "full_horizon_variables": 15337},
+      "scale_check": {"status": "CONDITIONAL", "representative_n": 6573, "runtime_seconds": 14.8848, "full_horizon_variables": 15337, "new_micro_probe_plots": 6, "eighteen_plot_eta_zero_second_stage": "no incumbent within 30 seconds", "micro_joint_max_gap": 0.062566},
       "verdict": "CONDITIONAL",
-      "conditions": ["use overlapping three-year windows", "require <=5% gap for every production run", "recheck price sensitivity with comparable solver gaps", "recompute exact profit, allocation, concentration, waste, and constraints under the human-confirmed smart-greenhouse mapping"],
-      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json"]
+      "conditions": ["use overlapping three-year windows", "replace binary bean occurrence with three-year cumulative bean-area coverage", "use relative minimum area with alpha=10% as the only currently supported main point", "pre-register eta=1% as the preliminary main point and eta=3% as the full-scale comparison if the human confirms", "require <=5% gap for every production run", "separate reported economic profit and its floor from the epsilon activation tie-break", "recheck price sensitivity with comparable solver gaps", "recompute exact profit, allocation, concentration, waste, and constraints under the human-confirmed smart-greenhouse mapping"],
+      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json", "methods/Q1/probes/q1_tradeoff_probe_report.md"]
     },
     {
       "id": "Q1-B1",
       "role": "usable_baseline",
-      "executability": {"status": "PASS", "evidence": {"assignments": 574, "constraint_validation_errors": 0}},
-      "data_coverage": {"status": "PASS", "evidence": {"plots": 54, "years": 7, "smart_greenhouse_first_season_mapping_complete": true, "matched_crop_count": 18}},
-      "assumption_checks": [{"name": "hard_constraint_validation", "status": "PASS", "metric": "error_count", "value": 0}],
+      "executability": {"status": "CONDITIONAL", "evidence": {"legacy_assignments": 574, "legacy_constraint_validation_errors": 0, "caveat": "legacy bean-occurrence/coverage evidence is invalid under the corrected cumulative bean-area requirement"}},
+      "data_coverage": {"status": "CONDITIONAL", "evidence": {"plots": 54, "years": 7, "smart_greenhouse_first_season_mapping_complete": true, "matched_crop_count": 18, "corrected_bean_area_coverage_rerun": false}},
+      "assumption_checks": [{"name": "hard_constraint_validation", "status": "STALE", "metric": "corrected_bean_area_validation_available", "value": false}],
       "output_degeneracy": {"status": "CONDITIONAL", "metrics": {"unique_crop_count": 8, "top_5_area_mass": 0.9656, "waste_ratio_case_1": 0.9212}, "evidence_status": "carried from allowed upstream summary; exact values must be recomputed under the new mapping"},
       "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "surplus rule 0% vs 50% salvage", "metric": "profit_sign_change", "value": true},
       "scale_check": {"status": "PASS", "representative_n": 574, "runtime_seconds": 0.1},
       "verdict": "CONDITIONAL",
-      "conditions": ["use only as a deliberately simple comparison baseline", "never present its concentrated allocation as the recommended plan", "recompute the baseline under the new smart-greenhouse mapping"],
+      "conditions": ["use only as a deliberately simple comparison baseline", "never present its concentrated allocation as the recommended plan", "recompute the baseline under the new smart-greenhouse mapping, relative minimum-area constraint, and cumulative bean-area coverage before claiming feasibility"],
       "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json"]
     }
   ]
