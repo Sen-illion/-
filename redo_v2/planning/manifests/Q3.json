@@ -6,7 +6,7 @@
   "status": "method_screened_with_provisional_preference",
   "artifacts": {
     "method_card": "methods/Q3/q3_method_card.md",
-    "decision_ledger": "methods/Q3/q3_decisions.jsonl",
+    "decision_ledger": null,
     "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
     "latest_run": null
   },
