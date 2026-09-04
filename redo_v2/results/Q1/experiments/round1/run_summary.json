@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "round": "round1",
+  "implementation_target": "python",
+  "random_seed": 2026,
+  "approved_decision_id": "q1_method_choice_1",
+  "methods": [
+    {
+      "method_id": "m1_zero_price_profit",
+      "role": "main_reference",
+      "script": "code/Q1/q1_model.py",
+      "status": "success",
+      "execution_time_seconds": 39.57661740000185,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/m1_zero_price_profit_plan.csv",
+        "results/Q1/experiments/round1/tables/window_solver_records.csv",
+        "results/Q1/experiments/round1/metrics/window_details.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 39485334.23649253,
+        "revenue_yuan": 44903729.83781102,
+        "cost_yuan": 5418395.601318496,
+        "production_jin": 8529678.100091571,
+        "normal_sales_jin": 8244671.741239898,
+        "excess_jin": 285006.3588516731,
+        "waste_jin": 285006.3588516731,
+        "waste_rate": 0.033413495269957884,
+        "activation_count": 665,
+        "average_area_per_activation_mu": 13.117260888512014,
+        "minimum_positive_area_mu": 0.05999999999999994,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.60615263784679,
+        "area_hhi": 0.08911694528389791,
+        "total_planted_area_mu": 8722.978490860489
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "m1_eta_01",
+      "role": "main",
+      "script": "code/Q1/q1_model.py",
+      "status": "success",
+      "execution_time_seconds": 429.4504154000024,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/m1_eta_01_plan.csv",
+        "results/Q1/experiments/round1/tables/window_solver_records.csv",
+        "results/Q1/experiments/round1/metrics/window_details.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 39178938.77260235,
+        "revenue_yuan": 44537847.16846206,
+        "cost_yuan": 5358908.395859707,
+        "production_jin": 8631379.09873447,
+        "normal_sales_jin": 8391440.892089486,
+        "excess_jin": 239938.20664498396,
+        "waste_jin": 239938.20664498396,
+        "waste_rate": 0.02779836268345155,
+        "activation_count": 763,
+        "average_area_per_activation_mu": 11.260368256774644,
+        "minimum_positive_area_mu": 0.05999999999999994,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.6183887198461551,
+        "area_hhi": 0.09024270906583073,
+        "total_planted_area_mu": 8591.660979919054
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "m1_eta_03",
+      "role": "robustness_comparator",
+      "script": "code/Q1/q1_model.py",
+      "status": "success",
+      "execution_time_seconds": 293.2814081999968,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/m1_eta_03_plan.csv",
+        "results/Q1/experiments/round1/tables/window_solver_records.csv",
+        "results/Q1/experiments/round1/metrics/window_details.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 38708593.631692,
+        "revenue_yuan": 44002414.03456963,
+        "cost_yuan": 5293820.402877626,
+        "production_jin": 8517072.150193391,
+        "normal_sales_jin": 8242275.953106846,
+        "excess_jin": 274796.19708654564,
+        "waste_jin": 274796.19708654564,
+        "waste_rate": 0.03226416217224437,
+        "activation_count": 671,
+        "average_area_per_activation_mu": 12.83499761347497,
+        "minimum_positive_area_mu": 0.05999999999999983,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.6298309915525284,
+        "area_hhi": 0.09366376107320995,
+        "total_planted_area_mu": 8612.283398641704
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "m1_half_price",
+      "role": "main_case_2",
+      "script": "code/Q1/q1_model.py",
+      "status": "success",
+      "execution_time_seconds": 23.22162440000102,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/m1_half_price_plan.csv",
+        "results/Q1/experiments/round1/tables/window_solver_records.csv",
+        "results/Q1/experiments/round1/metrics/window_details.json"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 58185489.58452244,
+        "revenue_yuan": 64741325.99105795,
+        "cost_yuan": 6555836.4065355025,
+        "production_jin": 14945198.992144845,
+        "normal_sales_jin": 6755848.8205741625,
+        "excess_jin": 8189350.171570683,
+        "waste_jin": 0.0,
+        "waste_rate": 0.0,
+        "activation_count": 625,
+        "average_area_per_activation_mu": 14.884800000000078,
+        "minimum_positive_area_mu": 0.06,
+        "unique_crop_count": 32,
+        "top5_area_mass": 0.6163490331958874,
+        "area_hhi": 0.09249010659750097,
+        "total_planted_area_mu": 9303.00000000005
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "b1_zero_price",
+      "role": "usable_baseline",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.02099219999217894,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/b1_zero_price_plan.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 36219908.25,
+        "revenue_yuan": 42105316.25,
+        "cost_yuan": 5885408.0,
+        "production_jin": 9888465.0,
+        "normal_sales_jin": 7881235.0,
+        "excess_jin": 2007230.0,
+        "waste_jin": 2007230.0,
+        "waste_rate": 0.20298701567937996,
+        "activation_count": 548,
+        "average_area_per_activation_mu": 16.646715328467234,
+        "minimum_positive_area_mu": 0.6,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.554897833903356,
+        "area_hhi": 0.07772863217145032,
+        "total_planted_area_mu": 9122.400000000045
+      },
+      "warnings": [
+        "2024: baseline leaves some normal-price demand unused",
+        "2025: baseline leaves some normal-price demand unused",
+        "2026: baseline leaves some normal-price demand unused",
+        "2027: baseline leaves some normal-price demand unused",
+        "2028: baseline leaves some normal-price demand unused",
+        "2029: baseline leaves some normal-price demand unused",
+        "2030: baseline leaves some normal-price demand unused"
+      ],
+      "errors": []
+    },
+    {
+      "method_id": "b1_half_price",
+      "role": "usable_baseline_case_2",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.02245750000292901,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/round1/tables/b1_half_price_plan.csv"
+      ],
+      "figure_files": [],
+      "metrics_summary": {
+        "profit_yuan": 56827485.875,
+        "revenue_yuan": 64116597.875,
+        "cost_yuan": 7289112.0,
+        "production_jin": 15719245.0,
+        "normal_sales_jin": 6379075.0,
+        "excess_jin": 9340170.0,
+        "waste_jin": 0.0,
+        "waste_rate": 0.0,
+        "activation_count": 574,
+        "average_area_per_activation_mu": 16.268292682926912,
+        "minimum_positive_area_mu": 0.6,
+        "unique_crop_count": 30,
+        "top5_area_mass": 0.5345898479331735,
+        "area_hhi": 0.07941791763604701,
+        "total_planted_area_mu": 9338.000000000047
+      },
+      "warnings": [
+        "2024: baseline leaves some normal-price demand unused",
+        "2025: baseline leaves some normal-price demand unused",
+        "2026: baseline leaves some normal-price demand unused",
+        "2027: baseline leaves some normal-price demand unused",
+        "2028: baseline leaves some normal-price demand unused",
+        "2029: baseline leaves some normal-price demand unused",
+        "2030: baseline leaves some normal-price demand unused"
+      ],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "metrics_file": "results/Q1/experiments/round1/tables/method_comparison.csv",
+    "total_constraint_violations": 0,
+    "maximum_gap_across_all_attempts": 0.3079410987137223,
+    "maximum_selected_solver_gap": 0.04825836088941386,
+    "retried_stage_count": 3,
+    "activation_tie_break_upper_bound_yuan": 763.0,
+    "activation_tie_break_share_of_zero_price_profit": 1.932363027320741e-05
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q1-F1",
+    "condition": "any formal rolling window has no incumbent or gap > 5% after one 180-second retry",
+    "observed": false,
+    "evidence": null
+  },
+  "environment": {
+    "python": "3.14.6 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:29:05) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "D:\\anaconda3\\python.exe",
+    "platform": "Windows-11-10.0.26100-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0"
+  },
+  "legacy_result_isolation": "No legacy plan or result file was read; all plans were rebuilt from cleaned attachments.",
+  "warnings": [
+    "b1_zero_price: 2024: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2025: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2026: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2027: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2028: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2029: baseline leaves some normal-price demand unused",
+    "b1_zero_price: 2030: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2024: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2025: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2026: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2027: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2028: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2029: baseline leaves some normal-price demand unused",
+    "b1_half_price: 2030: baseline leaves some normal-price demand unused"
+  ],
+  "errors": [],
+  "status": "success",
+  "execution_time_seconds": 785.8017360999947
+}

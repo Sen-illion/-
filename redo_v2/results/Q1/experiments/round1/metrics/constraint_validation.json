@@ -1,0 +1,38 @@
+{
+  "m1_zero_price_profit": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  },
+  "m1_eta_01": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  },
+  "m1_eta_03": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  },
+  "m1_half_price": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  },
+  "b1_zero_price": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  },
+  "b1_half_price": {
+    "violation_count": 0,
+    "max_violation": 0.0,
+    "counts_by_type": {},
+    "details": []
+  }
+}

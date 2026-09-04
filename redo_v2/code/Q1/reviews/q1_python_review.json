@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "reviewed_files": [
+    "code/Q1/q1_code_plan.md",
+    "code/Q1/q1_common.py",
+    "code/Q1/q1_model.py",
+    "code/Q1/q1_baseline.py",
+    "code/Q1/run_q1_round1.py",
+    "results/Q1/experiments/round1/run_summary.json"
+  ],
+  "decision_id": "q1_method_choice_1",
+  "checks": {
+    "syntax": {
+      "status": "PASS",
+      "evidence": [
+        "All four Python files passed py_compile.",
+        "Two complete round1 executions exited successfully; the final execution took 785.802 seconds."
+      ]
+    },
+    "input_contract": {
+      "status": "PASS",
+      "evidence": [
+        "The loader validates primary/composite keys, positive areas/yields, nonnegative costs, and plot/crop references.",
+        "SHA-256 hashes of C题.pdf, 附件1.xlsx, and 附件2.xlsx match data_profile.json after execution; raw inputs were not modified.",
+        "All 321 smart-greenhouse rows across the six saved plans match ordinary-greenhouse first-season economics for season 1 and smart-greenhouse economics for season 2."
+      ]
+    },
+    "method_alignment": {
+      "status": "PASS",
+      "evidence": [
+        "Q1-M1 implements independent three-year rolling paths for zero-price profit, eta=1%, eta=3%, and half-price surplus.",
+        "The Pareto profit floor uses economic profit without the activation tie-break; all 14 saved Pareto window floors are satisfied within numerical tolerance.",
+        "Both Q1-M1 and Q1-B1 use alpha=10% and cumulative three-year bean area >= plot area with 2023 actual bean areas.",
+        "No Q1-F1 fallback implementation exists; its trigger is evaluated only."
+      ]
+    },
+    "reproducibility": {
+      "status": "PASS",
+      "evidence": [
+        "Seed 2026, stable sort keys, Python executable, platform, and NumPy/pandas/SciPy versions are recorded.",
+        "Two consecutive complete runs produced identical six-policy headline metrics; time-limited attempt runtimes remain machine-dependent."
+      ]
+    },
+    "output_contract": {
+      "status": "PASS",
+      "evidence": [
+        "Six plan tables, one comparison table, per-attempt solver records, per-window stage details, method metrics, constraint validation, warning log, and canonical run_summary.json exist.",
+        "All six method records report success and directly comparable profit, excess/waste, fragmentation, concentration, and legality metrics.",
+        "The run summary separates maximum gap across all attempts (30.794%) from maximum gap of selected incumbents (4.826%) and reports three retried stages."
+      ]
+    },
+    "smart_greenhouse_mapping": {
+      "status": "PASS",
+      "evidence": ["321 saved smart-greenhouse plan rows checked; mismatches = 0."]
+    },
+    "bean_area_coverage": {
+      "status": "PASS",
+      "evidence": ["Independent validation reports zero bean-area coverage violations for all six plans."]
+    },
+    "legacy_result_isolation": {
+      "status": "PASS",
+      "evidence": ["The formal scripts read only four cleaned input tables and do not import or read any legacy plan/result path."]
+    },
+    "solver_status_and_gap_reporting": {
+      "status": "PASS",
+      "evidence": ["All 42 selected MILP stages have incumbents and selected gaps <= 5%; fallback trigger is false."]
+    }
+  },
+  "findings": [
+    {
+      "severity": "INFO",
+      "id": "rolling_path_nonmonotonicity",
+      "finding": "The eta=3% rolling path has more seven-year waste than eta=1%, although every local profit-floor constraint passes. This is consistent with path dependence and must be treated as a robustness result, not a global Pareto monotonicity claim."
+    },
+    {
+      "severity": "INFO",
+      "id": "baseline_unfilled_demand_warning",
+      "finding": "The greedy baseline leaves some normal-price crop demand unused in every year. Demand is an upper bound rather than a service requirement, so this does not violate the model; the warnings are retained as baseline behavior evidence."
+    },
+    {
+      "severity": "INFO",
+      "id": "attachment3_missing",
+      "finding": "Attachment 3 is absent, so round1 correctly saves long-form CSV plans and does not fabricate result1_1.xlsx or result1_2.xlsx."
+    }
+  ],
+  "verdict": "PASSED",
+  "reviewed_at": "2026-09-04T20:58:05+08:00"
+}

@@ -61,5 +61,15 @@
     "formal_result_claim_count": 0,
     "remaining_legacy_numbers_are_explicitly_labeled_historical_or_stale": true
   },
+  "post_rerun_update": {
+    "updated_at": "2026-09-04T20:58:05+08:00",
+    "formal_q1_code_directory_exists": true,
+    "formal_q1_results_directory_exists": true,
+    "current_run": "results/Q1/experiments/round1/run_summary.json",
+    "current_run_status": "success",
+    "current_run_constraint_violations": 0,
+    "legacy_results_remain_invalid": true,
+    "interpretation": "The new round1 is an independent rebuild from cleaned attachments. Its success does not restore validity to any legacy allocation or metric."
+  },
   "verdict": "LEGACY_RESULTS_INVALIDATED_RERUN_REQUIRED"
 }

@@ -2,8 +2,8 @@
   "schema_version": 1,
   "question_id": "Q1",
   "rigor_profile": "lean",
-  "current_gate": "G2.5",
-  "status": "method_chosen_awaiting_code_plan",
+  "current_gate": "G3",
+  "status": "code_and_experiment_reviewed_waiting_result_judgment",
   "artifacts": {
     "method_card": "methods/Q1/q1_method_card.md",
     "decision_ledger": "methods/Q1/q1_decisions.jsonl",
@@ -13,7 +13,10 @@
     "tradeoff_probe_script": "methods/Q1/probes/q1_tradeoff_probe.py",
     "stale_evidence_audit": "methods/Q1/probes/stale_evidence_audit.json",
     "mapping_audit": "methods/Q1/probes/smart_greenhouse_mapping_audit.json",
-    "latest_run": null
+    "code_plan": "code/Q1/q1_code_plan.md",
+    "code_review": "code/Q1/reviews/q1_python_review.json",
+    "latest_run": "results/Q1/experiments/round1/run_summary.json",
+    "decision_report": "results/Q1/experiments/round1/q1_decision_report.md"
   },
   "allowed": {
     "code_generation": true,
@@ -21,11 +24,13 @@
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [],
+  "blockers": [
+    "round1 结果尚无人工 verdict；在此之前不进入定向稳健性和结果冻结"
+  ],
   "next_action": {
-    "owner": "AI",
-    "skill": "model-code-analyzer",
-    "reason": "Q1-M1 已由人工 DECIDED；下一步建立正式主模型和修正版 baseline 的实现与实验契约，所有旧方案级结果禁止复用"
+    "owner": "human",
+    "skill": "decision-prompt-builder",
+    "reason": "Q1 round1 和 Python 审查已通过；需要人工判断是否接受 eta=1% 主点及滚动路径依赖，再进入定向稳健性"
   },
-  "updated_at": "2026-09-04T20:13:32+08:00"
+  "updated_at": "2026-09-04T20:58:05+08:00"
 }

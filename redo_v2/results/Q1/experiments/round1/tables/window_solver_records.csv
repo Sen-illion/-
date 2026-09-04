@@ -1,0 +1,46 @@
+﻿policy,committed_year,window_start,window_end,stage,attempt,time_limit_seconds,runtime_seconds,status,message,mip_gap,mip_node_count,has_incumbent
+m1_zero_price_profit,2024,2024,2026,pure_profit,1,60.0,6.1570784999930765,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.026194390238220722,1.0,True
+m1_zero_price_profit,2025,2025,2027,pure_profit,1,60.0,4.524084599994239,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.041771520265391646,1.0,True
+m1_zero_price_profit,2026,2026,2028,pure_profit,1,60.0,4.081532900003367,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04566476116711822,1.0,True
+m1_zero_price_profit,2027,2027,2029,pure_profit,1,60.0,8.23951610000222,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.02855111464472647,1.0,True
+m1_zero_price_profit,2028,2028,2030,pure_profit,1,60.0,3.4611358000111068,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04206248388643512,1.0,True
+m1_zero_price_profit,2029,2029,2030,pure_profit,1,60.0,2.945944300008705,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.02755376316162139,1.0,True
+m1_zero_price_profit,2030,2030,2030,pure_profit,1,60.0,0.6731398000119952,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.029291491475815078,1.0,True
+m1_eta_01,2024,2024,2026,pure_profit,1,60.0,6.7038876000005985,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.026194390238220722,1.0,True
+m1_eta_01,2024,2024,2026,minimum_waste,1,60.0,60.04507969999395,1,Time limit reached. (HiGHS Status 13: Time limit reached),0.3079410987137223,393.0,True
+m1_eta_01,2024,2024,2026,minimum_waste,2,180.0,76.01819930000056,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.045828990995487734,502.0,True
+m1_eta_01,2025,2025,2027,pure_profit,1,60.0,7.757817799996701,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04468724055367079,1.0,True
+m1_eta_01,2025,2025,2027,minimum_waste,1,60.0,20.091618500009645,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04627942170018127,1.0,True
+m1_eta_01,2026,2026,2028,pure_profit,1,60.0,11.83113289999892,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.044560277580833536,1.0,True
+m1_eta_01,2026,2026,2028,minimum_waste,1,60.0,20.958444499992765,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),1.539338515707651e-10,1.0,True
+m1_eta_01,2027,2027,2029,pure_profit,1,60.0,5.30794440000318,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04701252015795064,1.0,True
+m1_eta_01,2027,2027,2029,minimum_waste,1,60.0,57.50661000001128,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.00575953935507336,344.0,True
+m1_eta_01,2028,2028,2030,pure_profit,1,60.0,11.49548589999904,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.03396248070556519,1.0,True
+m1_eta_01,2028,2028,2030,minimum_waste,1,60.0,60.07363849999092,1,Time limit reached. (HiGHS Status 13: Time limit reached),0.11553779774103973,0.0,True
+m1_eta_01,2028,2028,2030,minimum_waste,2,180.0,58.74769530000049,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.012121207872283435,1.0,True
+m1_eta_01,2029,2029,2030,pure_profit,1,60.0,3.310839300000225,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.025128801850993965,1.0,True
+m1_eta_01,2029,2029,2030,minimum_waste,1,60.0,6.755569700006163,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.011279301157439218,1.0,True
+m1_eta_01,2030,2030,2030,pure_profit,1,60.0,0.9313008999888552,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.011168632000371367,1.0,True
+m1_eta_01,2030,2030,2030,minimum_waste,1,60.0,1.5785613999905763,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),2.6964372796141117e-09,1.0,True
+m1_eta_03,2024,2024,2026,pure_profit,1,60.0,5.834108700000797,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.026194390238220722,1.0,True
+m1_eta_03,2024,2024,2026,minimum_waste,1,60.0,60.036774699998205,1,Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None),,,False
+m1_eta_03,2024,2024,2026,minimum_waste,2,180.0,80.66202450000856,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.007598438950470815,840.0,True
+m1_eta_03,2025,2025,2027,pure_profit,1,60.0,2.991203800003859,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.03558441774686285,1.0,True
+m1_eta_03,2025,2025,2027,minimum_waste,1,60.0,33.6590911999956,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04223129788752727,1.0,True
+m1_eta_03,2026,2026,2028,pure_profit,1,60.0,7.734476299985545,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.03259442650335716,1.0,True
+m1_eta_03,2026,2026,2028,minimum_waste,1,60.0,16.447867000009865,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.009888674815960086,1.0,True
+m1_eta_03,2027,2027,2029,pure_profit,1,60.0,9.577646300007473,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.023400977451426764,1.0,True
+m1_eta_03,2027,2027,2029,minimum_waste,1,60.0,19.13945539999986,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.01716261302768371,1.0,True
+m1_eta_03,2028,2028,2030,pure_profit,1,60.0,6.9668808999995235,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.015562495598657727,1.0,True
+m1_eta_03,2028,2028,2030,minimum_waste,1,60.0,10.40214270001161,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04825836088941386,1.0,True
+m1_eta_03,2029,2029,2030,pure_profit,1,60.0,3.4832285000011325,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.04224727471425633,1.0,True
+m1_eta_03,2029,2029,2030,minimum_waste,1,60.0,14.74591430000146,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),3.2508964671149566e-10,1.0,True
+m1_eta_03,2030,2030,2030,pure_profit,1,60.0,0.7155746999924304,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.008089314879704329,1.0,True
+m1_eta_03,2030,2030,2030,minimum_waste,1,60.0,2.0541548000037437,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),4.365603768577975e-12,1.0,True
+m1_half_price,2024,2024,2026,half_price_profit,1,60.0,3.133509499995853,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.014643506719872348,1.0,True
+m1_half_price,2025,2025,2027,half_price_profit,1,60.0,2.4447987000021385,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.00730478038429765,1.0,True
+m1_half_price,2026,2026,2028,half_price_profit,1,60.0,2.6082700999977533,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.005745010418077683,1.0,True
+m1_half_price,2027,2027,2029,half_price_profit,1,60.0,2.2313114999997197,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.005088468443573051,1.0,True
+m1_half_price,2028,2028,2030,half_price_profit,1,60.0,2.6548136999917915,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.009342027369155617,1.0,True
+m1_half_price,2029,2029,2030,half_price_profit,1,60.0,0.4258689999987837,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.046092763627034045,1.0,True
+m1_half_price,2030,2030,2030,half_price_profit,1,60.0,0.1365555999946082,0,Optimization terminated successfully. (HiGHS Status 7: Optimal),0.028978985417107778,1.0,True
