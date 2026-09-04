@@ -1,6 +1,6 @@
 # Q1 建模与方法选择过程
 
-状态：`DRAFT — G2 定向探针已完成，等待人工最终确认`
+状态：`DECIDED — G2.5 已通过，等待正式实现契约`
 
 ## 1. 问题目标与输出
 
@@ -112,8 +112,9 @@ baseline `Q1-B1` 设计为满足硬约束的利润排序循环贪心。旧版本
 ## 9. 当前状态与下一步
 
 - 已完成：Q1 方法族筛选、baseline 合法性论证、规模风险探针、智慧大棚映射刷新、利润—浪费与相对最小面积定向微型探针、豆类面积覆盖修正。
-- 尚未完成：人工最终方法决定、实现契约、正式代码、正式运行、稳健性和结果判断。
-- 当前 gate：G2。
-- 唯一下一步：人工确认是否以 $\eta=1\%,\alpha=10\%$ 为正式主点，并把 $\eta=3\%$ 预注册为稳健性对照；没有 `DECIDED` 记录前不得进入正式代码生成。
+- 已确认：Q1-M1；正式主点 $\eta=1\%,\alpha=10\%$，$\eta=3\%$ 作为预注册稳健性对照，决策记录为 `q1_method_choice_1`。
+- 尚未完成：实现契约、正式代码、主模型与修正版 baseline 重跑、稳健性和结果判断。
+- 当前 gate：G2.5。
+- 唯一下一步：生成实现与实验契约；所有旧方案级结果和旧约束通过结论均不得作为输入或验收基准。
 
-AI 接续必读：`planning/manifests/Q1.json`、`methods/Q1/q1_method_card.md`、`methods/Q1/probes/risk_probe_summary.json`、`methods/Q1/probes/q1_tradeoff_probe_report.md`、`methods/Q1/probes/q1_tradeoff_probe_results.json`、`methods/Q1/probes/smart_greenhouse_mapping_audit.json`。
+AI 接续必读：`planning/manifests/Q1.json`、`methods/Q1/q1_decisions.jsonl`、`methods/Q1/q1_method_card.md`、`methods/Q1/probes/risk_probe_summary.json`、`methods/Q1/probes/stale_evidence_audit.json`、`methods/Q1/probes/q1_tradeoff_probe_report.md`、`methods/Q1/probes/q1_tradeoff_probe_results.json`、`methods/Q1/probes/smart_greenhouse_mapping_audit.json`。

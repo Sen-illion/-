@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "audit_type": "scoped_stale_evidence_and_constraint_legality",
+  "generated_at": "2026-09-04T20:13:32+08:00",
+  "change_impact": "CANONICAL",
+  "scope": [
+    "methods/Q1",
+    "planning/manifests/Q1.json",
+    "planning/model_assumptions.md",
+    "planning/symbol_table.md",
+    "planning/solution_process/global_modeling_map.md",
+    "workspace/data/data_profile.json"
+  ],
+  "checks": {
+    "formal_q1_results_directory_exists": false,
+    "formal_q1_code_directory_exists": false,
+    "manifest_latest_run": null,
+    "corrected_micro_probe_uses_cumulative_bean_area": true,
+    "corrected_micro_probe_initializes_2023_actual_bean_area": true,
+    "corrected_micro_probe_uses_latest_smart_greenhouse_mapping": true,
+    "legacy_baseline_legality_is_current": false,
+    "legacy_full_scale_q1_metrics_are_current": false
+  },
+  "invalidated_evidence": [
+    {
+      "evidence": "legacy Q1-B1 baseline values and zero-error constraint-validation claim",
+      "reason": "the corrected requirement is cumulative bean area over every three-year window, not binary bean occurrence; the baseline has not been rerun under this constraint"
+    },
+    {
+      "evidence": "legacy Q1-M1 full-scale allocation, profit, waste, concentration, and minimum-positive-area values",
+      "reason": "the smart-greenhouse first-season economics mapping and minimum-area formulation changed, and the corrected cumulative bean-area constraint was not used"
+    },
+    {
+      "evidence": "legacy statement that all hard constraints passed",
+      "reason": "a pass under the superseded bean-occurrence interpretation does not establish legality under cumulative area coverage"
+    }
+  ],
+  "still_valid_for_screening_only": [
+    "legacy runtime and variable-count observations when explicitly labeled as scale background",
+    "legacy concentration values when explicitly labeled as historical risk signals rather than current results"
+  ],
+  "current_valid_evidence": [
+    "methods/Q1/probes/smart_greenhouse_mapping_audit.json",
+    "methods/Q1/probes/q1_tradeoff_probe_results.json",
+    "methods/Q1/probes/q1_tradeoff_probe_report.md"
+  ],
+  "required_before_any_new_q1_result_claim": [
+    "rebuild and rerun Q1-M1 using eta=1%, alpha=10%, and cumulative bean-area coverage",
+    "run eta=3% as the pre-registered robustness comparator",
+    "rebuild and rerun Q1-B1 under the same corrected hard constraints and parameter mapping",
+    "independently validate every hard constraint",
+    "recompute profit, waste, concentration, fragmentation, per-window runtime, and optimality gap"
+  ],
+  "post_update_consistency": {
+    "status": "PASSED",
+    "decision_manifest_parameters_match": true,
+    "decision_evidence_paths_exist": true,
+    "manifest_code_generation_matches_gate_g2_5": true,
+    "unlabeled_current_baseline_pass_claim_count": 0,
+    "formal_result_claim_count": 0,
+    "remaining_legacy_numbers_are_explicitly_labeled_historical_or_stale": true
+  },
+  "verdict": "LEGACY_RESULTS_INVALIDATED_RERUN_REQUIRED"
+}

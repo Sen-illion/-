@@ -217,10 +217,10 @@
     "Q1": {
       "status": "ready_with_warnings",
       "warnings": [
-        "Expected sales volume is not supplied as a separate field.",
-        "Sales price is a range and no representative-value rule is specified.",
+        "Expected sales volume is not supplied as a separate field; the human-confirmed modeling proxy is 2023 actual production.",
+        "Sales price is a range; the human-confirmed baseline rule uses the interval midpoint.",
         "Smart-greenhouse first-season economics are not separately supplied; a human-confirmed mapping to ordinary-greenhouse first-season parameters is available and the targeted method-family refresh has passed, while formal solution metrics remain to be recomputed.",
-        "Management thresholds and Attachment 3 templates are missing."
+        "The management threshold is now human-confirmed as alpha=10% of plot area; Attachment 3 templates remain missing."
       ]
     },
     "Q2": {
@@ -272,9 +272,9 @@
   ],
   "unresolved_risks": [
     "No Attachment 3 templates.",
-    "Expected sales volume proxy not confirmed.",
-    "Price representative value not confirmed.",
-    "Management convenience thresholds not confirmed.",
+    "Expected sales volume is unobserved separately; the confirmed 2023-production proxy remains a modeling limitation.",
+    "The confirmed midpoint-price rule is a modeling simplification because only price ranges are supplied.",
+    "The confirmed alpha=10% management threshold is evidence-supported by a micro-probe but still requires full-scale validation.",
     "Smart-greenhouse first-season yield/cost rows are absent in the attachment; the human-confirmed mapping resolves the modeling rule, the targeted method-family refresh has passed, and formal solution metrics remain to be recomputed.",
     "Q2 probability and risk conventions not confirmed.",
     "Q3 relationship groups and dependence parameters are not empirically identifiable from supplied data."

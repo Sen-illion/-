@@ -2,32 +2,30 @@
   "schema_version": 1,
   "question_id": "Q1",
   "rigor_profile": "lean",
-  "current_gate": "G2",
-  "status": "method_probe_complete_waiting_human_decision",
+  "current_gate": "G2.5",
+  "status": "method_chosen_awaiting_code_plan",
   "artifacts": {
     "method_card": "methods/Q1/q1_method_card.md",
-    "decision_ledger": null,
+    "decision_ledger": "methods/Q1/q1_decisions.jsonl",
     "risk_probe": "methods/Q1/probes/risk_probe_summary.json",
     "tradeoff_probe_report": "methods/Q1/probes/q1_tradeoff_probe_report.md",
     "tradeoff_probe_results": "methods/Q1/probes/q1_tradeoff_probe_results.json",
     "tradeoff_probe_script": "methods/Q1/probes/q1_tradeoff_probe.py",
+    "stale_evidence_audit": "methods/Q1/probes/stale_evidence_audit.json",
     "mapping_audit": "methods/Q1/probes/smart_greenhouse_mapping_audit.json",
     "latest_run": null
   },
   "allowed": {
-    "code_generation": false,
+    "code_generation": true,
     "freeze": false,
     "paper_writing": false,
     "final_assembly": false
   },
-  "blockers": [
-    "Q1-M1 尚无人工 DECIDED 记录",
-    "微型探针首选 eta=1%、alpha=10%，但 eta=3% 是否作为预注册正式对照仍待人工确认"
-  ],
+  "blockers": [],
   "next_action": {
-    "owner": "human",
-    "skill": "decision-prompt-builder",
-    "reason": "Q1 定向轻量探针已完成；需人工确认 eta=1%、alpha=10% 主点及 eta=3% 对照后才能生成正式代码"
+    "owner": "AI",
+    "skill": "model-code-analyzer",
+    "reason": "Q1-M1 已由人工 DECIDED；下一步建立正式主模型和修正版 baseline 的实现与实验契约，所有旧方案级结果禁止复用"
   },
-  "updated_at": "2026-09-03T22:33:27+08:00"
+  "updated_at": "2026-09-04T20:13:32+08:00"
 }

@@ -2,12 +2,22 @@
   "schema_version": 1,
   "question_id": "Q1",
   "generated_at": "2026-09-03T22:33:27+08:00",
+  "updated_at": "2026-09-04T20:13:32+08:00",
+  "current_method_decision": {
+    "decision_id": "q1_method_choice_1",
+    "status": "DECIDED",
+    "main_method": "Q1-M1",
+    "eta_main": 0.01,
+    "alpha": 0.1,
+    "eta_robustness_comparator": 0.03,
+    "legacy_solution_results_reusable": false
+  },
   "provenance": {
     "upstream_probe_summary": "allowed pre-code screening artifact copied into redo_v2",
     "detailed_upstream_probe_files": "not copied into redo_v2 and not used",
     "targeted_refresh": "smart-greenhouse first-season mapping audit plus profit-waste/minimum-area/bean-area micro-probe"
   },
-  "data_refs": ["workspace/data/data_profile.json", "methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json"],
+  "data_refs": ["workspace/data/data_profile.json", "methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json", "methods/Q1/probes/stale_evidence_audit.json", "methods/Q1/q1_decisions.jsonl"],
   "methods": [
     {
       "id": "Q1-M1",

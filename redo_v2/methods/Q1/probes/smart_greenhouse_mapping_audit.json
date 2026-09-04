@@ -37,6 +37,7 @@
   },
   "verdict": "MATERIAL_CHANGE_SCREENED_METHOD_FAMILY_RETAINED",
   "interpretation": "The first-season mapping changes all three economic inputs materially, but covers all 18 crops, affects 0.17991% of annual land-season capacity, and leaves uncoupled gross-margin ranks nearly unchanged. The method family remains eligible; exact profits, allocation, concentration, and constraint checks must be recomputed during formal implementation.",
-  "allowed_next_step": "present refreshed Q1 method choice; formal implementation remains gated by the human decision",
-  "code_generation_allowed": false
+  "allowed_next_step_at_audit_time": "present refreshed Q1 method choice; formal implementation remained gated by the human decision",
+  "code_generation_allowed_at_audit_time": false,
+  "current_status_note": "Superseded for workflow gating by human decision q1_method_choice_1 on 2026-09-04; the mapping evidence remains current, while all solution-level values still require rerun."
 }
