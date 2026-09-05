@@ -2,7 +2,7 @@
   "schema_version": 1,
   "question_id": "Q1",
   "generated_at": "2026-09-03T22:33:27+08:00",
-  "updated_at": "2026-09-04T20:58:05+08:00",
+  "updated_at": "2026-09-05T14:10:55+08:00",
   "current_method_decision": {
     "decision_id": "q1_method_choice_1",
     "status": "DECIDED",
@@ -22,7 +22,7 @@
     {
       "id": "Q1-M1",
       "role": "main_candidate",
-      "executability": {"status": "PASS", "evidence": {"formal_round": "round1", "window_years": 3, "total_runtime_seconds": 785.801736, "selected_stage_count": 42, "maximum_selected_mip_gap": 0.0482584, "retried_stage_count": 3, "constraint_validation_errors": 0}},
+      "executability": {"status": "PASS", "evidence": {"formal_round": "round2", "window_years": 3, "total_runtime_seconds": 529.98743, "selected_stage_count": 42, "maximum_selected_mip_gap": 0.0496575, "retried_stage_count": 1, "constraint_validation_errors": 0, "rotation_interpretation": "strict chronological adjacent cycles with whole-plot activation"}},
       "data_coverage": {"status": "PASS", "evidence": {"plots": 54, "crops": 41, "years_in_probe_window": 3, "smart_greenhouse_first_season_economics": "mapped from ordinary-greenhouse first-season rows by human-confirmed rule", "matched_smart_greenhouse_crop_count": 18, "missing_crop_count": 0}},
       "assumption_checks": [
         {"name": "constraint_feasibility", "status": "PASS", "metric": "solver_feasible", "value": true},
@@ -34,25 +34,25 @@
         {"name": "relative_minimum_area", "status": "CONDITIONAL", "metric": "alpha_scan", "value": {"recommended": 0.1, "alpha_20_profit_loss_rate": 0.061793, "alpha_30_profit_loss_rate": 0.125625}},
         {"name": "profit_waste_tradeoff", "status": "CONDITIONAL", "metric": "eta_knee", "value": {"preliminary": 0.01, "retained_interval": [0.01, 0.03], "eta_1_profit_loss_rate": 0.006923, "eta_1_waste_reduction_rate": 0.2788}}
       ],
-      "output_degeneracy": {"status": "PASS", "formal_eta_1_metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.618389, "waste_ratio": 0.0277984, "activation_count": 763, "average_area_per_activation_mu": 11.260368, "area_hhi": 0.090243}, "legacy_metrics_reusable": false},
-      "perturbation_sensitivity": {"status": "STALE", "perturbation": "legacy +/-5% price probe", "metric": "area_jaccard", "value": 0.4062, "caveat": "used superseded constraints and ended at 21.65% gap; targeted round1 robustness has not yet run"},
-      "scale_check": {"status": "PASS", "formal_plots": 54, "formal_total_runtime_seconds": 785.801736, "maximum_selected_mip_gap": 0.0482584, "retried_stage_count": 3, "eighteen_plot_eta_zero_second_stage": "historical no-incumbent warning retained"},
+      "output_degeneracy": {"status": "CONDITIONAL", "formal_eta_1_metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.620183, "waste_ratio": 0.0327281, "activation_count": 975, "average_area_per_activation_mu": 8.904786, "area_hhi": 0.091476}, "half_price_metrics": {"unique_crop_count": 24, "top_5_area_mass": 0.641442, "half_price_sales_ratio": 0.590814}, "legacy_metrics_reusable": false},
+      "perturbation_sensitivity": {"status": "STALE", "perturbation": "legacy +/-5% price probe", "metric": "area_jaccard", "value": 0.4062, "caveat": "used superseded constraints and ended at 21.65% gap; targeted round2 robustness has not yet run"},
+      "scale_check": {"status": "PASS", "formal_plots": 54, "formal_total_runtime_seconds": 529.98743, "maximum_selected_mip_gap": 0.0496575, "retried_stage_count": 1, "eighteen_plot_eta_zero_second_stage": "historical no-incumbent warning retained"},
       "verdict": "CONDITIONAL",
-      "conditions": ["use overlapping three-year windows", "use three-year cumulative bean-area coverage", "use alpha=10% and eta=1% as human-confirmed main parameters", "retain eta=3% as the pre-registered robustness comparator", "require <=5% selected gap for every production run", "separate reported economic profit and its floor from the activation tie-break", "obtain human round1 result judgment before targeted robustness", "do not interpret local eta constraints as a globally monotone seven-year Pareto curve"],
-      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json", "methods/Q1/probes/q1_tradeoff_probe_report.md", "results/Q1/experiments/round1/run_summary.json", "code/Q1/reviews/q1_python_review.json"]
+      "conditions": ["use overlapping three-year windows", "use strict chronological adjacent-cycle rotation with whole-plot activation", "use three-year cumulative bean-area coverage", "use alpha=10% and eta=1% as human-confirmed main parameters", "retain eta=3% as the pre-registered robustness comparator", "require <=5% selected gap for every production run", "separate reported economic profit and its floor from the activation tie-break", "obtain human round2 result judgment before targeted robustness", "do not claim the three-year rolling half-price path dominates the legal baseline"],
+      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json", "methods/Q1/probes/q1_tradeoff_probe_results.json", "methods/Q1/probes/q1_tradeoff_probe_report.md", "results/Q1/experiments/round2/run_summary.json", "results/Q1/experiments/round2/q1_decision_report.md", "code/Q1/reviews/q1_python_review.json"]
     },
     {
       "id": "Q1-B1",
       "role": "usable_baseline",
-      "executability": {"status": "PASS", "evidence": {"formal_zero_price_assignments": 548, "formal_half_price_assignments": 574, "constraint_validation_errors": 0, "runtime_seconds_each": 0.02}},
+      "executability": {"status": "PASS", "evidence": {"formal_zero_price_assignments": 572, "formal_half_price_assignments": 574, "constraint_validation_errors": 0, "runtime_seconds_max": 0.0276}},
       "data_coverage": {"status": "PASS", "evidence": {"plots": 54, "years": 7, "smart_greenhouse_first_season_mapping_complete": true, "corrected_bean_area_coverage_rerun": true}},
       "assumption_checks": [{"name": "hard_constraint_validation", "status": "PASS", "metric": "corrected_constraint_error_count", "value": 0}],
-      "output_degeneracy": {"status": "PASS", "zero_price_metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.554898, "waste_ratio": 0.202987, "activation_count": 548, "average_area_per_activation_mu": 16.646715}, "legacy_metrics_reusable": false},
-      "perturbation_sensitivity": {"status": "NOT_RUN", "reason": "awaiting human round1 result judgment before targeted robustness"},
-      "scale_check": {"status": "PASS", "formal_assignments_max": 574, "runtime_seconds_max": 0.02},
+      "output_degeneracy": {"status": "CONDITIONAL", "zero_price_metrics": {"unique_crop_count": 41, "top_5_area_mass": 0.544418, "waste_ratio": 0.253289, "activation_count": 572, "average_area_per_activation_mu": 16.255245}, "half_price_metrics": {"profit_yuan": 62771956.875, "half_price_sales_ratio": 0.637176, "profit_advantage_over_rolling_milp": 0.041441}, "legacy_metrics_reusable": false},
+      "perturbation_sensitivity": {"status": "NOT_RUN", "reason": "awaiting human round2 result judgment before targeted robustness"},
+      "scale_check": {"status": "PASS", "formal_assignments_max": 574, "runtime_seconds_max": 0.0276},
       "verdict": "PASS",
       "conditions": ["use only as a deliberately simple comparison baseline", "never present the greedy allocation as the recommended plan", "retain the same corrected mapping and hard-constraint validator in later reruns"],
-      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json", "results/Q1/experiments/round1/run_summary.json", "code/Q1/reviews/q1_python_review.json"]
+      "evidence_refs": ["methods/Q1/probes/smart_greenhouse_mapping_audit.json", "results/Q1/experiments/round2/run_summary.json", "results/Q1/experiments/round2/q1_decision_report.md", "code/Q1/reviews/q1_python_review.json"]
     }
   ]
 }

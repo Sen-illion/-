@@ -15,8 +15,9 @@
     "mapping_audit": "methods/Q1/probes/smart_greenhouse_mapping_audit.json",
     "code_plan": "code/Q1/q1_code_plan.md",
     "code_review": "code/Q1/reviews/q1_python_review.json",
-    "latest_run": "results/Q1/experiments/round1/run_summary.json",
-    "decision_report": "results/Q1/experiments/round1/q1_decision_report.md"
+    "latest_run": "results/Q1/experiments/round2/run_summary.json",
+    "decision_report": "results/Q1/experiments/round2/q1_decision_report.md",
+    "scoped_consistency": "results/Q1/reports/scoped_consistency.json"
   },
   "allowed": {
     "code_generation": true,
@@ -25,12 +26,12 @@
     "final_assembly": false
   },
   "blockers": [
-    "round1 结果尚无人工 verdict；在此之前不进入定向稳健性和结果冻结"
+    "round2 相邻季次修订结果尚无人工 verdict；Q1(2) 半价销量占比为59.081%，且可行 baseline 利润高于三年滚动 MILP 4.144%；在人工判断前不进入定向稳健性和结果冻结"
   ],
   "next_action": {
     "owner": "human",
     "skill": "decision-prompt-builder",
-    "reason": "Q1 round1 和 Python 审查已通过；需要人工判断是否接受 eta=1% 主点及滚动路径依赖，再进入定向稳健性"
+    "reason": "Q1 round2 和 Python 审查已通过；需要人工判断是否接受严格相邻季次结果，以及如何处理 Q1(2) 的高半价比例和 baseline 反超，再进入定向稳健性"
   },
-  "updated_at": "2026-09-04T20:58:05+08:00"
+  "updated_at": "2026-09-05T14:10:55+08:00"
 }

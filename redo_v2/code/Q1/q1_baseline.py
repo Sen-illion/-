@@ -63,14 +63,18 @@ def run_baseline(land: pd.DataFrame, economics: pd.DataFrame, demand: dict[int, 
     for year in YEARS:
         residual = {crop: float(value) for crop, value in demand.items()}
         for plot in land.sort_values("plot_id").itertuples(index=False):
-            prior = {int(row["crop_id"]) for row in history + plan
-                     if row["plot_id"] == plot.plot_id and int(row["year"]) == year - 1}
+            prior_single = {int(row["crop_id"]) for row in history + plan
+                            if row["plot_id"] == plot.plot_id and int(row["year"]) == year - 1
+                            and row["slot"] == "单季"}
+            prior_second = {int(row["crop_id"]) for row in history + plan
+                            if row["plot_id"] == plot.plot_id and int(row["year"]) == year - 1
+                            and row["slot"] == "第二季"}
             required = year in scheduled_beans[plot.plot_id]
             slots = {slot: crops for slot, crops, _, _ in crop_slots(plot.land_type)}
             rows: list[dict[str, Any]] = []
             if plot.land_type in DRY_TYPES:
                 pick = choose_crop(plot.plot_id, "单季", slots["单季"], float(plot.area_mu),
-                                   params, residual, salvage, prior, require_bean=required)
+                                   params, residual, salvage, prior_single, require_bean=required)
                 if pick is None or (pick[1] <= 0 and not required):
                     if required:
                         raise RuntimeError(f"No legal bean for {plot.plot_id}/{year}")
@@ -79,21 +83,21 @@ def run_baseline(land: pd.DataFrame, economics: pd.DataFrame, demand: dict[int, 
             elif plot.land_type == "水浇地":
                 if required:
                     first = choose_crop(plot.plot_id, "第一季", slots["第一季"], float(plot.area_mu),
-                                        params, residual, salvage, prior, require_bean=True)
+                                        params, residual, salvage, set(), require_bean=True)
                     if first is None:
                         raise RuntimeError(f"No legal irrigated bean for {plot.plot_id}/{year}")
                     rows.append(make_row(plot, year, "第一季", first[0], params))
                     second = choose_crop(plot.plot_id, "第二季", slots["第二季"], float(plot.area_mu),
-                                         params, residual, salvage, prior)
+                                         params, residual, salvage, set())
                     if second is not None and second[1] > 0:
                         rows.append(make_row(plot, year, "第二季", second[0], params))
                 else:
                     rice = choose_crop(plot.plot_id, "单季", slots["单季"], float(plot.area_mu),
-                                       params, residual, salvage, prior)
+                                       params, residual, salvage, prior_single)
                     first = choose_crop(plot.plot_id, "第一季", slots["第一季"], float(plot.area_mu),
-                                        params, residual, salvage, prior)
+                                        params, residual, salvage, set())
                     second = choose_crop(plot.plot_id, "第二季", slots["第二季"], float(plot.area_mu),
-                                         params, residual, salvage, prior)
+                                         params, residual, salvage, set())
                     rice_score = rice[1] if rice is not None else float("-inf")
                     veg_score = sum(item[1] for item in (first, second) if item is not None and item[1] > 0)
                     if rice is not None and rice_score > max(0.0, veg_score):
@@ -104,15 +108,16 @@ def run_baseline(land: pd.DataFrame, economics: pd.DataFrame, demand: dict[int, 
                         if second is not None and second[1] > 0:
                             rows.append(make_row(plot, year, "第二季", second[0], params))
             else:
+                first_forbidden = prior_second if plot.land_type == "智慧大棚" else set()
                 first = choose_crop(plot.plot_id, "第一季", slots["第一季"], float(plot.area_mu),
-                                    params, residual, salvage, prior, require_bean=required)
+                                    params, residual, salvage, first_forbidden, require_bean=required)
                 if first is None and required:
                     raise RuntimeError(f"No legal greenhouse bean for {plot.plot_id}/{year}")
                 if first is not None and (first[1] > 0 or required):
                     rows.append(make_row(plot, year, "第一季", first[0], params))
                 block = {first[0]} if first is not None and plot.land_type == "智慧大棚" else set()
                 second = choose_crop(plot.plot_id, "第二季", slots["第二季"], float(plot.area_mu),
-                                     params, residual, salvage, prior, also_forbidden=block)
+                                     params, residual, salvage, set(), also_forbidden=block)
                 if second is not None and second[1] > 0:
                     rows.append(make_row(plot, year, "第二季", second[0], params))
             consume(rows, residual)

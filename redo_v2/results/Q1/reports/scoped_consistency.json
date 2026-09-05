@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "mode": "scoped",
+  "change_impact": "CANONICAL",
+  "changed_identifier": "q1_rotation_interpretation_1",
+  "sources_of_truth": [
+    "methods/Q1/q1_decisions.jsonl",
+    "code/Q1/q1_code_plan.md",
+    "results/Q1/experiments/round2/run_summary.json",
+    "code/Q1/reviews/q1_python_review.json"
+  ],
+  "checks": {
+    "decision_and_assumption": {
+      "status": "PASS",
+      "evidence": "Decision, model assumptions, method card, code plan, main code, baseline, and validator all use chronological adjacent planting cycles with whole-plot activation."
+    },
+    "scope_exclusion": {
+      "status": "PASS",
+      "evidence": "No surplus-ratio constraint or constrained-surplus comparison is present; round2 explicitly records the narrowed scope."
+    },
+    "numerical_claims": {
+      "status": "PASS",
+      "evidence": "Decision report values resolve to round2 method_metrics.json and method_comparison.csv, including 59.081% half-price volume and the baseline's 4.144% profit advantage."
+    },
+    "constraint_and_solver_claims": {
+      "status": "PASS",
+      "evidence": "All six validators report zero violations; 42 selected stages have incumbents, maximum selected gap is 4.966%, and fallback is false."
+    },
+    "references": {
+      "status": "PASS",
+      "evidence": "All current manifest, method-card, review, run-summary, and decision-report paths exist."
+    },
+    "staleness": {
+      "status": "PASS",
+      "evidence": "Round1 is explicitly historical and invalidated by the rotation change; manifest latest_run and current claims point to round2."
+    },
+    "human_result_verdict": {
+      "status": "NOT_APPLICABLE",
+      "evidence": "No round2 result verdict has been supplied; manifest correctly blocks robustness and freeze instead of inferring acceptance."
+    }
+  },
+  "divergences": [],
+  "verdict": "PASSED",
+  "audited_at": "2026-09-05T14:10:55+08:00"
+}

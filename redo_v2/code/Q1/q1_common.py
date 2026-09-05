@@ -208,8 +208,7 @@ def validate_plan(
         details.append({"type": kind, "amount": float(amount), "key": key})
 
     capacity: dict[tuple[str, int, str], float] = {}
-    active: set[tuple[str, int, int]] = set()
-    smart_active: set[tuple[str, int, int, str]] = set()
+    active: set[tuple[str, int, str, int]] = set()
     for row in plan:
         plot_id, year, slot, crop = row["plot_id"], int(row["year"]), row["slot"], int(row["crop_id"])
         area = float(row["area"])
@@ -219,9 +218,7 @@ def validate_plan(
         if area + TOL < alpha * float(plot.area_mu):
             violation("minimum_area", alpha * float(plot.area_mu) - area, f"{plot_id}/{year}/{slot}/{crop}")
         capacity[(plot_id, year, slot)] = capacity.get((plot_id, year, slot), 0.0) + area
-        active.add((plot_id, year, crop))
-        if plot.land_type == "智慧大棚":
-            smart_active.add((plot_id, year, crop, slot))
+        active.add((plot_id, year, slot, crop))
     for (plot_id, year, slot), area in capacity.items():
         excess = area - float(plots[plot_id].area_mu)
         if excess > TOL:
@@ -234,21 +231,32 @@ def validate_plan(
                 if rice > TOL and veg > TOL:
                     violation("irrigated_mode", min(rice, veg), f"{plot.plot_id}/{year}")
     history_active = {
-        (row["plot_id"], int(row["year"]), int(row["crop_id"]))
+        (row["plot_id"], int(row["year"]), row["slot"], int(row["crop_id"]))
         for row in history_2023
         if float(row["area"]) > TOL
     }
     combined_active = active | history_active
-    for plot_id, year, crop in sorted(combined_active):
-        if year < 2030 and (plot_id, year + 1, crop) in combined_active:
-            violation("rotation", 1.0, f"{plot_id}/{year}-{year + 1}/{crop}")
     for plot in land.itertuples(index=False):
-        if plot.land_type == "智慧大棚":
+        if plot.land_type in DRY_TYPES:
+            for year in range(2023, 2030):
+                for crop in range(1, 16):
+                    if ((plot.plot_id, year, "单季", crop) in combined_active and
+                            (plot.plot_id, year + 1, "单季", crop) in combined_active):
+                        violation("adjacent_cycle_rotation", 1.0, f"{plot.plot_id}/{year}-{year + 1}/单季/{crop}")
+        elif plot.land_type == "水浇地":
+            for year in range(2023, 2030):
+                if ((plot.plot_id, year, "单季", 16) in combined_active and
+                        (plot.plot_id, year + 1, "单季", 16) in combined_active):
+                    violation("adjacent_cycle_rotation", 1.0, f"{plot.plot_id}/{year}-{year + 1}/单季/16")
+        elif plot.land_type == "智慧大棚":
             for year in YEARS:
                 for crop in range(17, 35):
-                    slots = [slot for p, y, c, slot in smart_active if p == plot.plot_id and y == year and c == crop]
-                    if len(slots) > 1:
-                        violation("smart_within_year_rotation", len(slots) - 1, f"{plot.plot_id}/{year}/{crop}")
+                    if ((plot.plot_id, year, "第一季", crop) in combined_active and
+                            (plot.plot_id, year, "第二季", crop) in combined_active):
+                        violation("adjacent_cycle_rotation", 1.0, f"{plot.plot_id}/{year}/第一季-第二季/{crop}")
+                    if year < 2030 and ((plot.plot_id, year, "第二季", crop) in combined_active and
+                                        (plot.plot_id, year + 1, "第一季", crop) in combined_active):
+                        violation("adjacent_cycle_rotation", 1.0, f"{plot.plot_id}/{year}-{year + 1}/第二季-第一季/{crop}")
     all_rows = history_2023 + plan
     for plot in land.itertuples(index=False):
         for end_year in range(2025, 2031):

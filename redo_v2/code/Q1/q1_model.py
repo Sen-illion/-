@@ -125,23 +125,45 @@ def build_model(land: pd.DataFrame, economics: pd.DataFrame, demand: dict[int, f
             row = {idx: 1.0 for (_, y, _, c), idx in u_idx.items() if y == year and c == crop}
             if row:
                 b.con(row, ub=float(demand[crop]))
-    history_active = {(r["plot_id"], int(r["year"]), int(r["crop_id"])) for r in history if float(r["area"]) > 1e-6}
+    history_active = {
+        (r["plot_id"], int(r["year"]), r["slot"], int(r["crop_id"]))
+        for r in history if float(r["area"]) > 1e-6
+    }
     for plot in land.itertuples(index=False):
-        for crop in range(1, 42):
-            first = {idx: 1.0 for (p, y, _, c), idx in y_idx.items() if p == plot.plot_id and y == start and c == crop}
-            if (plot.plot_id, start - 1, crop) in history_active and first:
-                b.con(first, ub=0)
+        if plot.land_type in {"平旱地", "梯田", "山坡地"}:
+            for crop in range(1, 16):
+                first = y_idx.get((plot.plot_id, start, "单季", crop))
+                if (plot.plot_id, start - 1, "单季", crop) in history_active and first is not None:
+                    b.con({first: 1.0}, ub=0)
+                for year in range(start, end):
+                    left = y_idx.get((plot.plot_id, year, "单季", crop))
+                    right = y_idx.get((plot.plot_id, year + 1, "单季", crop))
+                    if left is not None and right is not None:
+                        b.con({left: 1.0, right: 1.0}, ub=1)
+        elif plot.land_type == "水浇地":
+            crop = 16
+            first = y_idx.get((plot.plot_id, start, "单季", crop))
+            if (plot.plot_id, start - 1, "单季", crop) in history_active and first is not None:
+                b.con({first: 1.0}, ub=0)
             for year in range(start, end):
-                row = {idx: 1.0 for (p, y, _, c), idx in y_idx.items()
-                       if p == plot.plot_id and c == crop and y in {year, year + 1}}
-                if row:
-                    b.con(row, ub=1)
-            if plot.land_type == "智慧大棚":
+                left = y_idx.get((plot.plot_id, year, "单季", crop))
+                right = y_idx.get((plot.plot_id, year + 1, "单季", crop))
+                if left is not None and right is not None:
+                    b.con({left: 1.0, right: 1.0}, ub=1)
+        elif plot.land_type == "智慧大棚":
+            for crop in range(17, 35):
+                first = y_idx.get((plot.plot_id, start, "第一季", crop))
+                if (plot.plot_id, start - 1, "第二季", crop) in history_active and first is not None:
+                    b.con({first: 1.0}, ub=0)
                 for year in range(start, end + 1):
-                    row = {idx: 1.0 for (p, y, _, c), idx in y_idx.items()
-                           if p == plot.plot_id and y == year and c == crop}
-                    if row:
-                        b.con(row, ub=1)
+                    season_1 = y_idx.get((plot.plot_id, year, "第一季", crop))
+                    season_2 = y_idx.get((plot.plot_id, year, "第二季", crop))
+                    if season_1 is not None and season_2 is not None:
+                        b.con({season_1: 1.0, season_2: 1.0}, ub=1)
+                    if year < end:
+                        next_season_1 = y_idx.get((plot.plot_id, year + 1, "第一季", crop))
+                        if season_2 is not None and next_season_1 is not None:
+                            b.con({season_2: 1.0, next_season_1: 1.0}, ub=1)
     for plot in land.itertuples(index=False):
         for end_year in range(max(2025, start), end + 1):
             window_start = end_year - 2

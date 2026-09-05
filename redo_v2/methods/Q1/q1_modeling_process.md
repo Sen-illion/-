@@ -1,6 +1,6 @@
 # Q1 建模与方法选择过程
 
-状态：`G3 — 正式代码与 round1 审查通过，等待人工结果判断`
+状态：`G3 — 相邻季次修订后的 round2 与代码审查通过，等待人工结果判断`
 
 ## 1. 问题目标与输出
 
@@ -67,6 +67,8 @@ $$
 
 面积累计覆盖隐含“地块内部土壤近似均匀”的假设。它比“只要种过一点豆类即完成轮作”严格得多，但仍不等于逐物理子地块追踪；若题意要求后一种解释，需要进一步离散土地单元。
 
+连续重茬的正式时间顺序为：单季地块和水浇地单季水稻按相邻年份检查；智慧大棚按“当年第一季→当年第二季→下一年第一季”检查。普通大棚与水浇地两季蔬菜的相邻季次适种集合本身不重叠，不扩大为年度禁种。仍按整块启用解释，不追踪地块内部物理面积交换。
+
 ## 4. 为什么使用三年重叠滚动 MILP
 
 完整七年单体 MILP 在 45 秒内仍有 19%–57% 的最优性缺口，不符合轻量预算下的可信求解要求。三年窗口旧规模探针在 14.88 秒达到 0.81% 缺口，仍能显式表达二元启用、轮作、豆类覆盖和销量上限，因此保留为主候选 `Q1-M1`。
@@ -114,8 +116,9 @@ baseline `Q1-B1` 设计为满足硬约束的利润排序循环贪心。旧版本
 - 已完成：Q1 方法族筛选、baseline 合法性论证、规模风险探针、智慧大棚映射刷新、利润—浪费与相对最小面积定向微型探针、豆类面积覆盖修正。
 - 已确认：Q1-M1；正式主点 $\eta=1\%,\alpha=10\%$，$\eta=3\%$ 作为预注册稳健性对照，决策记录为 `q1_method_choice_1`。
 - 已完成：实现契约、正式代码、主模型与修正版 baseline 重跑、Python 命名检查审查；所有旧方案级结果均未读取。
-- 尚未完成：人工 round1 结果判断、定向稳健性、最终结果判断与冻结。
+- 已完成：用户确认严格相邻季次口径；round2 两次完整重跑、独立硬约束验证和 Python 审查均通过。未加入任何超产比例约束。
+- 尚未完成：人工 round2 结果判断、定向稳健性、最终结果判断与冻结。
 - 当前 gate：G3。
-- 唯一下一步：人工选择接受当前主点进入稳健性，或先调整滚动结构/补充约束后重跑。证据见 `results/Q1/experiments/round1/q1_decision_report.md`。
+- 唯一下一步：人工判断是否接受 round2 的相邻季次结果；Q1(2) 半价销量占比 59.081%，且可行 baseline 利润高于三年滚动 MILP 4.144%，因此不得直接冻结。证据见 `results/Q1/experiments/round2/q1_decision_report.md`。
 
-AI 接续必读：`planning/manifests/Q1.json`、`methods/Q1/q1_decisions.jsonl`、`methods/Q1/q1_method_card.md`、`code/Q1/q1_code_plan.md`、`code/Q1/reviews/q1_python_review.json`、`results/Q1/experiments/round1/run_summary.json`、`results/Q1/experiments/round1/q1_decision_report.md`。
+AI 接续必读：`planning/manifests/Q1.json`、`methods/Q1/q1_decisions.jsonl`、`methods/Q1/q1_method_card.md`、`code/Q1/q1_code_plan.md`、`code/Q1/reviews/q1_python_review.json`、`results/Q1/experiments/round2/run_summary.json`、`results/Q1/experiments/round2/q1_decision_report.md`。

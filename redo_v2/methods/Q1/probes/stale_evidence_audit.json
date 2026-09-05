@@ -71,5 +71,18 @@
     "legacy_results_remain_invalid": true,
     "interpretation": "The new round1 is an independent rebuild from cleaned attachments. Its success does not restore validity to any legacy allocation or metric."
   },
-  "verdict": "LEGACY_RESULTS_INVALIDATED_RERUN_REQUIRED"
+  "post_rotation_update": {
+    "updated_at": "2026-09-05T14:10:55+08:00",
+    "change_impact": "CANONICAL",
+    "human_decision": "q1_rotation_interpretation_1",
+    "invalidated_evidence": "all round1 plan-level metrics and round1 hard-constraint pass claims",
+    "reason": "round1 enforced an over-broad annual occurrence ban instead of strict chronological adjacent planting cycles",
+    "current_run": "results/Q1/experiments/round2/run_summary.json",
+    "current_run_status": "success",
+    "current_run_constraint_violations": 0,
+    "current_code_review": "code/Q1/reviews/q1_python_review.json",
+    "review_verdict": "PASSED",
+    "surplus_ratio_constraint_added": false
+  },
+  "verdict": "LEGACY_AND_ROUND1_INVALIDATED_ROUND2_CURRENT"
 }

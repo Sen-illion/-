@@ -1,0 +1,1321 @@
+{
+  "m1_zero_price_profit": [
+    {
+      "committed_year": 2024,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 16958219.740444727,
+        "half_price_profit_yuan": 17360164.740444727,
+        "waste_jin": 114100.00000000009,
+        "activation_penalty_yuan": 290.0,
+        "selected_status": 0,
+        "selected_gap": 0.04282485599754675,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.7003938000125345,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04282485599754675,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11251
+      },
+      "committed_activations": 96
+    },
+    {
+      "committed_year": 2025,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 17306960.645957313,
+        "half_price_profit_yuan": 17710663.646459203,
+        "waste_jin": 112619.26200035839,
+        "activation_penalty_yuan": 300.99999999999784,
+        "selected_status": 0,
+        "selected_gap": 0.02182917708193131,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.367420499998843,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.02182917708193131,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11311
+      },
+      "committed_activations": 104
+    },
+    {
+      "committed_year": 2026,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 16971444.462979637,
+        "half_price_profit_yuan": 17350233.400479637,
+        "waste_jin": 110689.95454545453,
+        "activation_penalty_yuan": 282.0,
+        "selected_status": 0,
+        "selected_gap": 0.042029013400988094,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 7.567275099994731,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.042029013400988094,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11310
+      },
+      "committed_activations": 97
+    },
+    {
+      "committed_year": 2027,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 17300033.783140797,
+        "half_price_profit_yuan": 17639784.148994457,
+        "waste_jin": 98890.57649667407,
+        "activation_penalty_yuan": 299.0,
+        "selected_status": 0,
+        "selected_gap": 0.022238484557587136,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 5.302256800001487,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.022238484557587136,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11306
+      },
+      "committed_activations": 100
+    },
+    {
+      "committed_year": 2028,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 16894620.1846987,
+        "half_price_profit_yuan": 17271299.544746548,
+        "waste_jin": 109177.29186602881,
+        "activation_penalty_yuan": 285.00000000000006,
+        "selected_status": 0,
+        "selected_gap": 0.04676543744385314,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.02541430000565,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04676543744385314,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11311
+      },
+      "committed_activations": 98
+    },
+    {
+      "committed_year": 2029,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 11737976.86762124,
+        "half_price_profit_yuan": 11880022.36762124,
+        "waste_jin": 42013.45454545453,
+        "activation_penalty_yuan": 208.0,
+        "selected_status": 0,
+        "selected_gap": 0.006314243287565928,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 3.2890810999961104,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.006314243287565928,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7398
+      },
+      "committed_activations": 103
+    },
+    {
+      "committed_year": 2030,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 5824190.373423371,
+        "half_price_profit_yuan": 5976860.373423371,
+        "waste_jin": 40479.99999999997,
+        "activation_penalty_yuan": 103.0,
+        "selected_status": 0,
+        "selected_gap": 0.01049173566413695,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.6102744000090752,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.01049173566413695,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3486
+      },
+      "committed_activations": 103
+    }
+  ],
+  "m1_eta_01": [
+    {
+      "committed_year": 2024,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 16958219.740444727,
+        "half_price_profit_yuan": 17360164.740444727,
+        "waste_jin": 114100.00000000009,
+        "activation_penalty_yuan": 290.0,
+        "selected_status": 0,
+        "selected_gap": 0.04282485599754675,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.742864400002873,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04282485599754675,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11251
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 16788637.52608206,
+        "half_price_profit_yuan": 17066665.52608206,
+        "waste_jin": 84095.99999999991,
+        "activation_penalty_yuan": 500.0,
+        "selected_status": 0,
+        "selected_gap": 0.04965753688014081,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 60.344857000003685,
+            "status": 1,
+            "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+            "mip_gap": 0.08951166211693735,
+            "mip_node_count": 883,
+            "has_incumbent": true
+          },
+          {
+            "time_limit_seconds": 180.0,
+            "runtime_seconds": 73.75121489999583,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04965753688014081,
+            "mip_node_count": 1102,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11252,
+        "eta": 0.01,
+        "pi_star_yuan": 16958219.740444727,
+        "profit_floor_yuan": 16788637.52608206,
+        "numeric_slack_yuan": 0.01695821974044473
+      },
+      "committed_activations": 175
+    },
+    {
+      "committed_year": 2025,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 17078663.751444552,
+        "half_price_profit_yuan": 17430095.89145249,
+        "waste_jin": 102135.96781926046,
+        "activation_penalty_yuan": 302.0,
+        "selected_status": 0,
+        "selected_gap": 0.035487416350190835,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.765784800008987,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.035487416350190835,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11318
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 16907877.096851442,
+        "half_price_profit_yuan": 17186952.096851442,
+        "waste_jin": 81900.00000000007,
+        "activation_penalty_yuan": 341.0,
+        "selected_status": 0,
+        "selected_gap": 0.02808302885744811,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 28.67817999998806,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.02808302885744811,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11319,
+        "eta": 0.01,
+        "pi_star_yuan": 17078663.751444552,
+        "profit_floor_yuan": 16907877.096851442,
+        "numeric_slack_yuan": 0.017078663751444553
+      },
+      "committed_activations": 123
+    },
+    {
+      "committed_year": 2026,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 16932667.049910337,
+        "half_price_profit_yuan": 17306223.279347923,
+        "waste_jin": 104766.04803140173,
+        "activation_penalty_yuan": 287.0,
+        "selected_status": 0,
+        "selected_gap": 0.04441657574126988,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.3853919999965,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04441657574126988,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11311
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 16763340.36247857,
+        "half_price_profit_yuan": 17045446.36247857,
+        "waste_jin": 83544.00000000006,
+        "activation_penalty_yuan": 449.0,
+        "selected_status": 0,
+        "selected_gap": 0.04720865851070999,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 19.330666000008932,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04720865851070999,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11312,
+        "eta": 0.01,
+        "pi_star_yuan": 16932667.049910337,
+        "profit_floor_yuan": 16763340.362478567,
+        "numeric_slack_yuan": 0.016932667049910338
+      },
+      "committed_activations": 149
+    },
+    {
+      "committed_year": 2027,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 16967993.976851176,
+        "half_price_profit_yuan": 17351968.122668274,
+        "waste_jin": 111688.01072691317,
+        "activation_penalty_yuan": 282.0,
+        "selected_status": 0,
+        "selected_gap": 0.042241434542574854,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.086454200005392,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.042241434542574854,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11314
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 16798314.02011467,
+        "half_price_profit_yuan": 17072113.177343186,
+        "waste_jin": 82328.61092604925,
+        "activation_penalty_yuan": 436.0,
+        "selected_status": 0,
+        "selected_gap": 0.03314292625745668,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 14.198418599989964,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03314292625745668,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11315,
+        "eta": 0.01,
+        "pi_star_yuan": 16967993.976851176,
+        "profit_floor_yuan": 16798314.02011467,
+        "numeric_slack_yuan": 0.016967993976851177
+      },
+      "committed_activations": 155
+    },
+    {
+      "committed_year": 2028,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 17048517.747967217,
+        "half_price_profit_yuan": 17400310.278270245,
+        "waste_jin": 100497.1515151515,
+        "activation_penalty_yuan": 285.0,
+        "selected_status": 0,
+        "selected_gap": 0.03731851143721423,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 8.064918799995212,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03731851143721423,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11307
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 16878032.553439025,
+        "half_price_profit_yuan": 17155303.20723603,
+        "waste_jin": 82052.61537057321,
+        "activation_penalty_yuan": 437.0,
+        "selected_status": 0,
+        "selected_gap": 0.029890765953949693,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 35.626743300003,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.029890765953949693,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11308,
+        "eta": 0.01,
+        "pi_star_yuan": 17048517.747967217,
+        "profit_floor_yuan": 16878032.553439025,
+        "numeric_slack_yuan": 0.01704851774796722
+      },
+      "committed_activations": 172
+    },
+    {
+      "committed_year": 2029,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 11336643.733834721,
+        "half_price_profit_yuan": 11559791.746992618,
+        "waste_jin": 63217.990430622056,
+        "activation_penalty_yuan": 196.0,
+        "selected_status": 0,
+        "selected_gap": 0.04090545368247216,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 3.094604199999594,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04090545368247216,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7401
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 11223277.285159731,
+        "half_price_profit_yuan": 11384340.876068821,
+        "waste_jin": 47722.54545454553,
+        "activation_penalty_yuan": 193.0,
+        "selected_status": 0,
+        "selected_gap": 2.2996989632674704e-10,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 13.91694360000838,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 2.2996989632674704e-10,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7402,
+        "eta": 0.01,
+        "pi_star_yuan": 11336643.733834721,
+        "profit_floor_yuan": 11223277.285159731,
+        "numeric_slack_yuan": 0.011336643733834723
+      },
+      "committed_activations": 97
+    },
+    {
+      "committed_year": 2030,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 5901280.164602309,
+        "half_price_profit_yuan": 5965114.914602309,
+        "waste_jin": 18914.0,
+        "activation_penalty_yuan": 117.0,
+        "selected_status": 0,
+        "selected_gap": 0.0016054722643756838,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 1.0207603000017116,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.0016054722643756838,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3482
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 5842267.357055007,
+        "half_price_profit_yuan": 5908659.607055007,
+        "waste_jin": 19534.000000000036,
+        "activation_penalty_yuan": 104.0,
+        "selected_status": 0,
+        "selected_gap": 0.03173953127555123,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 2.7618727999943076,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03173953127555123,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3483,
+        "eta": 0.01,
+        "pi_star_yuan": 5901280.164602309,
+        "profit_floor_yuan": 5842267.357055007,
+        "numeric_slack_yuan": 0.00590128016460231
+      },
+      "committed_activations": 104
+    }
+  ],
+  "m1_eta_03": [
+    {
+      "committed_year": 2024,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 16958219.740444727,
+        "half_price_profit_yuan": 17360164.740444727,
+        "waste_jin": 114100.00000000009,
+        "activation_penalty_yuan": 290.0,
+        "selected_status": 0,
+        "selected_gap": 0.04282485599754675,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 6.947206199998618,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04282485599754675,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11251
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 16449473.131273165,
+        "half_price_profit_yuan": 16729305.631273165,
+        "waste_jin": 82735.0000000002,
+        "activation_penalty_yuan": 263.99999999999994,
+        "selected_status": 0,
+        "selected_gap": 0.03402429455127288,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 22.243827300000703,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03402429455127288,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11252,
+        "eta": 0.03,
+        "pi_star_yuan": 16958219.740444727,
+        "profit_floor_yuan": 16449473.131273165,
+        "numeric_slack_yuan": 0.01695821974044473
+      },
+      "committed_activations": 90
+    },
+    {
+      "committed_year": 2025,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 17012259.50957073,
+        "half_price_profit_yuan": 17414434.50957073,
+        "waste_jin": 117102.50000000001,
+        "activation_penalty_yuan": 278.0000000000008,
+        "selected_status": 0,
+        "selected_gap": 0.039519229512101885,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 4.971416500004125,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.039519229512101885,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11301
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 16501891.707271349,
+        "half_price_profit_yuan": 16770541.707271349,
+        "waste_jin": 79599.99999999999,
+        "activation_penalty_yuan": 275.0,
+        "selected_status": 0,
+        "selected_gap": 1.5301174278060808e-10,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 27.694466300003114,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 1.5301174278060808e-10,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11302,
+        "eta": 0.03,
+        "pi_star_yuan": 17012259.50957073,
+        "profit_floor_yuan": 16501891.707271347,
+        "numeric_slack_yuan": 0.01701225950957073
+      },
+      "committed_activations": 99
+    },
+    {
+      "committed_year": 2026,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 16850956.4401927,
+        "half_price_profit_yuan": 17253342.0651927,
+        "waste_jin": 117030.00000000001,
+        "activation_penalty_yuan": 283.0,
+        "selected_status": 0,
+        "selected_gap": 0.04947973095523827,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 5.510082200009492,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04947973095523827,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11308
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 16345427.730135966,
+        "half_price_profit_yuan": 16620344.999872807,
+        "waste_jin": 81518.68421052633,
+        "activation_penalty_yuan": 376.0,
+        "selected_status": 0,
+        "selected_gap": 0.023536743160176597,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 13.448078900008113,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.023536743160176597,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11309,
+        "eta": 0.03,
+        "pi_star_yuan": 16850956.4401927,
+        "profit_floor_yuan": 16345427.730135962,
+        "numeric_slack_yuan": 0.016850956440192702
+      },
+      "committed_activations": 137
+    },
+    {
+      "committed_year": 2027,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 17169694.71738637,
+        "half_price_profit_yuan": 17455874.560638126,
+        "waste_jin": 84331.68180871957,
+        "activation_penalty_yuan": 299.0,
+        "selected_status": 0,
+        "selected_gap": 0.029998175911302532,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 5.561624800000573,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.029998175911302532,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11308
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 16654603.85869509,
+        "half_price_profit_yuan": 16937128.85869509,
+        "waste_jin": 83500.00000000001,
+        "activation_penalty_yuan": 493.0,
+        "selected_status": 0,
+        "selected_gap": 0.04670658940074307,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 17.420022899998003,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04670658940074307,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11309,
+        "eta": 0.03,
+        "pi_star_yuan": 17169694.71738637,
+        "profit_floor_yuan": 16654603.858695082,
+        "numeric_slack_yuan": 0.01716969471738637
+      },
+      "committed_activations": 181
+    },
+    {
+      "committed_year": 2028,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 17145273.196601775,
+        "half_price_profit_yuan": 17428484.10713093,
+        "waste_jin": 83023.93533888654,
+        "activation_penalty_yuan": 301.00000000000045,
+        "selected_status": 0,
+        "selected_gap": 0.03146411083047866,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 26.56934880001063,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03146411083047866,
+            "mip_node_count": 72,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11317
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 16630914.98355844,
+        "half_price_profit_yuan": 16908360.983558442,
+        "waste_jin": 82232.00000000004,
+        "activation_penalty_yuan": 406.0,
+        "selected_status": 0,
+        "selected_gap": 0.03200700597022005,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 41.67957039999601,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03200700597022005,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11318,
+        "eta": 0.03,
+        "pi_star_yuan": 17145273.196601775,
+        "profit_floor_yuan": 16630914.983558448,
+        "numeric_slack_yuan": 0.017145273196601776
+      },
+      "committed_activations": 151
+    },
+    {
+      "committed_year": 2029,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 11656913.408350982,
+        "half_price_profit_yuan": 11742192.908350982,
+        "waste_jin": 25267.999999999978,
+        "activation_penalty_yuan": 221.0,
+        "selected_status": 0,
+        "selected_gap": 0.016805379915306833,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 2.3466426999948453,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.016805379915306833,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7406
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 11307205.994443536,
+        "half_price_profit_yuan": 11376871.585371325,
+        "waste_jin": 20641.65657119645,
+        "activation_penalty_yuan": 205.0,
+        "selected_status": 0,
+        "selected_gap": 0.016164235310433567,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 19.51820589999261,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.016164235310433567,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7407,
+        "eta": 0.03,
+        "pi_star_yuan": 11656913.408350982,
+        "profit_floor_yuan": 11307205.994443538,
+        "numeric_slack_yuan": 0.011656913408350983
+      },
+      "committed_activations": 101
+    },
+    {
+      "committed_year": 2030,
+      "pure_profit": {
+        "stage": "pure_profit",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 5821454.841354582,
+        "half_price_profit_yuan": 5848840.750426795,
+        "waste_jin": 8114.343428803491,
+        "activation_penalty_yuan": 105.0,
+        "selected_status": 0,
+        "selected_gap": 0.013710426900225002,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.9691642000107095,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.013710426900225002,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3483
+      },
+      "pareto": {
+        "stage": "minimum_waste",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 5646811.19029249,
+        "half_price_profit_yuan": 5662425.099364702,
+        "waste_jin": 4626.343428803608,
+        "activation_penalty_yuan": 105.0,
+        "selected_status": 0,
+        "selected_gap": 2.7048544114039106e-09,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 2.2575783000065712,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 2.7048544114039106e-09,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3484,
+        "eta": 0.03,
+        "pi_star_yuan": 5821454.841354582,
+        "profit_floor_yuan": 5646811.19029249,
+        "numeric_slack_yuan": 0.005821454841354583
+      },
+      "committed_activations": 105
+    }
+  ],
+  "m1_half_price": [
+    {
+      "committed_year": 2024,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2024,
+          2026
+        ],
+        "economic_profit_yuan": 11320096.842105264,
+        "half_price_profit_yuan": 26793701.363038275,
+        "waste_jin": 4068322.226475279,
+        "activation_penalty_yuan": 268.0,
+        "selected_status": 0,
+        "selected_gap": 0.011729216460795368,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 2.2433432999969227,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.011729216460795368,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11251
+      },
+      "committed_activations": 90
+    },
+    {
+      "committed_year": 2025,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2025,
+          2027
+        ],
+        "economic_profit_yuan": 10745662.5,
+        "half_price_profit_yuan": 26294400.625,
+        "waste_jin": 4092470.0,
+        "activation_penalty_yuan": 246.0,
+        "selected_status": 0,
+        "selected_gap": 0.030678775988569953,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.8446115999977337,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.030678775988569953,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11304
+      },
+      "committed_activations": 81
+    },
+    {
+      "committed_year": 2026,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2026,
+          2028
+        ],
+        "economic_profit_yuan": 10526878.75,
+        "half_price_profit_yuan": 26080934.375,
+        "waste_jin": 4092855.0,
+        "activation_penalty_yuan": 246.0,
+        "selected_status": 0,
+        "selected_gap": 0.03932935094157266,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.9758583000075305,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03932935094157266,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11298
+      },
+      "committed_activations": 83
+    },
+    {
+      "committed_year": 2027,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2027,
+          2029
+        ],
+        "economic_profit_yuan": 10830656.118421052,
+        "half_price_profit_yuan": 26040136.11842105,
+        "waste_jin": 4046395.0,
+        "activation_penalty_yuan": 245.0,
+        "selected_status": 0,
+        "selected_gap": 0.04095685782347786,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.2104028999892762,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04095685782347786,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11299
+      },
+      "committed_activations": 81
+    },
+    {
+      "committed_year": 2028,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2028,
+          2030
+        ],
+        "economic_profit_yuan": 10570590.0,
+        "half_price_profit_yuan": 26053399.375,
+        "waste_jin": 4015275.0,
+        "activation_penalty_yuan": 245.0,
+        "selected_status": 0,
+        "selected_gap": 0.04042629447641598,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.773422300000675,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.04042629447641598,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 9582,
+        "binary_variables": 3210,
+        "constraints": 11298
+      },
+      "committed_activations": 81
+    },
+    {
+      "committed_year": 2029,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2029,
+          2030
+        ],
+        "economic_profit_yuan": 7104918.618421053,
+        "half_price_profit_yuan": 18331685.99342105,
+        "waste_jin": 2997606.0,
+        "activation_penalty_yuan": 165.0,
+        "selected_status": 0,
+        "selected_gap": 0.03327488780220901,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.2368304999981774,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03327488780220901,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 6388,
+        "binary_variables": 2140,
+        "constraints": 7384
+      },
+      "committed_activations": 85
+    },
+    {
+      "committed_year": 2030,
+      "half_price": {
+        "stage": "half_price_profit",
+        "years": [
+          2030,
+          2030
+        ],
+        "economic_profit_yuan": 3624920.5921052634,
+        "half_price_profit_yuan": 9167132.467105264,
+        "waste_jin": 1467585.0,
+        "activation_penalty_yuan": 81.0,
+        "selected_status": 0,
+        "selected_gap": 0.03693710675775299,
+        "attempts": [
+          {
+            "time_limit_seconds": 60.0,
+            "runtime_seconds": 0.07487419999961276,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.03693710675775299,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 3194,
+        "binary_variables": 1070,
+        "constraints": 3475
+      },
+      "committed_activations": 81
+    }
+  ]
+}
