@@ -1,0 +1,8 @@
+{
+  "stage": "full_horizon_minimum_waste",
+  "status": "heuristic_fallback",
+  "message": "No incumbent after retry: Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+  "selected_gap": null,
+  "pi_star_yuan": 39569174.59283889,
+  "profit_floor_yuan": 39173482.80734132
+}

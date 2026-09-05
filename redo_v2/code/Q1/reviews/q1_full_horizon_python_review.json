@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "question_id": "Q1",
+  "language": "python",
+  "reviewed_files": [
+    "code/Q1/q1_full_horizon.py",
+    "code/Q1/q1_model.py",
+    "code/Q1/q1_common.py",
+    "code/Q1/q1_baseline.py",
+    "results/Q1/experiments/full_horizon_round1/run_summary.json"
+  ],
+  "decision_id": "q1_full_horizon_method_1",
+  "checks": {
+    "syntax": {"status": "PASS", "evidence": ["All Q1 Python modules passed py_compile."]},
+    "input_contract": {"status": "PASS", "evidence": ["Cleaned land, crop, planting, and economics tables loaded through the validated shared loader; raw files were not modified."]},
+    "method_alignment": {"status": "PASS", "evidence": ["The main runner builds one 2024-2030 MILP and retains explicit activation, sales, surplus, rotation, bean-coverage, and greenhouse mode constraints."]},
+    "reproducibility": {"status": "PASS", "evidence": ["Seed 2026, Python executable, platform, NumPy, pandas, and SciPy versions are recorded."]},
+    "output_contract": {"status": "PASS", "evidence": ["CSV/XLSX plans, validation JSON files, solver summaries, comparison table, and run_summary.json were written."]},
+    "constraint_validation": {"status": "PASS", "evidence": ["All six generated plans report zero independent hard-constraint violations."]},
+    "solver_status": {"status": "CONDITIONAL", "evidence": ["Pure-profit incumbent gap is 4.41%; half-price incumbent gap is 0.82%; both Pareto minimum-waste stages had no incumbent and used the declared pure-profit feasible fallback."]}
+  },
+  "findings": [
+    {"severity": "warning", "message": "Q1(1) Pareto stages are feasible fallback plans, not newly solved minimum-waste optima; do not claim strict Pareto optimality."}
+  ],
+  "verdict": "PASSED_WITH_CONDITION",
+  "reviewed_at": "2026-09-05T00:00:00+08:00"
+}

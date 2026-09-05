@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "question": "Q1",
+  "round": "full_horizon_round1",
+  "implementation_target": "python",
+  "approved_decision_id": "q1_full_horizon_method_1",
+  "random_seed": 2026,
+  "method": "Recursive-State Full-Horizon MILP",
+  "parameters": {
+    "alpha": 0.1,
+    "eta_main": 0.01,
+    "eta_comparator": 0.03
+  },
+  "methods": [
+    {
+      "method_id": "full_eta_01",
+      "role": "main",
+      "script": "code/Q1/q1_full_horizon.py",
+      "status": "success",
+      "execution_time_seconds": 119.33892599999672,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/full_eta_01_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/full_eta_01_plan.xlsx",
+        "results/Q1/experiments/full_horizon_round1/metrics/full_eta_01_validation.json"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 39569174.5928389,
+        "revenue_yuan": 44942704.13434678,
+        "cost_yuan": 5373529.541507887,
+        "production_jin": 8552825.329975326,
+        "normal_sales_jin": 8337598.703463354,
+        "excess_jin": 215226.62651197147,
+        "waste_jin": 215226.62651197147,
+        "waste_rate": 0.025164389334324494,
+        "activation_count": 705,
+        "average_area_per_activation_mu": 12.057447900548329,
+        "minimum_positive_area_mu": 0.05999999999999994,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.6145210715832883,
+        "area_hhi": 0.0919524385075841,
+        "total_planted_area_mu": 8500.500769886572
+      },
+      "solver_summary": {
+        "stage": "full_horizon_minimum_waste",
+        "status": "heuristic_fallback",
+        "message": "No incumbent after retry: Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "selected_gap": null,
+        "pi_star_yuan": 39569174.59283889,
+        "profit_floor_yuan": 39173482.80734132
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "full_eta_03",
+      "role": "robustness_comparator",
+      "script": "code/Q1/q1_full_horizon.py",
+      "status": "success",
+      "execution_time_seconds": 124.15976289997343,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/full_eta_03_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/full_eta_03_plan.xlsx",
+        "results/Q1/experiments/full_horizon_round1/metrics/full_eta_03_validation.json"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 39569174.5928389,
+        "revenue_yuan": 44942704.13434678,
+        "cost_yuan": 5373529.541507887,
+        "production_jin": 8552825.329975326,
+        "normal_sales_jin": 8337598.703463354,
+        "excess_jin": 215226.62651197147,
+        "waste_jin": 215226.62651197147,
+        "waste_rate": 0.025164389334324494,
+        "activation_count": 705,
+        "average_area_per_activation_mu": 12.057447900548329,
+        "minimum_positive_area_mu": 0.05999999999999994,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.6145210715832883,
+        "area_hhi": 0.0919524385075841,
+        "total_planted_area_mu": 8500.500769886572
+      },
+      "solver_summary": {
+        "stage": "full_horizon_minimum_waste",
+        "status": "heuristic_fallback",
+        "message": "No incumbent after retry: Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+        "selected_gap": null,
+        "pi_star_yuan": 39569174.59283889,
+        "profit_floor_yuan": 38382099.315484546
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "full_half_price",
+      "role": "main_case_2",
+      "script": "code/Q1/q1_full_horizon.py",
+      "status": "success",
+      "execution_time_seconds": 20.26544719998492,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/full_half_price_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/full_half_price_plan.xlsx",
+        "results/Q1/experiments/full_horizon_round1/metrics/full_half_price_validation.json"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 63458404.73965933,
+        "revenue_yuan": 70149416.7408444,
+        "cost_yuan": 6691012.001185067,
+        "production_jin": 16438194.757336859,
+        "normal_sales_jin": 6570265.454545455,
+        "excess_jin": 9867929.302791404,
+        "waste_jin": 0.0,
+        "waste_rate": 0.0,
+        "activation_count": 637,
+        "average_area_per_activation_mu": 14.659340659340733,
+        "minimum_positive_area_mu": 0.06,
+        "unique_crop_count": 24,
+        "top5_area_mass": 0.5938135796535513,
+        "area_hhi": 0.09111939661974527,
+        "total_planted_area_mu": 9338.000000000047
+      },
+      "solver_summary": {
+        "stage": "full_horizon_half_price",
+        "years": [
+          2024,
+          2030
+        ],
+        "economic_profit_yuan": 25812592.357905842,
+        "half_price_profit_yuan": 63458404.73965933,
+        "waste_jin": 9867929.302791404,
+        "activation_penalty_yuan": 637.0,
+        "selected_status": 0,
+        "selected_gap": 0.00819888584787962,
+        "attempts": [
+          {
+            "time_limit_seconds": 30.0,
+            "runtime_seconds": 19.10003339999821,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.00819888584787962,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 22358,
+        "binary_variables": 7490,
+        "constraints": 26903
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "full_pure_profit",
+      "role": "reference",
+      "script": "code/Q1/q1_full_horizon.py",
+      "status": "success",
+      "execution_time_seconds": 28.674310500035062,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/full_pure_profit_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/full_pure_profit_plan.xlsx",
+        "results/Q1/experiments/full_horizon_round1/metrics/full_pure_profit_validation.json"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 39569174.5928389,
+        "revenue_yuan": 44942704.13434678,
+        "cost_yuan": 5373529.541507887,
+        "production_jin": 8552825.329975326,
+        "normal_sales_jin": 8337598.703463354,
+        "excess_jin": 215226.62651197147,
+        "waste_jin": 215226.62651197147,
+        "waste_rate": 0.025164389334324494,
+        "activation_count": 705,
+        "average_area_per_activation_mu": 12.057447900548329,
+        "minimum_positive_area_mu": 0.05999999999999994,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.6145210715832883,
+        "area_hhi": 0.0919524385075841,
+        "total_planted_area_mu": 8500.500769886572
+      },
+      "solver_summary": {
+        "stage": "full_horizon_pure_profit",
+        "years": [
+          2024,
+          2030
+        ],
+        "economic_profit_yuan": 39569174.59283889,
+        "half_price_profit_yuan": 40274335.0130076,
+        "waste_jin": 215226.62651197112,
+        "activation_penalty_yuan": 705.0,
+        "selected_status": 0,
+        "selected_gap": 0.044121250913565654,
+        "attempts": [
+          {
+            "time_limit_seconds": 30.0,
+            "runtime_seconds": 27.56122440000763,
+            "status": 0,
+            "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+            "mip_gap": 0.044121250913565654,
+            "mip_node_count": 1,
+            "has_incumbent": true
+          }
+        ],
+        "variables": 22358,
+        "binary_variables": 7490,
+        "constraints": 26903
+      },
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "rolling_baseline_zero",
+      "role": "usable_baseline",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.4720715000294149,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/rolling_baseline_zero_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/rolling_baseline_zero_plan.xlsx"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 36689216.25,
+        "revenue_yuan": 42851156.25,
+        "cost_yuan": 6161940.0,
+        "production_jin": 10576185.0,
+        "normal_sales_jin": 7897355.0,
+        "excess_jin": 2678830.0,
+        "waste_jin": 2678830.0,
+        "waste_rate": 0.25328887495821983,
+        "activation_count": 572,
+        "average_area_per_activation_mu": 16.25524475524484,
+        "minimum_positive_area_mu": 0.6,
+        "unique_crop_count": 41,
+        "top5_area_mass": 0.5444181544418126,
+        "area_hhi": 0.07580088298813227,
+        "total_planted_area_mu": 9298.000000000047
+      },
+      "solver_summary": null,
+      "warnings": [],
+      "errors": []
+    },
+    {
+      "method_id": "rolling_baseline_half",
+      "role": "usable_baseline_case_2",
+      "script": "code/Q1/q1_baseline.py",
+      "status": "success",
+      "execution_time_seconds": 0.778393300017342,
+      "input_files": [
+        "workspace/data_clean/land.csv",
+        "workspace/data_clean/crops.csv",
+        "workspace/data_clean/planting_2023.csv",
+        "workspace/data_clean/economics_2023.csv"
+      ],
+      "output_files": [
+        "results/Q1/experiments/full_horizon_round1/tables/rolling_baseline_half_plan.csv",
+        "results/Q1/experiments/full_horizon_round1/tables/rolling_baseline_half_plan.xlsx"
+      ],
+      "metrics_summary": {
+        "profit_yuan": 62771956.875,
+        "revenue_yuan": 69849016.875,
+        "cost_yuan": 7077060.0,
+        "production_jin": 16750985.0,
+        "normal_sales_jin": 6077665.0,
+        "excess_jin": 10673320.0,
+        "waste_jin": 0.0,
+        "waste_rate": 0.0,
+        "activation_count": 574,
+        "average_area_per_activation_mu": 16.268292682926912,
+        "minimum_positive_area_mu": 0.6,
+        "unique_crop_count": 24,
+        "top5_area_mass": 0.5345898479331735,
+        "area_hhi": 0.08170068654134743,
+        "total_planted_area_mu": 9338.000000000047
+      },
+      "solver_summary": null,
+      "warnings": [],
+      "errors": []
+    }
+  ],
+  "comparison": {
+    "table": "results/Q1/experiments/full_horizon_round1/tables/method_comparison.csv",
+    "maximum_selected_full_horizon_gap": 0.044121250913565654,
+    "total_constraint_violations": 0
+  },
+  "fallback_trigger": {
+    "fallback_id": "Q1-F1",
+    "condition": "selected full-horizon solve has no incumbent or MIP gap > 5%",
+    "observed": false,
+    "evidence": []
+  },
+  "environment": {
+    "python": "3.14.6 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:29:05) [MSC v.1942 64 bit (AMD64)]",
+    "executable": "C:\\Users\\Lenovo\\anaconda3\\python.exe",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scipy": "1.18.0"
+  },
+  "warnings": [
+    "full_eta_01: pure_profit_incumbent",
+    "full_eta_03: pure_profit_incumbent"
+  ],
+  "errors": [],
+  "status": "success",
+  "execution_time_seconds": 294.79142480000155
+}

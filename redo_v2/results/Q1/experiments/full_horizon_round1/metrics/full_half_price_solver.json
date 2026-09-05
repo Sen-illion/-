@@ -1,0 +1,27 @@
+{
+  "stage": "full_horizon_half_price",
+  "years": [
+    2024,
+    2030
+  ],
+  "economic_profit_yuan": 25812592.357905842,
+  "half_price_profit_yuan": 63458404.73965933,
+  "waste_jin": 9867929.302791404,
+  "activation_penalty_yuan": 637.0,
+  "selected_status": 0,
+  "selected_gap": 0.00819888584787962,
+  "attempts": [
+    {
+      "time_limit_seconds": 30.0,
+      "runtime_seconds": 19.10003339999821,
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "mip_gap": 0.00819888584787962,
+      "mip_node_count": 1,
+      "has_incumbent": true
+    }
+  ],
+  "variables": 22358,
+  "binary_variables": 7490,
+  "constraints": 26903
+}
