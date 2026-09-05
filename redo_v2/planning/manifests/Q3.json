@@ -3,9 +3,10 @@
   "question_id": "Q3",
   "rigor_profile": "lean",
   "current_gate": "G2",
-  "status": "method_screened_with_provisional_preference",
+  "status": "method_spec_refined_waiting_human_parameters",
   "artifacts": {
     "method_card": "methods/Q3/q3_method_card.md",
+    "method_spec": "methods/Q3/q3_improved_method_spec.md",
     "decision_ledger": null,
     "risk_probe": "methods/Q3/probes/risk_probe_summary.json",
     "latest_run": null
@@ -17,13 +18,12 @@
     "final_assembly": false
   },
   "blockers": [
-    "先完成 Q1 与 Q2 闭环",
-    "类别层面中等相关及 ±50% 敏感性目前为暂定选择，等待用户补充和最终确认"
+    "Human confirmation is required for candidate crop-pair groups, cross-price elasticity intervals, correlated-factor strength scenarios, and the pre-registered CVaR limit before code generation."
   ],
   "next_action": {
     "owner": "human",
     "skill": "decision-prompt-builder",
-    "reason": "在 Q2 完成后补充并最终确认 Q3 相关结构"
+    "reason": "Confirm Q3 economic relationship groups and risk parameters before implementation."
   },
-  "updated_at": "2026-09-03T18:04:03+08:00"
+  "updated_at": "2026-09-05T18:30:00+08:00"
 }
