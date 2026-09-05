@@ -1,64 +1,28 @@
 # Q1 Method Card
 
-状态：`DECIDED / G3 ROUND2 REVIEWED`。正式主点 $\eta=1\%,\alpha=10\%$；$\eta=3\%$ 为预注册稳健性对照。用户已将连续重茬修订为严格相邻种植周期解释并保留整块管理；round1 因旧年度禁种口径失效，round2 已重建并通过代码审查，等待人工结果判断。
+## Approved main method
 
-## Goal and success criteria
+**Q1-M2: Recursive-State Full-Horizon MILP (RS-FH-MILP).** Optimize all 2024—2030 planting decisions in one seven-year model with explicit state-transition constraints for strict adjacent-cycle rotation, three-year cumulative bean-area coverage, irrigated-land modes, and greenhouse season states.
 
-在两种超产处置规则下生成 2024–2030 年逐地块、逐季、逐作物的可行种植方案；满足适种、面积、轮作、三年豆类面积覆盖和管理约束。Q1(1) 用利润下界—最小浪费的 Pareto 表达显式呈现权衡，并保留零超产价格下的纯利润最大化基准。
+## Usable baseline
 
-## Human constraints
+**Q1-B2: Three-year rolling MILP.** It remains a structural comparator, warm-start source, and computational fallback only. It is not the recommended seven-year policy and must not be described as globally optimal for the full horizon.
 
-- Output form: 附件3模板中的 `result1_1.xlsx` 与 `result1_2.xlsx`（模板尚缺）。
-- Priority: 收益与风险平衡；Q1(1) 提高控制滞销浪费优先级。
-- Unacceptable failure: 违反硬约束、形成不可实施碎片化方案，或把未收敛解当成最优解。
-- Experiment budget: 轻量，每轮情景不超过约 200；确定性求解也应采用受控时间窗口。
+## Fixed modeling choices
 
-## Shortlist
+- Main horizon: 2024—2030 full-horizon optimization.
+- Minimum activated area: alpha = 10% of plot area.
+- Q1(1) formal Pareto tolerance: eta = 1%; eta = 3% is the registered comparator.
+- Price: midpoint of the supplied 2023 price interval.
+- Demand proxy: 2023 observed production by crop.
+- Bean rule: cumulative bean area >= plot area in every rolling three-year period, initialized with 2023 observations.
+- Rotation: strict adjacent chronological planting cycles, with whole-plot activation.
+- Q1(2): independently solve the half-price surplus objective.
 
-| ID | Role | Mathematical idea | Why eligible | Main risk | Implementation cost |
-|---|---|---|---|---|---|
-| Q1-M1 | main_candidate | 三年重叠滚动窗口 MILP；Q1(1)先求纯利润 $\Pi^*$，再在 $\Pi\ge(1-\eta)\Pi^*$ 下最小化浪费；Q1(2)线性化半价收入 | 不引入任意利润—浪费权重，能直接表达轮作、豆类面积覆盖和相对最小面积 | 窗口间可能损失全局最优；$\eta=0$ 二阶段和完整规模可能难解 | 中 |
-| Q1-B1 | usable_baseline | 合法的利润排序循环贪心：按地类选高毛利作物，强制轮作与三年豆类覆盖 | 完整输出七年逐地块方案，运行极快，可作同口径下界比较 | 产量过度集中并忽略全局销量耦合 | 低 |
-| Q1-F1 | conditional_fallback | 按地类聚合的线性规划，再做逐地块分配与约束修复 | 当窗口 MILP 的最优性缺口或耗时超预算时可快速给出可行近似 | 修复步骤可能损失目标值，必须重新验约束 | 中低 |
+## Claim boundary
 
-## Baseline validity
+The supplied data cover only 2023. Future values are scenario/modeling assumptions, not estimated historical time-series behavior. A time-limited incumbent is reported with its MIP gap and is not called a strict global optimum. Q1(1) Pareto results are labeled as feasible fallback plans when the minimum-waste stage obtains no new incumbent.
 
-- Real task completed: **是**；round2 的零价与半价 baseline 均生成完整七年计划，并在严格相邻季次、累计豆类面积覆盖、相对最小面积和智慧大棚新映射下通过独立验证。
-- Comparable output/metric: **是**；与 Q1-M1 使用相同数据、利润、销量、集中度和合法性口径。
-- Condition: 仅作为简单可行比较。Q1(2) 中 baseline 七年利润高于三年滚动 MILP 4.144%，该结果构成滚动路径风险，不能宣称主方法无条件优于 baseline。
+## Required evidence
 
-## Risk-probe summary
-
-| ID | Executability | Data/assumptions | Degeneracy | Sensitivity | Scale | Verdict |
-|---|---|---|---|---|---|---|
-| Q1-M1 | 修正约束的 6 地块微型滚动探针全部可行；旧 54 地块三年窗 14.88秒达到0.81%缺口仅作规模背景 | 新映射 18/18 作物覆盖；2023 豆类实际面积可初始化 | 微型候选前5面积占64.37%；完整结构待重算 | $\eta=1\%$–$3\%$ 的减废边际递减；价格扰动仍待正式检验 | 18 地块 $\eta=0$ 二阶段 30秒无 incumbent；完整规模有风险 | CONDITIONAL |
-| Q1-B1 | 旧运行很快，但修正后的豆类面积覆盖尚未重跑 | 新映射可用，豆类旧验证失效 | 旧摘要仅8种作物、前5占96.56%，明显集中 | 对销量规则高度敏感 | 运行成本低，但需按新硬约束重建 | CONDITIONAL |
-
-2026-09-03 参数映射审计表明，相对旧探针映射，新规则覆盖的 18 种蔬菜亩产提高 9.09%–12.50%、亩成本降低 7.69%–10.00%、价格中点降低 16.67%–22.79%。全部作物均可映射，受影响容量占年度地块季次容量 0.17991%，未耦合销量上限时的亩毛利排序 Spearman 相关为 0.995354、最大名次变化为 1。该结果支持保留方法族，但不替代正式优化；利润、分配、集中度、浪费与约束必须在正式实现中重算。证据：`methods/Q1/probes/smart_greenhouse_mapping_audit.json`。
-
-2026-09-03 新轻量探针在六地类中位面积微型实例上比较了 $\eta=0,1\%,3\%,5\%$ 与 $\alpha=10\%,20\%,30\%$。预注册几何拐点为 $\eta=1\%$：相对零超产价格纯利润基准，报告利润损失约 0.692%，浪费量减少约 27.88%。$\alpha=20\%$ 已使纯利润损失约 6.18%、浪费率上升，故当前仅支持 $\alpha=10\%$。8 个不同参数策略的硬约束验证均为 0 违规；候选 $(1\%,10\%)$ 各窗 gap 不超过约 2%。证据仅为方法筛选，不是正式全量结果；18 地块版本的 $\eta=0$ 二阶段 30 秒无 incumbent，完整规模风险仍在。详见 `methods/Q1/probes/q1_tradeoff_probe_report.md`。
-
-## Confirmed formulation requirements
-
-- Q1(1) 不使用人为指定的 $\lambda$ 加权目标，也不采用无条件严格“先最小浪费、再最大利润”。
-- 纯利润基准：超出预期销量部分价格为零，最大化经济利润；它同时作为独立比较模型。
-- Pareto 模型：在 $\Pi\ge(1-\eta)\Pi^*$ 下最小化总浪费，正式全量候选先保留 $\eta=1\%,3\%$，首选 1%。
-- 最小面积：$x_{ijts}\ge\alpha A_i y_{ijts}$，当前首选且唯一获探针支持的值为 $\alpha=10\%$。
-- 豆类覆盖：$X^B_{it}=\sum_{j\in B,s}x_{ijts}$，任意连续三年满足 $\sum_{\tau=t-2}^{t}X^B_{i\tau}\ge A_i$；2023 年传递实际豆类面积，不使用“出现过豆类”的二元记录。
-- 连续重茬：按地块时间轴只约束真实相邻种植周期。单季地块与水浇地单季水稻检查相邻年份；智慧大棚检查当年第一季→第二季及第二季→下一年第一季。继续采用整块启用变量，不追踪地块内部面积交换。
-- $\varepsilon\sum y$ 仅作同利润附近的碎片化 tie-break；正式实现中报告利润与利润下界均不应混入该辅助项。
-
-## Fallback trigger
-
-- Trigger: 任一滚动窗口在限定时间内最优性缺口超过5%，或价格小扰动后仍无法在相同时间内把缺口压到5%以内。
-- Evidence to evaluate: `methods/Q1/probes/risk_probe_summary.json`、`methods/Q1/probes/smart_greenhouse_mapping_audit.json`，以及人工确认方法后生成的正式 `run_summary.json` 与约束复核。
-
-## Compact history
-
-- 2026-09-02：根据 `global_framing_choice_1` 建立轻量、浪费优先的候选结构；完整七年单体 MILP 因规模风险改为三年重叠窗口。
-- 2026-09-03：用户补充智慧大棚第一季经济参数与普通大棚第一季相同；原探针对该覆盖项失效，需定向刷新后再作最终方法选择。
-- 2026-09-03：定向映射审计完成；方法族仍可进入人工选择，但旧方案级数值仅作上游筛选背景，正式实现必须全部重算。
-- 2026-09-03：按人工指定的 epsilon-constraint、相对最小面积和豆类面积覆盖完成轻量探针；形成 $(\eta,\alpha)=(1\%,10\%)$ 首选点与 $\eta=3\%$ 对照建议。
-- 2026-09-04：用户确认 `q1_method_choice_1`，Q1-M1 标记 `DECIDED`；明确旧 baseline 数值、旧方案级结果和旧“约束通过”结论不得沿用，主模型与 baseline 均须按新豆类面积覆盖和智慧大棚映射重跑。
-- 2026-09-04：正式 round1 重建 Q1-M1 与 Q1-B1；六个方案硬约束违规均为0，最终采用窗口最大 gap 4.826%，fallback 未触发，Python 审查通过。$\eta=3\%$ 的七年累计浪费高于 $\eta=1\%$，作为滚动路径依赖风险提交人工判断。
-- 2026-09-05：用户确认严格相邻季次重茬解释、整块管理不变，并取消超产比例约束实验；round2 两次完整运行成功，六方案均为0违规，最大采用 gap 4.966%。Q1(2) 半价比例为59.081%，且合法 baseline 利润高4.144%，因此继续等待人工结果判断，不冻结。
+Every formal plan must have independent hard-constraint validation, solver records, profit/waste metrics, concentration metrics, and a directly comparable rolling-baseline result.
