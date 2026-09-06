@@ -1,0 +1,43 @@
+{
+  "time_limit_seconds": 600,
+  "models": [
+    {
+      "id": "M3",
+      "K": 5,
+      "cvar": false,
+      "continuous_variables": 10309,
+      "binary_integer_variables": 7490,
+      "constraints": 23802,
+      "incumbent": true,
+      "mip_gap": 0.7145245011680976,
+      "solve_time_seconds": 606.308650800027,
+      "status": 1,
+      "message": "Time limit reached",
+      "scenario_indexed_binary_variables": 0,
+      "x_y_planting_variables": 14868,
+      "explicit_surplus_variables": 1435
+    },
+    {
+      "id": "M4",
+      "K": 5,
+      "cvar": true,
+      "continuous_variables": 10315,
+      "binary_integer_variables": 7490,
+      "constraints": 23808,
+      "incumbent": false,
+      "mip_gap": null,
+      "solve_time_seconds": 611.4057483999641,
+      "status": 1,
+      "message": "Time limit reached; no incumbent",
+      "scenario_indexed_binary_variables": 0,
+      "x_y_planting_variables": 14868,
+      "explicit_surplus_variables": 1435
+    }
+  ],
+  "presolve_variables": null,
+  "presolve_constraints": null,
+  "best_bound": null,
+  "node_count": null,
+  "note": "SciPy milp does not expose these HiGHS diagnostics",
+  "status": "K5_CVAR_blocked"
+}

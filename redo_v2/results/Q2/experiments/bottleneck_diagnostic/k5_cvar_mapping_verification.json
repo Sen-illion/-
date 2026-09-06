@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "reference_plan": "Q1 full_half_price_plan or baseline fallback",
+  "K": 5,
+  "seed": 2026,
+  "beta": 0.95,
+  "formula_profit_cvar": "B = lower-tail weighted CVaR_0.95(Pi)",
+  "formula_loss_cvar": "kappa = -B; eta + sum(w*xi)/(1-beta) <= kappa; xi >= -Pi-eta",
+  "B": 65867152.34051686,
+  "kappa": -65867152.34051686,
+  "scenarios": [
+    {
+      "scenario_rank": 1,
+      "raw_scenario_index": 20,
+      "profit_yuan": 68570981.4304739,
+      "weight": 0.241,
+      "loss_yuan": -68570981.4304739
+    },
+    {
+      "scenario_rank": 2,
+      "raw_scenario_index": 728,
+      "profit_yuan": 71635160.05838168,
+      "weight": 0.232,
+      "loss_yuan": -71635160.05838168
+    },
+    {
+      "scenario_rank": 3,
+      "raw_scenario_index": 929,
+      "profit_yuan": 72797267.87369536,
+      "weight": 0.201,
+      "loss_yuan": -72797267.87369536
+    },
+    {
+      "scenario_rank": 4,
+      "raw_scenario_index": 555,
+      "profit_yuan": 69621321.49456087,
+      "weight": 0.129,
+      "loss_yuan": -69621321.49456087
+    },
+    {
+      "scenario_rank": 5,
+      "raw_scenario_index": 686,
+      "profit_yuan": 65867152.34051686,
+      "weight": 0.197,
+      "loss_yuan": -65867152.34051686
+    }
+  ],
+  "manual_profit_lower_cvar": 65867152.34051686,
+  "model_loss_cvar_minimized": -65867152.34051686,
+  "difference_model_minus_kappa": 0.0,
+  "constraint_equivalence_check": true,
+  "lambda_used": false,
+  "medoid_indices": [
+    20,
+    728,
+    929,
+    555,
+    686
+  ],
+  "weights_sum": 1.0,
+  "model_cvar_eta_arg": -65867152.34051686
+}

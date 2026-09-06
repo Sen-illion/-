@@ -1,0 +1,29 @@
+{
+  "time_limit_seconds": 600.0,
+  "models": [
+    {
+      "id": "M4",
+      "description": "Q2 seven-year shared-decision MILP K=5 with CVaR",
+      "K": 5,
+      "cvar": true,
+      "continuous_variables": 10315,
+      "binary_integer_variables": 7490,
+      "constraints": 23808,
+      "presolve_variables": null,
+      "presolve_constraints": null,
+      "incumbent": false,
+      "best_bound": null,
+      "mip_gap": null,
+      "node_count": null,
+      "solve_time_seconds": 611.4057483999641,
+      "status": 1,
+      "message": "Time limit reached. (HiGHS Status 13: model_status is Time limit reached; primal_status is None)",
+      "scenario_indexed_binary_variables": 0,
+      "x_y_planting_variables": 14868,
+      "explicit_surplus_variables": 1435,
+      "big_m_area_upper_bound": "plot area for x/y; u bounded by scenario demand; e bounded by legal maximum production",
+      "note": "SciPy milp wrapper does not expose HiGHS presolve/node/best-bound fields"
+    }
+  ],
+  "status": "complete"
+}

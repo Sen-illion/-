@@ -1,12 +1,13 @@
 {
   "schema_version": 1,
   "question_id": "Q2",
-  "generated_at": "2026-09-02T23:08:00+08:00",
+  "generated_at": "2026-09-05T16:30:00+08:00",
+  "probe_scope": "legacy Q2 probe retained as pre-revision evidence; seven-year full-horizon stochastic optimizer and revised Q2-B1 have not yet been probed",
   "data_refs": ["workspace/data/data_profile.json", "methods/probe_metrics.json"],
   "methods": [
     {
       "id": "Q2-M1",
-      "role": "main_candidate",
+      "role": "main_candidate_pre_revision",
       "executability": {"status": "CONDITIONAL", "evidence": {"scenario_generation_and_evaluation": "PASS", "joint_stochastic_optimizer": "not yet implemented before human choice"}},
       "data_coverage": {"status": "PASS", "evidence": {"scenarios": 100, "seed": 20240902, "seed_reproducible": true, "plots": 54, "crops": 41}},
       "assumption_checks": [
@@ -17,12 +18,12 @@
       "perturbation_sensitivity": {"status": "CONDITIONAL", "perturbation": "independent versus illustrative correlated inputs", "metric": "lower_tail_change_yuan", "value": 43400.16},
       "scale_check": {"status": "CONDITIONAL", "representative_scenarios": 100, "estimated_extra_sales_variables_at_200": 82600},
       "verdict": "CONDITIONAL",
-      "conditions": ["human confirms Q2 surplus rule", "solve in rolling windows", "compare with mean-value baseline on identical scenarios"],
+      "conditions": ["human confirms Q2 surplus rule", "re-run probe for seven-year full-horizon shared-decision model", "compare with revised seven-year mean-value baseline on identical scenarios"],
       "evidence_refs": ["methods/probe_metrics.json"]
     },
     {
       "id": "Q2-B1",
-      "role": "usable_baseline",
+      "role": "usable_baseline_pre_revision",
       "executability": {"status": "PASS", "evidence": {"mean_value_plan_evaluation_scenarios": 100}},
       "data_coverage": {"status": "PASS", "evidence": {"plots": 54, "crops": 41, "years": 7}},
       "assumption_checks": [{"name": "future_data_leakage", "status": "PASS", "metric": "observed_years_used", "value": [2023]}],
@@ -30,7 +31,7 @@
       "perturbation_sensitivity": {"status": "PASS", "perturbation": "100 independent scenarios", "metric": "profit_coefficient_of_variation", "value": 0.01787},
       "scale_check": {"status": "PASS", "representative_scenarios": 100},
       "verdict": "CONDITIONAL",
-      "conditions": ["formal mean-value rolling solve must meet <=5% gap and pass concentration checks"],
+      "conditions": ["formal seven-year mean-value solve must meet <=5% gap and pass concentration checks; legacy rolling result is structural evidence only"],
       "evidence_refs": ["methods/probe_metrics.json"]
     }
   ]

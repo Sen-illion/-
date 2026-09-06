@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "original_state": "boolean bean flags b_{t-2}, b_{t-1}",
+  "counterexample": {"history_A": [0.1, 0.1], "history_B": [0.4, 0.4], "same_boolean_state": true, "next_required_A": 0.8, "next_required_B": 0.2},
+  "corrected_state": "actual bean areas L_{t-2}, L_{t-1}",
+  "window_check": "L_{t-2}+L_{t-1}+L_t >= A_i",
+  "plots": 54,
+  "candidate_paths": 108,
+  "complete_plan_validation_violations": 0
+}

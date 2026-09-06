@@ -1,0 +1,24 @@
+[
+  {
+    "P": 10,
+    "beam_width": 20,
+    "plots": 54,
+    "nonempty_plots": 54,
+    "total_paths": 530,
+    "min_paths_per_plot": 4,
+    "max_paths_per_plot": 10,
+    "max_path_violations": 0,
+    "generation_seconds": 4.370825100049842
+  },
+  {
+    "P": 20,
+    "beam_width": 50,
+    "plots": 54,
+    "nonempty_plots": 54,
+    "total_paths": 1080,
+    "min_paths_per_plot": 20,
+    "max_paths_per_plot": 20,
+    "max_path_violations": 0,
+    "generation_seconds": 9.226329699973576
+  }
+]

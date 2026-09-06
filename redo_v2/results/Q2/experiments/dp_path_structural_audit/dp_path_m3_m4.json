@@ -1,0 +1,54 @@
+{
+  "B": 22760077.937852412,
+  "kappa": -22760077.937852412,
+  "weights": [
+    0.241,
+    0.232,
+    0.201,
+    0.129,
+    0.197
+  ],
+  "profits": [
+    24144957.791844137,
+    25022547.163157236,
+    23473533.6030899,
+    22760077.937852412,
+    24791751.620451357
+  ],
+  "rows": [
+    {
+      "id": "M3-DP",
+      "info": {
+        "incumbent": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "solve_time_seconds": 0.09657080000033602,
+        "variables": 1548,
+        "continuous_variables": 1440,
+        "binary_integer_variables": 108,
+        "constraints": 2929,
+        "mip_gap": 0.003207321699832045,
+        "best_bound": -36465983.022744544,
+        "node_count": 1
+      },
+      "violations": 0
+    },
+    {
+      "id": "M4-DP",
+      "info": {
+        "incumbent": true,
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "solve_time_seconds": 0.03476389998104423,
+        "variables": 1554,
+        "continuous_variables": 1446,
+        "binary_integer_variables": 108,
+        "constraints": 2935,
+        "mip_gap": 0.0007491112166925384,
+        "best_bound": -36466984.279834725,
+        "node_count": 1
+      },
+      "violations": 0
+    }
+  ]
+}

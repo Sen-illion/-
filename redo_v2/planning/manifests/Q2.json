@@ -2,13 +2,16 @@
   "schema_version": 1,
   "question_id": "Q2",
   "rigor_profile": "lean",
-  "current_gate": "G2",
-  "status": "method_screened_waiting_human",
+  "current_gate": "G3",
+  "status": "dp_path_formal_experiment_complete",
   "artifacts": {
     "method_card": "methods/Q2/q2_method_card.md",
     "decision_ledger": "planning/framing_decisions.jsonl",
     "risk_probe": "methods/Q2/probes/risk_probe_summary.json",
-    "latest_run": null
+    "latest_run": "results/Q2/experiments/dp_path_formal_round1/run_summary.json",
+    "code_plan": "code/Q2/q2_code_plan.md",
+    "code_review": "code/Q2/reviews/q2_python_review.json",
+    "method_revision": "2026-09-05: Q2-M1 upgraded to seven-year full-horizon scenario stochastic MILP with recursive Q1 state transitions; Q2-B2 retains the original three-year rolling model as structural comparator."
   },
   "allowed": {
     "code_generation": false,
@@ -18,12 +21,13 @@
   },
   "blockers": [
     "先完成 Q1 闭环",
-    "稳健方法链 B 目前仅为初步倾向，需结合刷新后的 Q1 证据正式确认"
+    "当前仅完成极小规模探针；正式 N_raw=1000、K=20/40/60/80/100 与独立大样本测试尚未运行",
+    "随机 MILP 探针无 incumbent，当前结果使用已审计参考方案回退，不得冻结为 Q2-M1 最优"
   ],
   "next_action": {
     "owner": "AI",
-    "skill": "workflow-orchestrator",
-    "reason": "等待 Q1 闭环；已记录两种超产口径均需计算"
+    "skill": "robustness-checker",
+    "reason": "先针对随机 MILP 无 incumbent 和 K/情景规模稳定性设计回退与求解降维检查，再决定是否进入正式运行"
   },
-  "updated_at": "2026-09-03T18:04:03+08:00"
+  "updated_at": "2026-09-06T16:25:00+08:00"
 }

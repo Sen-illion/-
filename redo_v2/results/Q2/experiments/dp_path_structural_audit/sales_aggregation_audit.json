@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "global crop-year demand coupling",
+  "case": {"demand": 100, "plot_A_production": 80, "plot_B_production": 80, "price": 1},
+  "expected": {"total_production": 160, "normal_sales": 100, "excess": 60, "wasted_revenue": 100, "half_price_revenue": 130},
+  "observed": {"total_production": 160, "normal_sales": 100, "excess": 60, "wasted_revenue": 100, "half_price_revenue": 130},
+  "path_profit_additive": false,
+  "additive_path_fields": ["area", "production contribution", "cost"],
+  "global_fields": ["normal sales", "excess", "sales revenue", "scenario profit"]
+}

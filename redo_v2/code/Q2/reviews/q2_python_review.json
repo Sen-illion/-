@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "question_id": "Q2",
+  "language": "python",
+  "reviewed_files": ["code/Q2/q2_scenario.py", "code/Q2/q2_main.py"],
+  "decision_id": "q2_full_horizon_scenario_reduction_1",
+  "checks": {
+    "syntax": {"status": "PASS", "evidence": ["python -m py_compile passed", "module imports passed"]},
+    "input_contract": {"status": "PASS", "evidence": ["reuses q1_common cleaned CSV contracts", "invalid plot-crop combinations fixed by crop_slots"]},
+    "method_alignment": {"status": "CONDITIONAL", "evidence": ["annual rates are independently sampled and levels recursively accumulated", "shared x/z decisions and scenario-indexed sales/profit variables", "weighted K-medoids and CVaR loss linearization implemented", "formal Q2-W/Q2-H large-sample run remains pending"]},
+    "reproducibility": {"status": "PASS", "evidence": ["seed and environment recorded", "small probe rerunnable with Q2_N_RAW/Q2_K_LIST/Q2_N_TEST/Q2_TIME_LIMIT overrides"]},
+    "output_contract": {"status": "CONDITIONAL", "evidence": ["scenario_count_sensitivity.csv, scenario_reduction_summary.csv, ordinary_vs_tail_kmedoids.csv, out_of_sample_evaluation.csv, seed_stability.csv, lambda_sensitivity.csv, solver_diagnostics.csv and run_summary.json emitted", "current probe uses heuristic fallback because no MILP incumbent was found"]}
+  },
+  "findings": [
+    "The current probe was deliberately run at N_raw=2, K=1, N_test=2 and is not formal evidence for K convergence.",
+    "The shared-decision stochastic MILP reached time limits without an incumbent even at probe scale; fallback status is recorded and must be addressed before claiming Q2-M1 success.",
+    "result2.xlsx is an interim auditable workbook based on the existing Q1 reference plan because the official template is absent; it is not a frozen Q2 stochastic optimum."
+  ],
+  "verdict": "CONDITIONAL",
+  "reviewed_at": "2026-09-05T21:00:00+08:00"
+}

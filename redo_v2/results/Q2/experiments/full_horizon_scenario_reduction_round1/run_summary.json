@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "round": "full_horizon_scenario_reduction_round1",
+  "status": "no_incumbent",
+  "stage": "K=1_gate",
+  "random_seed": 2026,
+  "parameters": {
+    "n_raw": 1000,
+    "k_list": [
+      1
+    ],
+    "n_test": 2000,
+    "time_limit_seconds": 600.0,
+    "beta_cvar": 0.95,
+    "distribution": "triangular",
+    "annual_rate_sampling": "independent",
+    "level_evolution": "recursive_cumulative",
+    "evolution_formula": "X_t=X_{t-1}(1+r_t)"
+  },
+  "failed_model": {
+    "K": 1,
+    "rule": "half",
+    "solve_time": 162.2667062000255,
+    "status": 2,
+    "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+    "mip_gap": null,
+    "variables": 15501,
+    "binary_variables": 7490,
+    "constraints": 21504,
+    "objective": null,
+    "incumbent_found": false
+  },
+  "message": "Reduced shared-decision stochastic MILP did not produce an incumbent within the configured time limit; no fallback method was activated."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "question": "Q2",
+  "method": "Q2-F1 candidate path coordination fallback",
+  "status": "success",
+  "n_raw": 1000,
+  "n_test": 2000,
+  "seed": 2026,
+  "annual_rate_sampling": "independent",
+  "level_evolution": "recursive_cumulative",
+  "chosen": {
+    "waste": {
+      "candidate": "full_eta_01_plan",
+      "rule": "waste",
+      "mean_profit": 39611232.7679675,
+      "std_profit": 543560.0822286007,
+      "q05_profit": 38698638.910104565,
+      "bottom_10pct_mean": 38653335.759255484,
+      "cvar_95_profit": 38497502.64284576,
+      "worst_profit": 37585275.38446198,
+      "raw_mean_profit": 39620800.262947835,
+      "raw_cvar_95_profit": 38511723.39158629,
+      "constraint_violations": 0
+    },
+    "half": {
+      "candidate": "full_half_price_plan",
+      "rule": "half",
+      "mean_profit": 68919820.40952595,
+      "std_profit": 2673651.0371903996,
+      "q05_profit": 64528882.54051939,
+      "bottom_10pct_mean": 64335474.36388393,
+      "cvar_95_profit": 63639829.864234045,
+      "worst_profit": 60946270.31194835,
+      "raw_mean_profit": 68798407.81697516,
+      "raw_cvar_95_profit": 63845751.42428791,
+      "constraint_violations": 0
+    }
+  },
+  "candidate_count": 2
+}
