@@ -29,7 +29,13 @@ def _contrib(path, sc):
     for r in path:
         key=(r["plot_id"],int(r["year"]),r["slot"],int(r["crop_id"]))
         area=float(r["area"]); c=int(r["crop_id"]); y=int(r["year"])
-        q[(c,y)] = q.get((c,y),0.0) + area*sc["yields"][key]
+        # Keep season/price classes separate.  Demand is shared at crop-year
+        # level, but normal sales must be allocated across production sources
+        # with their own Q1 price coefficients (not replaced by one arbitrary
+        # representative price).
+        price=round(float(sc["prices"][key]), 10)
+        seg=(c,y,r["slot"],price)
+        q[seg] = q.get(seg,0.0) + area*sc["yields"][key]
         cost += area*sc["costs"][key]
     return q,cost
 
@@ -45,32 +51,36 @@ def build_path_master(paths, scenarios, demand, rule="half", kappa=None, beta=0.
             for path in plist: cqs.append(_contrib(path,sc)[0]); costs.append(_contrib(path,sc)[1])
         contributions.append((cqs,costs))
         u={}
+        seg_keys=sorted({seg for qmap in cqs for seg in qmap})
+        for seg in seg_keys:
+            c,y,slot,price=seg
+            idx=b.var(0,max(float(sc["sales"][(c,y)]),1.0)); u[seg]=idx; uidx[(k,*seg)]=idx
+            row={idx:1}; pos=0
+            for plot_id,plist in paths.items():
+                for j,_ in enumerate(plist):
+                    row[zidx[(plot_id,j)]]=row.get(zidx[(plot_id,j)],0)-cqs[pos].get(seg,0.0); pos+=1
+            b.con(row,ub=0)
+        # One shared demand cap per crop-year across all seasons/price classes.
         for c in range(1,42):
             for y in YEARS:
-                idx=b.var(0,max(float(sc["sales"][(c,y)]),1.0)); u[(c,y)]=idx; uidx[(k,c,y)]=idx
-                row={idx:1}
-                pos=0
-                for plot_id,plist in paths.items():
-                    for j,_ in enumerate(plist):
-                        row[zidx[(plot_id,j)]]=row.get(zidx[(plot_id,j)],0)-cqs[pos].get((c,y),0.0); pos+=1
-                b.con(row,ub=0)
-                b.con({idx:1},ub=float(sc["sales"][(c,y)]))
+                row={idx:1 for (cc,yy,_,_),idx in u.items() if cc==c and yy==y}
+                if row: b.con(row,ub=float(sc["sales"][(c,y)]))
         pr=b.var(-1e9,1e9); row={pr:1}; pos=0
         for plot_id,plist in paths.items():
             for j,_ in enumerate(plist):
                 qmap=cqs[pos]; cost=costs[pos];
                 row[zidx[(plot_id,j)]]=row.get(zidx[(plot_id,j)],0)+cost
                 pos+=1
-        for (c,y),ui in u.items():
-            price=next((v for (pp,yy,s,cc),v in sc["prices"].items() if yy==y and cc==c),0.0)
-            row[ui]=row.get(ui,0)-price
-            if rule=="half":
+        for (c,y,slot,price),ui in u.items():
+            if rule=="waste":
+                row[ui]=row.get(ui,0)-price
+            elif rule=="half":
                 # Revenue = 0.5*p*total production + 0.5*p*normal sales.
                 pos=0
                 for plot_id,plist in paths.items():
                     for j,_ in enumerate(plist):
-                        row[zidx[(plot_id,j)]]=row.get(zidx[(plot_id,j)],0)-0.5*price*cqs[pos].get((c,y),0.0); pos+=1
-                row[ui]=row.get(ui,0)+0.5*price
+                        row[zidx[(plot_id,j)]]=row.get(zidx[(plot_id,j)],0)-0.5*price*cqs[pos].get((c,y,slot,price),0.0); pos+=1
+                row[ui]=row.get(ui,0)-0.5*price
         b.con(row,lb=0,ub=0); pidx.append(pr)
     if kappa is not None:
         eta=b.var(-1e9,1e9); xis=[]

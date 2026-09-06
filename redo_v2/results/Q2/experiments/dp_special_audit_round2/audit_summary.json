@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "Q2 DP专项审查 Round 2",
+  "large_K_expansion": false,
+  "dp_state": {"status": "PASS", "state": "actual bean areas L_t-2,L_t-1", "candidate_paths": 108, "violations": 0},
+  "sales_aggregation": {"status": "PASS", "global_demand_cap": true, "counterexample": {"D": 100, "QA": 80, "QB": 80, "Q": 160, "normal_sales": 100, "excess": 60, "wasted_revenue_at_p1": 100, "half_price_revenue_at_p1": 130}},
+  "cvar": {"status": "PASS", "beta": 0.95, "mapping": "kappa=-B", "lambda_used": false},
+  "regression": [
+    {"model": "M3-DP", "rule": "waste", "K": 5, "P": 2, "binary": 108, "continuous": 326, "constraints": 695, "incumbent": true, "solve_time_seconds": 0.0991968, "mip_gap": 0.0000581778},
+    {"model": "M4-DP", "rule": "half", "K": 5, "P": 2, "binary": 108, "continuous": 326, "constraints": 695, "incumbent": true, "solve_time_seconds": 0.0176281, "mip_gap": 0.0309463}
+  ]
+}
