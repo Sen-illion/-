@@ -3,12 +3,12 @@
   "question_id": "Q2",
   "rigor_profile": "lean",
   "current_gate": "G3",
-  "status": "dp_path_formal_experiment_complete",
+  "status": "dp_path_formal_experiment_complete_after_sales_price_fix",
   "artifacts": {
     "method_card": "methods/Q2/q2_method_card.md",
     "decision_ledger": "planning/framing_decisions.jsonl",
     "risk_probe": "methods/Q2/probes/risk_probe_summary.json",
-    "latest_run": "results/Q2/experiments/dp_path_formal_round1/run_summary.json",
+    "latest_run": "results/Q2/experiments/dp_path_formal_round2/run_summary.json",
     "code_plan": "code/Q2/q2_code_plan.md",
     "code_review": "code/Q2/reviews/q2_python_review.json",
     "method_revision": "2026-09-05: Q2-M1 upgraded to seven-year full-horizon scenario stochastic MILP with recursive Q1 state transitions; Q2-B2 retains the original three-year rolling model as structural comparator."
@@ -20,9 +20,7 @@
     "final_assembly": false
   },
   "blockers": [
-    "先完成 Q1 闭环",
-    "当前仅完成极小规模探针；正式 N_raw=1000、K=20/40/60/80/100 与独立大样本测试尚未运行",
-    "随机 MILP 探针无 incumbent，当前结果使用已审计参考方案回退，不得冻结为 Q2-M1 最优"
+    "DP 候选路径集属于受限近似，不能据此宣称原始完整随机 MILP 的严格全局最优性；正式结果需同时披露 MIP gap。"
   ],
   "next_action": {
     "owner": "AI",

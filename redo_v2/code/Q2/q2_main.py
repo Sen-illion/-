@@ -123,7 +123,10 @@ def evaluate_scen(plan,sc,rule):
       c=int(r["crop_id"]); y=int(r["year"]); q=float(r["area"])*sc["yields"][(r["plot_id"],y,r["slot"],c)]; by.setdefault((c,y),[]).append((q,sc["prices"][(r["plot_id"],y,r["slot"],c)])); total-=float(r["area"])*sc["costs"][(r["plot_id"],y,r["slot"],c)]
     for (c,y),items in by.items():
       rem=sc["sales"][(c,y)]
-      for q,p in items:
+      # Match the global sales variables in the MILP: when the shared demand
+      # cap binds, normal-price sales are allocated to the highest-price
+      # production sources first.  Plan row order must not change profit or B.
+      for q,p in sorted(items, key=lambda qp: qp[1], reverse=True):
         normal=min(q,max(rem,0)); excess=q-normal; total+=p*(normal+(0.5 if rule=="half" else 0)*excess); rem-=normal
     return total
 
